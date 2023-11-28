@@ -1,5 +1,14 @@
 # community.flake.parts
 
+A place to host documentation for [flake modules](/modules) created using [flake-parts](https://flake.parts/).
+
+Initially, we use Docusaurus (in conjunction with git submodules), which presents the following limitations:
+
+- Harcoded slugs and links
+    - For eg., `haskell-flake` uses `/haskell-flake/start` (rather than just `/start` or `start`) to link to one of its page.
+
+In the long-run, we plan to switch to a new mdBook based system.
+
 ## Local
 
 In nix shell,
