@@ -13,3 +13,6 @@
 [submodule "ext/nix-browser"]
 	path = ext/nix-browser
 	url = https://github.com/juspay/nix-browser
+[submodule "ext/mission-control"]
+	path = ext/mission-control
+	url = https://github.com/Platonic-Systems/mission-control.git
