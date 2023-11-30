@@ -14,6 +14,7 @@ In the long-run, we plan to switch to a new mdBook based system.
 In nix shell,
 
 ```bash
+# Run `npm i` first!
 just run
 ```
 
