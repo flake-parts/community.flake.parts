@@ -183,11 +183,11 @@
     "nixos-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1705159033,
-        "narHash": "sha256-Mo9sKXLmdZhby1NCCq8AnxECuw9hmSjJF8cFVOuoCAM=",
+        "lastModified": 1705161926,
+        "narHash": "sha256-j5X285ZzmWWtetyxtBVQkkMsHlAtX1owKDyCXLseDgc=",
         "owner": "srid",
         "repo": "nixos-flake",
-        "rev": "c7323ddd9563f490019eafe911a28539b62a0a12",
+        "rev": "db230f73fc95752c883c57b68d8b00842b97c90d",
         "type": "github"
       },
       "original": {
