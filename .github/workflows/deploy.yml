@@ -17,15 +17,11 @@ jobs:
           submodules: recursive
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v4
-      - uses: actions/setup-node@v3
+      - uses: cachix/cachix-action@v14
         with:
-          node-version: 18
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
+          name: srid
       - name: Build website
-        run: npm run build
+        run: nix build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
@@ -34,7 +30,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
-          publish_dir: ./build
+          publish_dir: ./result
           cname: community.flake.parts
           # The following lines assign commit authorship to the official
           # GH-Actions bot for deploys to `gh-pages` branch:
