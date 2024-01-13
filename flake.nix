@@ -22,15 +22,14 @@
       imports = [ inputs.emanote.flakeModule ];
       perSystem = { config, self', pkgs, system, ... }:
         let
-          preProcess = { name, path }:
-            pkgs.runCommandNoCC "${name}-preProcess" { } ''
+          getDocDir = moduleName:
+            pkgs.runCommandNoCC "${moduleName}-docs" { } ''
               mkdir -p $out/
-              cp -r ${path}/* $out/
-              ls -l $out/
+              cp -r ${inputs.${moduleName}}/doc/* $out/
             '';
-          moduleDocs = builtins.map preProcess [
-            { name = "haskell-flake"; path = "${inputs.haskell-flake}/doc"; }
-            { name = "nixos-flake"; path = "${inputs.nixos-flake}/doc"; }
+          moduleDocs = builtins.map getDocDir [
+            "haskell-flake"
+            "nixos-flake"
           ];
         in
         {
