@@ -20,7 +20,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       imports = [ inputs.emanote.flakeModule ];
-      perSystem = { self', pkgs, system, ... }:
+      perSystem = { config, self', pkgs, system, ... }:
         let
           preProcess = { name, path }:
             pkgs.runCommandNoCC "${name}-preProcess" { } ''
@@ -36,18 +36,18 @@
         {
           emanote = {
             sites."default" = {
-              layers = [ ./. ] ++ moduleDocs;
-              layersString = [ "." ] ++ builtins.map builtins.toString moduleDocs;
+              layers = [ ./doc ] ++ moduleDocs;
+              layersString = [ "./doc" ] ++ builtins.map builtins.toString moduleDocs;
               port = 5566;
               prettyUrls = true;
             };
           };
           apps.preview.program = pkgs.writeShellApplication {
             name = "emanote-preview";
-            runtimeInputs = [ pkgs.nodePackages.http-server ];
+            runtimeInputs = [ pkgs.static-web-server ];
             text = ''
               set -x
-              http-server -d false ${self'.packages.default} "$@"
+              static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
             '';
           };
           devShells.default = pkgs.mkShell {
