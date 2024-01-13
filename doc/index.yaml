@@ -9,7 +9,7 @@ template:
 
   # You can add your own variables here, like editBaseUrl.
   # See after-note.tpl to see where editBaseUrl gets used.
-  editBaseUrl: https://github.com/flake-parts/community.flake.parts/edit/main
+  editBaseUrl: https://github.com/flake-parts/community.flake.parts/edit/emanote/doc
 
   # Uncomment this to get neuron-style pages
   # name: /templates/layouts/note
