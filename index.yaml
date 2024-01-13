@@ -5,7 +5,7 @@ page:
   siteTitle: community.flake.parts
 
 template:
-  theme: blue
+  theme: green
 
   # You can add your own variables here, like editBaseUrl.
   # See after-note.tpl to see where editBaseUrl gets used.

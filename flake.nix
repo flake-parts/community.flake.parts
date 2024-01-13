@@ -24,12 +24,9 @@
         let
           preProcess = { name, path }:
             pkgs.runCommandNoCC "${name}-preProcess" { } ''
-              mkdir -p $out/${name}
-              cp -r ${path}/* $out/${name}/
-              cd $out/${name}
-              ls -l
-              if test -f index.md; then mv index.md ../${name}.md; fi
-              if test -f index.yaml; then mv index.yaml ../${name}.yaml; fi
+              mkdir -p $out/
+              cp -r ${path}/* $out/
+              ls -l $out/
             '';
           moduleDocs = builtins.map preProcess [
             { name = "haskell-flake"; path = "${inputs.haskell-flake}/doc"; }
@@ -44,6 +41,14 @@
               port = 5566;
               prettyUrls = true;
             };
+          };
+          apps.preview.program = pkgs.writeShellApplication {
+            name = "emanote-preview";
+            runtimeInputs = [ pkgs.nodePackages.http-server ];
+            text = ''
+              set -x
+              http-server -d false ${self'.packages.default} "$@"
+            '';
           };
           devShells.default = pkgs.mkShell {
             buildInputs = [
