@@ -20,14 +20,15 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       imports = [ inputs.emanote.flakeModule ];
-      perSystem = { config, self', pkgs, system, ... }:
+      perSystem = { config, self', pkgs, lib, system, ... }:
         let
           getDocDir = moduleName:
-            pkgs.runCommandNoCC "${moduleName}-docs" { } ''
-              mkdir -p $out/
-              cp -r ${inputs.${moduleName}}/doc/* $out/
-            '';
-          moduleDocs = builtins.map getDocDir [
+            lib.cleanSourceWith {
+              name = "${moduleName}-docs";
+              src = inputs.${moduleName} + /doc;
+            };
+          moduleDocs = builtins.map getDocDir modules;
+          modules = [
             "haskell-flake"
             "nixos-flake"
           ];
@@ -42,7 +43,7 @@
             };
           };
           apps.preview.program = pkgs.writeShellApplication {
-            name = "emanote-preview";
+            name = "emanote-static-preview";
             runtimeInputs = [ pkgs.static-web-server ];
             text = ''
               set -x
