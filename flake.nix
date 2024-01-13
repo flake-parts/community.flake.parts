@@ -1,38 +1,61 @@
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    systems.url = "github:nix-systems/default";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+  nixConfig = {
+    extra-substituters = "https://srid.cachix.org";
+    extra-trusted-public-keys = "srid.cachix.org-1:3clnql5gjbJNEvhA/WQp7nrZlBptwpXnUk6JAv8aB2M=";
   };
 
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
-      imports = [
-        inputs.treefmt-nix.flakeModule
-      ];
-      perSystem = { self', system, lib, config, pkgs, ... }: {
-        # Auto formatters. This also adds a flake check to ensure that the
-        # source tree was auto formatted.
-        treefmt.config = {
-          projectRootFile = "docusaurus.config.js";
-          package = pkgs.treefmt;
-          programs.nixpkgs-fmt.enable = true;
-        };
+  inputs = {
+    emanote.url = "github:srid/emanote/amb";
+    nixpkgs.follows = "emanote/nixpkgs";
+    flake-parts.follows = "emanote/flake-parts";
 
-        # Default shell.
-        devShells.default = pkgs.mkShell {
-          name = "community.flake.parts";
-          inputsFrom = [
-            config.treefmt.build.devShell
+    # Individual flake-parts modules go here
+    haskell-flake.url = "github:srid/haskell-flake/cfp";
+    haskell-flake.flake = false;
+    nixos-flake.url = "github:srid/nixos-flake/cfp";
+    nixos-flake.flake = false;
+  };
+
+  outputs = inputs@{ self, flake-parts, nixpkgs, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = nixpkgs.lib.systems.flakeExposed;
+      imports = [ inputs.emanote.flakeModule ];
+      perSystem = { config, self', pkgs, system, ... }:
+        let
+          preProcess = { name, path }:
+            pkgs.runCommandNoCC "${name}-preProcess" { } ''
+              mkdir -p $out/
+              cp -r ${path}/* $out/
+              ls -l $out/
+            '';
+          moduleDocs = builtins.map preProcess [
+            { name = "haskell-flake"; path = "${inputs.haskell-flake}/doc"; }
+            { name = "nixos-flake"; path = "${inputs.nixos-flake}/doc"; }
           ];
-          nativeBuildInputs = [
-            pkgs.nodejs
-            pkgs.just
-          ];
+        in
+        {
+          emanote = {
+            sites."default" = {
+              layers = [ ./doc ] ++ moduleDocs;
+              layersString = [ "./doc" ] ++ builtins.map builtins.toString moduleDocs;
+              port = 5566;
+              prettyUrls = true;
+            };
+          };
+          apps.preview.program = pkgs.writeShellApplication {
+            name = "emanote-preview";
+            runtimeInputs = [ pkgs.static-web-server ];
+            text = ''
+              set -x
+              static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
+            '';
+          };
+          devShells.default = pkgs.mkShell {
+            buildInputs = [
+              pkgs.nixpkgs-fmt
+            ];
+          };
+          formatter = pkgs.nixpkgs-fmt;
         };
-      };
     };
 }
