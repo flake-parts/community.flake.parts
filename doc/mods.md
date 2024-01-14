@@ -9,3 +9,4 @@ template:
 
 - [[haskell-flake]]#
 - [[nixos-flake]]#
+- [[services-flake]]#
