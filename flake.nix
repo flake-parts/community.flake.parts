@@ -14,7 +14,7 @@
     haskell-flake.flake = false;
     nixos-flake.url = "github:srid/nixos-flake/cfp";
     nixos-flake.flake = false;
-    services-flake.url = "github:juspay/services-flake/cfp";
+    services-flake.url = "github:juspay/services-flake/docs-init";
     services-flake.flake = false;
   };
 
