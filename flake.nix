@@ -5,7 +5,7 @@
   };
 
   inputs = {
-    emanote.url = "github:srid/emanote/amb";
+    emanote.url = "github:srid/emanote/amb"; # https://github.com/srid/emanote/pull/498
     nixpkgs.follows = "emanote/nixpkgs";
     flake-parts.follows = "emanote/flake-parts";
 
@@ -16,6 +16,8 @@
     nixos-flake.flake = false;
     services-flake.url = "github:juspay/services-flake";
     services-flake.flake = false;
+    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
+    process-compose-flake.flake = false;
   };
 
   outputs = inputs@{ self, flake-parts, nixpkgs, ... }:
@@ -34,6 +36,7 @@
             "haskell-flake"
             "nixos-flake"
             "services-flake"
+            "process-compose-flake"
           ];
         in
         {
