@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<!-- DoNotFormat -->
-<!-- DoNotFormat -->
-
-
-
-
 <!-- DoNotFormat -->
 <!-- DoNotFormat -->
 
@@ -14,15 +7,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Reference – haskell-flake
+    Index – community.flake.parts
   </title>
   
     
-      <meta property='og:description' content />
-      <meta property='og:site_name' content='haskell-flake' />
+      <meta property='og:description' content='This is a place to document the various flake modules created using flake-parts.' />
+      <meta property='og:site_name' content='community.flake.parts' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Reference' />
+      <meta property='og:title' content='Index' />
       
         <meta name='twitter:card' content='summary_large_image' />
       
@@ -31,18 +24,10 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <meta name='generator' content='Emanote' />
 
   
-  
+  <emaNoteFeedUrl></emaNoteFeedUrl>
   <link href='tailwind.css?instanceId=6bfc3fc8-5189-4a2e-8169-7bd8b4d3efc3' rel='stylesheet' type='text/css' />
 
   <style>
@@ -188,26 +173,7 @@
 </style>
 
 
-  
-    <style>
-      /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
-      /* md:min-w-48  */
-      @media (min-width: 768px) {
-        #sidebar {
-          min-width: 12rem;
-        }
-      }
-
-      /* xl:min-w-64  */
-      @media (min-width: 1280px) {
-        #sidebar {
-          min-width: 16rem;
-        }
-      }
-    </style>
-
-    
-  
+  <head-main></head-main>
   <link rel='stylesheet' href='_emanote-static/stork/flat.css' />
 <!-- Custom Stork-search styling for Emanote -->
 <style>
@@ -317,115 +283,18 @@
 
 <body class='bg-gray-400 overflow-y-scroll'>
   
-    <div class='container mx-auto md:mt-8 '>
+    <div class='container mx-auto '>
+      <main class='flex-col items-center justify-center mx-2'>
+        <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
+          Index
+        </h1>
+        <div class='pb-2 mx-auto my-4 lg:max-w-screen-md '>
+          
+    <div class='pt-1 pb-2 pl-4 bg-gray-200'>
       
-
-      
-        <nav id='breadcrumbs' class='w-full text-gray-700 md:hidden'>
-  <div class='flex justify-left'>
-    <div class='w-full px-2 py-2 bg-gray-50'>
-      <ul class='flex flex-wrap text-lg'>
-        <li class='inline-flex items-center'>
-          
-            
-              <img style='width: 1rem;' src='favicon.svg' />
-            
-          
-        </li>
-        
-          
-            <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href=''>
-                community.flake.parts
-              </a>
-              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
-                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-              </svg>
-            </li>
-          
-            <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='haskell-flake'>
-                Haskell development using <code>haskell-flake</code>
-              </a>
-              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
-                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
-              </svg>
-            </li>
-          
-        
-      </ul>
-    </div>
-    <button class='inline px-2 py-1 bg-gray-50 outline-none cursor-pointer focus:outline-none' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-emerald-700' f
- fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
-</svg>
-    </button>
-    <button class='inline px-2 py-1 text-white bg-emerald-600 outline-none cursor-pointer focus:outline-none' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
-      </svg>
-    </button>
-    <script>
-      function toggleHidden(elemId) {
-        document.getElementById(elemId).classList.toggle("hidden");
-      }
-    </script>
-  </div>
-</nav>
-      
-
-      
-        <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
-          <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
-  <div class='px-2 py-2 text-gray-800'>
-    <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
-      <a href='-/tags' title='View tags'>
-        <svg style='width: 1rem;' class='hover:text-emerald-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
-          </path>
-        </svg>
-      </a>
-      <a href='-/all' title='Expand full tree'>
-        <svg style='width: 1rem;' class='hover:text-emerald-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
-          </path>
-        </svg>
-      </a>
-      <a title='Search (Ctrl+K)' class='cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-        <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-emerald-700' f
- fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
-</svg>
-      </a>
-    </div>
-
-    <div id='site-logo' class='pl-2'>
-      <div class='flex items-center my-2 space-x-2 justify-left'>
-        <a href='' title='Go to Home'>
-          
-            
-              <!-- The style width attribute here is to prevent huge
-                      icon from displaying at those rare occasions when Tailwind
-                      hasn't kicked in immediately on page load 
-                      -->
-              <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='favicon.svg' />
-            
-          
-        </a>
-        <a class='font-bold truncate' title='Go to Home' href=''>
-          Home
-        </a>
-      </div>
-    </div>
-
-    
-      <!-- Variable bindings for this tree-->
+        <!-- Variable bindings for this tree-->
 
   
-    
-      
     
   
 
@@ -449,7 +318,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-emerald-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -465,8 +334,6 @@
 
   
     
-      
-    
   
 
 
@@ -489,7 +356,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-emerald-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -503,6 +370,8 @@
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -544,6 +413,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -579,6 +450,8 @@
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -620,6 +493,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -659,6 +534,8 @@
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -700,6 +577,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -740,6 +619,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -779,6 +660,8 @@
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -823,7 +706,9 @@
       <!-- Variable bindings for this tree-->
 
   
+    
   
+
 
 
   
@@ -844,7 +729,7 @@
   
         
     </span>
-    <a class='mavenLinkBold bg-emerald-100 hover:bg-emerald-200 rounded px-1.5 truncate' title='Reference' href='haskell-flake/ref'>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Reference' href='haskell-flake/ref'>
       Reference
     </a>
     
@@ -858,6 +743,8 @@
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -902,6 +789,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -945,6 +834,8 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+  
 
 
 
@@ -958,7 +849,6 @@
     <span>
       
         
-          
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
@@ -967,25 +857,26 @@
     
   
         
-      
     </span>
     <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='mission-control' href='mission-control'>
       mission-control
     </a>
     
       
-        
-    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
+    
+  
 </div>
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -1000,38 +891,30 @@
     <span>
       
         
-          <a href='nixos-flake' title='View folgezettel children'>
-            
     
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-500' viewBox='0 0 24 24' fill='currentColor'>
-        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
-    
-  
-          </a>
-          
       
+  
+        
     </span>
     <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='nixos-flake ❄️' href='nixos-flake'>
       nixos-flake ❄️
     </a>
     
       
-        <span class='text-gray-300' title='3 children inside'>
-          3
-        </span>
-      
-    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-</div>
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -1046,7 +929,6 @@
     <span>
       
         
-          
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
@@ -1055,25 +937,26 @@
     
   
         
-      
     </span>
-    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='process-compose-flake' href='process-compose-flake'>
-      process-compose-flake
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Getting Started' href='nixos-flake/start'>
+      Getting Started
     </a>
     
       
-        
-    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
+    
+  
 </div>
     
       <!-- Variable bindings for this tree-->
 
+  
+    
   
 
 
@@ -1088,126 +971,332 @@
     <span>
       
         
-          <a href='services-flake' title='View folgezettel children'>
-            
     
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-500' viewBox='0 0 24 24' fill='currentColor'>
-        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
-    
-  
-          </a>
-          
       
+  
+        
     </span>
-    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
-      services-flake
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Guide' href='nixos-flake/guide'>
+      Guide
     </a>
     
       
-        <span class='text-gray-300' title='2 children inside'>
-          2
-        </span>
-      
-    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-</div>
     
-  
-</div>
-    
+      <!-- Variable bindings for this tree-->
 
-  </div>
-</nav>
-          <!-- Main body column -->
-          <div class='flex-1 w-full overflow-x-auto bg-white'>
-  <main class='px-4 py-4'>
-    <h1 class='flex items-end justify-center mb-4 p-3 bg-emerald-100 text-5xl font-extrabold text-black rounded'>
-  <a class='z-40 tracking-tighter '>
-    Reference
-  </a>
-</h1>
-    <article class='overflow-auto'>
-  <!-- What goes in this file will appear on top of note body-->
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='haskell-flake/docker' class='text-emerald-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Building a docker image</a>
-        </li>
-      
-    </ul>
+    
   
 
-  <div class='flex items-center justify-center mt-2'>
-  
-    
-      <a class='text-gray-300 hover:text-emerald-600 text-sm' title='Edit this page on GitHub' href='https://github.com/srid/haskell-flake/edit/master/doc/haskell-flake/ref.md'>
-        <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
-        </svg>
-      </a>
-    
-  
-</div>
-</article>
-    <div class='flex flex-col lg:flex-row lg:space-x-2'>
-      
-      
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-emerald-600 mavenLinkBold hover:bg-emerald-50' href='haskell-flake'>
-            Haskell development using <code>haskell-flake</code>
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-emerald-200 hover:border-emerald-500'>
-      <div><p>To get started, see <a href='haskell-flake/start' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Getting Started</a> and thereon see <a href='haskell-flake/guide' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Guide</a>. To get inspired, see <a href='haskell-flake/examples' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Examples</a>. For reference, see <a href='haskell-flake/ref' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Reference</a>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-emerald-600 mavenLinkBold hover:bg-emerald-50' href='haskell-flake/start'>
-            Getting Started
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-emerald-200 hover:border-emerald-500'>
-      <div><p>Visit <a href='haskell-flake/guide' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Guide</a> for more details, and <a href='haskell-flake/ref' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Reference</a> for module options.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
 
-    </div>
-    
-  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
-    
-  </section>
 
-    <!-- What goes in this file will at the very end of the main div -->
-  </main>
-</div>
-        </div>
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
         
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Module outputs' href='nixos-flake/module-outputs'>
+      Module outputs
+    </a>
+    
+      
+  </div>
 
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Flake Templates' href='nixos-flake/templates'>
+      Flake Templates
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Examples' href='nixos-flake/examples'>
+      Examples
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='process-compose-flake' href='process-compose-flake'>
+      process-compose-flake
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+      services-flake
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Getting started' href='services-flake/start'>
+      Getting started
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+    
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-emerald-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
+      Services
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
+  
+</div>
+      
+    </div>
+  
+        </div>
+      </main>
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
   
   <div>
