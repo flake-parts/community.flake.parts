@@ -3,16 +3,16 @@ default:
 
 # Autoformat project tree
 fmt:
-    treefmt
+    nix fmt
 
 # Run local server
 run:
-    npm start
+    nix run
 
 # Build static site
 build:
-    npm run build
+    nix build
 
-# Update all submodules to latest HEAD
-update:
-    git submodule update --recursive --remote
+# Preview the static site
+preview:
+    nix run .#preview
