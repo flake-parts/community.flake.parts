@@ -24,7 +24,7 @@ In order to best host your flake-parts module's documentation in this site, plea
         ```
         
 
-[^imp]: These organizational clutches will be fixed in future versions of Emanote, such that you can just write all docs under `./doc`.
+[^imp]: These organizational clutches will be fixed in future versions of Emanote (see https://github.com/srid/emanote/issues/494), such that you can just write all docs under `./doc`.
 
 For further information, see [Emanote guide](https://emanote.srid.ca/guide). You can test your docs locally by running `nix run github:srid/emanote` under the `./doc` directory of your repository.
 
