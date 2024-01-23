@@ -197,6 +197,22 @@
         "type": "github"
       }
     },
+    "mission-control": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705982654,
+        "narHash": "sha256-7MvdCF0dxK8FRbBQXCC9JTuEh/7i5TAA1iU/8RNW/lI=",
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
+        "rev": "7aff11c21bd7b2045fdd90e6d0a1c714e96020d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
+        "type": "github"
+      }
+    },
     "nixos-flake": {
       "flake": false,
       "locked": {
@@ -272,6 +288,7 @@
           "flake-parts"
         ],
         "haskell-flake": "haskell-flake_2",
+        "mission-control": "mission-control",
         "nixos-flake": "nixos-flake",
         "nixpkgs": [
           "emanote",

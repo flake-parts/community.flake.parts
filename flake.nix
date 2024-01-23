@@ -18,6 +18,8 @@
     services-flake.flake = false;
     process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
     process-compose-flake.flake = false;
+    mission-control.url = "github:Platonic-Systems/mission-control";
+    mission-control.flake = false;
   };
 
   outputs = inputs@{ self, flake-parts, nixpkgs, ... }:
@@ -37,6 +39,7 @@
             "nixos-flake"
             "services-flake"
             "process-compose-flake"
+            "mission-control"
           ];
         in
         {

@@ -11,3 +11,4 @@ template:
 - [[nixos-flake]]#
 - [[services-flake]]#
 - [[process-compose-flake]]#
+- [[mission-control]]#
