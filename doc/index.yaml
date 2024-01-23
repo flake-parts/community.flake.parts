@@ -5,7 +5,8 @@ page:
   siteTitle: community.flake.parts
 
 template:
-  theme: green
+  # https://tailwindcss.com/docs/customizing-colors#default-color-palette
+  theme: amber
 
   # You can add your own variables here, like editBaseUrl.
   # See after-note.tpl to see where editBaseUrl gets used.
