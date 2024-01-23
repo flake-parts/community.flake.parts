@@ -10,9 +10,9 @@
     flake-parts.follows = "emanote/flake-parts";
 
     # Individual flake-parts modules go here
-    haskell-flake.url = "github:srid/haskell-flake/cfp";
+    haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.flake = false;
-    nixos-flake.url = "github:srid/nixos-flake/cfp";
+    nixos-flake.url = "github:srid/nixos-flake";
     nixos-flake.flake = false;
     services-flake.url = "github:juspay/services-flake";
     services-flake.flake = false;
