@@ -6,7 +6,7 @@ page:
 
 template:
   # https://tailwindcss.com/docs/customizing-colors#default-color-palette
-  theme: emerald
+  theme: sky
 
   # You can add your own variables here, like editBaseUrl.
   # See after-note.tpl to see where editBaseUrl gets used.
