@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=b9267c6a-22e6-482e-abbe-f5cd943049e6' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=0518f72b-b162-40b0-951a-7b253758ad50' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1139,6 +1139,12 @@
     <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
+
+
+
+
+
+
     <p class='mb-3'>
       haskell-flake’s per-project configuration can be modularized and shared among multiple repos. This is done using the <code class='py-0.5 px-0.5 bg-gray-100'>flake.haskellFlakeProjectModules</code> flake output.
     </p>
@@ -1177,11 +1183,39 @@
     <p class='mb-3'>
       This way your <code class='py-0.5 px-0.5 bg-gray-100'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
     </p>
-  <h2 id='module-arguments' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Module arguments</h2>
+  
+    <h2 id='module-arguments' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Module arguments
+  
+  <a href='haskell-flake/modules#module-arguments'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       A haskell-flake project module takes the following arguments:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100'>self</code></td></tr></tbody></table><h2 id='default-modules' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Default modules</h2>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100'>self</code></td></tr></tbody></table>
+    <h2 id='default-modules' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Default modules
+  
+  <a href='haskell-flake/modules#default-modules'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       By default, haskell-flake will generate the following modules for the “default” <code class='py-0.5 px-0.5 bg-gray-100'>haskellProject</code>:
     </p>
@@ -1203,7 +1237,21 @@
     <p class='mb-3'>
       By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100'>output</code> project module, you automatically get the overrides from “bar” as well as the local packages. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
     </p>
-  <h2 id='examples' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Examples</h2>
+  
+    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Examples
+  
+  <a href='haskell-flake/modules#examples'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
@@ -1212,7 +1260,6 @@
       
     </ul>
   
-
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -1324,7 +1371,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.10.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.11.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=b9267c6a-22e6-482e-abbe-f5cd943049e6' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=0518f72b-b162-40b0-951a-7b253758ad50' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -689,6 +689,12 @@
     <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
+
+
+
+
+
+
     <p class='mb-3'>
       <a href='https://github.com/Platonic-Systems/process-compose-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> is a <a href='https://flake.parts/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>flake-parts</a> module for <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a>.
     </p>
@@ -700,7 +706,21 @@
     <p class='mb-3'>
       This module is practical for local development e.g. if you have a lot of runtime dependencies that depend on each other. Stop executing these programs imperatively over and over again in a specific order, and stop the need to write complicated shell scripts to automate this. <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code> gives you a process dashboard for monitoring, inspecting logs for each process, and much more, all of this in a TUI.
     </p>
-  <h2 id='quick-example' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Quick Example</h2>
+  
+    <h2 id='quick-example' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Quick Example
+  
+  <a href='process-compose-flake#quick-example'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       See <a href='https://github.com/Platonic-Systems/process-compose-flake/blob/main/example/flake.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>example/flake.nix</code></a> for an example flake. This example shows a demo of <a href='https://github.com/coleifer/sqlite-web' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>sqlite-web</a> using the sample <a href='https://github.com/lerocha/chinook-database' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>chinhook-database</a>.
     </p>
@@ -718,7 +738,21 @@ nix run</code></pre></div>
     <p class='mb-3'>
       <img src='https://github.com/Platonic-Systems/process-compose-flake/assets/3998/254443fa-f3c2-4675-9ced-2a39ac23591d' alt />
     </p>
-  <h2 id='usage' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Usage</h2>
+  
+    <h2 id='usage' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Usage
+  
+  <a href='process-compose-flake#usage'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       Let’s say you want to have a <code class='py-0.5 px-0.5 bg-gray-100'>devShell</code> that makes a command <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> available, that you can use to spin up your projects <code class='py-0.5 px-0.5 bg-gray-100'>backend-server</code>, <code class='py-0.5 px-0.5 bg-gray-100'>frontend-server</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>proxy-server</code>.
     </p>
@@ -764,7 +798,21 @@ nix run</code></pre></div>
     <p class='mb-3'>
       You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> to run your processes.
     </p>
-  <h2 id='module-api' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Module API</h2>
+  
+    <h2 id='module-api' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Module API
+  
+  <a href='process-compose-flake#module-api'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       Our submodule mirrors the <a href='https://github.com/F1bonacc1/process-compose/blob/main/process-compose.yaml' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose YAML schema</a>. A few things to remember:
     </p>
@@ -784,7 +832,21 @@ nix run</code></pre></div>
         </li>
       
     </ul>
-  <h2 id='see-also' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>See also</h2>
+  
+    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  See also
+  
+  <a href='process-compose-flake#see-also'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
@@ -792,7 +854,21 @@ nix run</code></pre></div>
         </li>
       
     </ul>
-  <h2 id='related-projects' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Related projects</h2>
+  
+    <h2 id='related-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Related projects
+  
+  <a href='process-compose-flake#related-projects'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
@@ -805,7 +881,6 @@ nix run</code></pre></div>
       
     </ul>
   
-
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -872,7 +947,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.10.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.11.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

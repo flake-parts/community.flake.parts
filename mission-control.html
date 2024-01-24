@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=b9267c6a-22e6-482e-abbe-f5cd943049e6' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=0518f72b-b162-40b0-951a-7b253758ad50' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -688,7 +688,13 @@
 </h1>
     <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10' role='note'>
+  
+
+
+
+
+
+<div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10' role='note'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
   <div class='callout-title'>
@@ -714,7 +720,21 @@
     <p class='mb-3'>
       The <a href='https://github.com/Platonic-Systems/mission-control' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> flake-parts module enables creating a set of scripts or commands to run in the Nix dev shell. This makes it possible for the project’s user to locate all of the commands they need (to get started) in one place, often replacing the likes of <code class='py-0.5 px-0.5 bg-gray-100'>Makefile</code> or <code class='py-0.5 px-0.5 bg-gray-100'>bin/</code> scripts.
     </p>
-  <h2 id='usage' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Usage</h2>
+  
+    <h2 id='usage' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Usage
+  
+  <a href='mission-control#usage'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       To use this module, add <code class='py-0.5 px-0.5 bg-gray-100'>mission-control</code> to <code class='py-0.5 px-0.5 bg-gray-100'>inputs</code>,
     </p>
@@ -730,11 +750,39 @@
   imports = [
     inputs.mission-control.flakeModule
   ];
-}</code></pre></div><h2 id='add-a-script-haskell' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Add a script (Haskell)</h2>
+}</code></pre></div>
+    <h2 id='add-a-script-haskell' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Add a script (Haskell)
+  
+  <a href='mission-control#add-a-script-haskell'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       Here we’ll show a sample of scripts that are particular useful when developing <code class='py-0.5 px-0.5 bg-gray-100'>[Haskell](/haskell-flake)</code> projects.
     </p>
-  <h3 id='docs-hoogle' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Docs (Hoogle)</h3>
+  
+    <h3 id='docs-hoogle' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  Docs (Hoogle)
+  
+  <a href='mission-control#docs-hoogle'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
     <p class='mb-3'>
       We can add a convenient script to start Hoogle on project dependencies as follows. As a result, typing <code class='py-0.5 px-0.5 bg-gray-100'>, docs</code> in the dev shell will start Hoogle.
     </p>
@@ -754,7 +802,21 @@
     <p class='mb-3'>
       The <code class='py-0.5 px-0.5 bg-gray-100'>exec</code> option can be either a shell script (string) or a Nix package. The <code class='py-0.5 px-0.5 bg-gray-100'>category</code> option defines the group that this script belongs to, when displayed in the menu.
     </p>
-  <h3 id='cabal-repl' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Cabal repl</h3>
+  
+    <h3 id='cabal-repl' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  Cabal repl
+  
+  <a href='mission-control#cabal-repl'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
     <p class='mb-3'>
       To start a cabal repl from your devShell on running <code class='py-0.5 px-0.5 bg-gray-100'>, repl</code>, use:
     </p>
@@ -773,7 +835,21 @@
     <p class='mb-3'>
       <a href='https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>"$@"</code></a> represents the command-line arguments passed to <code class='py-0.5 px-0.5 bg-gray-100'>, repl</code>. This allows us to pass custom arguments to <code class='py-0.5 px-0.5 bg-gray-100'>cabal repl</code>. For example, if you wish to run an executable <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> from your project in cabal repl, you’d run <code class='py-0.5 px-0.5 bg-gray-100'>, repl exe:foo</code>. Similarly, to get into the repl for a library <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> you’d run <code class='py-0.5 px-0.5 bg-gray-100'>, run lib:bar</code>.
     </p>
-  <h3 id='treefmt' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>treefmt</h3>
+  
+    <h3 id='treefmt' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  treefmt
+  
+  <a href='mission-control#treefmt'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
     <p class='mb-3'>
       If you use the <a href='https://nixos.asia/en/treefmt' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>treefmt</a> module for autoformatting the source tree, you can alias it as <code class='py-0.5 px-0.5 bg-gray-100'>, fmt</code>:
     </p>
@@ -790,7 +866,35 @@
     <p class='mb-3'>
       Note that <code class='py-0.5 px-0.5 bg-gray-100'>exec</code> in this example is a Nix package.
     </p>
-  <h2 id='tips' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Tips</h2><h3 id='wrappername' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>wrapperName</h3>
+  
+    <h2 id='tips' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Tips
+  
+  <a href='mission-control#tips'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <h3 id='wrappername' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  wrapperName
+  
+  <a href='mission-control#wrappername'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
     <p class='mb-3'>
       If you don’t wish to run your command using <code class='py-0.5 px-0.5 bg-gray-100'>, &lt;command&gt;</code> you can change the <code class='py-0.5 px-0.5 bg-gray-100'>,</code> to be any string of your choice by setting the option <code class='py-0.5 px-0.5 bg-gray-100'>wrapperName</code>, as follows:
     </p>
@@ -799,7 +903,21 @@
   mission-control = {
     wrapperName = "s";
   };
-}</code></pre></div><h2 id='example' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example</h2>
+}</code></pre></div>
+    <h2 id='example' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Example
+  
+  <a href='mission-control#example'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
@@ -808,7 +926,6 @@
       
     </ul>
   
-
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -875,7 +992,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.10.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.11.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

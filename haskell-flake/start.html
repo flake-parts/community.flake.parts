@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=b9267c6a-22e6-482e-abbe-f5cd943049e6' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=0518f72b-b162-40b0-951a-7b253758ad50' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1135,10 +1135,30 @@
     <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
+
+
+
+
+
+
     <p class='mb-3'>
       Before using <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> you must first <a href='https://flakular.in/install' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>install Nix</a>.
     </p>
-  <h2 id='existing-projects' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Existing projects</h2>
+  
+    <h2 id='existing-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Existing projects
+  
+  <a href='haskell-flake/start#existing-projects'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       To use <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> in an <em>existing</em> Haskell project, run:
     </p>
@@ -1146,16 +1166,58 @@
     <p class='mb-3'>
       Open the generated <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> and change <code class='py-0.5 px-0.5 bg-gray-100'>self'.packages.example</code> to use your package name. For example, if your package is named <code class='py-0.5 px-0.5 bg-gray-100'>my-package</code> (with a <code class='py-0.5 px-0.5 bg-gray-100'>my-package.cabal</code> file), change <code class='py-0.5 px-0.5 bg-gray-100'>example</code> to <code class='py-0.5 px-0.5 bg-gray-100'>my-package</code>. Follow the comments along the <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> to make any necessary changes to the project configuration.
     </p>
-  <h2 id='new-projects' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>New projects</h2>
+  
+    <h2 id='new-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  New projects
+  
+  <a href='haskell-flake/start#new-projects'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       To create a <em>new</em> Haskell project, instead, run:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>mkdir example && cd ./example
-nix flake init -t github:srid/haskell-flake#example</code></pre></div><h3 id='template' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Template</h3>
+nix flake init -t github:srid/haskell-flake#example</code></pre></div>
+    <h3 id='template' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  Template
+  
+  <a href='haskell-flake/start#template'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
     <p class='mb-3'>
       You may also use <a href='https://github.com/srid/haskell-template' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/haskell-template</a> which already uses <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> along with other opinionated defaults.
     </p>
-  <h2 id='under-the-hood' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Under the hood</h2><div data-callout-metadata data-callout-fold data-callout='tip' class='callout bg-opacity-10' role='note'>
+  
+    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Under the hood
+  
+  <a href='haskell-flake/start#under-the-hood'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  <div data-callout-metadata data-callout-fold data-callout='tip' class='callout bg-opacity-10' role='note'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
   <div class='callout-title'>
@@ -1204,12 +1266,25 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div><h3 id='te
         </li>
       
     </ul>
-  <h2 id='next-steps' class='mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Next steps</h2>
+  
+    <h2 id='next-steps' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Next steps
+  
+  <a href='haskell-flake/start#next-steps'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
     <p class='mb-3'>
       Visit <a href='haskell-flake/guide' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Guide</a> for more details, and <a href='haskell-flake/ref' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Reference</a> for module options.
     </p>
   
-
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -1280,7 +1355,7 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div><h3 id='te
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.10.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.11.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
