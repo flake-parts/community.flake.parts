@@ -12,6 +12,7 @@
     # Individual flake-parts modules go here
     haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.flake = false;
+    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     nixos-flake.url = "github:srid/nixos-flake";
     nixos-flake.flake = false;
     services-flake.url = "github:juspay/services-flake";
@@ -25,7 +26,20 @@
   outputs = inputs@{ self, flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
-      imports = [ inputs.emanote.flakeModule ];
+      imports = [
+        inputs.emanote.flakeModule
+        inputs.hercules-ci-effects.flakeModule
+      ];
+      hercules-ci.flake-update = {
+        enable = true;
+        autoMergeMethod = "merge";
+        baseMerge.enable = true;
+        createPullRequest = true;
+        when = {
+          hour = [ 8 20 ];
+        };
+      };
+      herculesCI.ciSystems = [ "x86_64-linux" ];
       perSystem = { config, self', pkgs, lib, system, ... }:
         let
           getDocDir = moduleName:
