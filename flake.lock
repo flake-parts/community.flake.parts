@@ -86,11 +86,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1706355313,
-        "narHash": "sha256-QdXXGw+EgymFlOfmjeGJBIcztBmlZpiKMZaHyxPWsd4=",
+        "lastModified": 1706421161,
+        "narHash": "sha256-HPngUxidecCh1USMvlQaaz5XFBGbL3OUo9B8eeF0AGQ=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "ee8af66a9b855ade75f8eb46c11b030f81d3a8ad",
+        "rev": "60071d523f6d9441722e5dd844c44d67fe4f5f28",
         "type": "github"
       },
       "original": {
@@ -187,11 +187,11 @@
     "haskell-flake_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1706356277,
-        "narHash": "sha256-a4pla2tu/MYWa6psyfSvaLvom38AL8m+/QVe9pO5/XI=",
+        "lastModified": 1706414342,
+        "narHash": "sha256-57lyYrnhcuf2EVtWwTAK+6OV2Dk3eSq+b/NR7UzyGtI=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "db8b111a53f3584fb6d0b4c2d56ed37b68196302",
+        "rev": "738417211e16514d24d0e247bb83781e12293342",
         "type": "github"
       },
       "original": {
@@ -320,11 +320,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1705990326,
-        "narHash": "sha256-WZaGb+ZgwbZ0bz5cDRKIx+luBp4+yTAI4VXViEyT0Dw=",
+        "lastModified": 1706414413,
+        "narHash": "sha256-k56qLk1GI26Pv0HjCc0xeW1t67ADou/qLxqtPupa/B0=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "4fe4d008282efd270e14f2cacb6187a658bd7a50",
+        "rev": "f1b453e251ad5fd7523436230146bae6f34c1229",
         "type": "github"
       },
       "original": {
