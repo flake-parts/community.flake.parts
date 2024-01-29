@@ -6,6 +6,9 @@ We use [Emanote](https://emanote.srid.ca/) to serve the documentation from their
 
 ## Conventions for documenting an individual module
 
+>[!CAUTION] 
+> We are working to simplify the documentation setup for new modules. See https://github.com/flake-parts/community.flake.parts/issues/6
+
 In order to best host your flake-parts module's documentation in this site, please follow these conventions:
 
 - Use `[[..]]` style wiki-links to link between pages.
