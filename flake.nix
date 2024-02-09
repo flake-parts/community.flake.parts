@@ -11,15 +11,15 @@
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
 
     # Individual flake-parts modules go here
-    haskell-flake.url = "github:srid/haskell-flake/index-notes";
+    haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.flake = false;
-    nixos-flake.url = "github:srid/nixos-flake/index-notes";
+    nixos-flake.url = "github:srid/nixos-flake";
     nixos-flake.flake = false;
-    services-flake.url = "github:juspay/services-flake/index-notes";
+    services-flake.url = "github:juspay/services-flake";
     services-flake.flake = false;
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake/index-notes";
+    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
     process-compose-flake.flake = false;
-    mission-control.url = "github:Platonic-Systems/mission-control/index-notes";
+    mission-control.url = "github:Platonic-Systems/mission-control";
     mission-control.flake = false;
   };
 
