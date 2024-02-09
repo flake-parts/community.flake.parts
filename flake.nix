@@ -5,14 +5,14 @@
   };
 
   inputs = {
-    emanote.url = "github:srid/emanote";
+    emanote.url = "github:srid/emanote/index-notes"; # https://github.com/srid/emanote/pull/512
     nixpkgs.follows = "emanote/nixpkgs";
     flake-parts.follows = "emanote/flake-parts";
+    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
 
     # Individual flake-parts modules go here
     haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.flake = false;
-    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     nixos-flake.url = "github:srid/nixos-flake";
     nixos-flake.flake = false;
     services-flake.url = "github:juspay/services-flake";
@@ -43,10 +43,12 @@
       perSystem = { config, self', pkgs, lib, system, ... }:
         let
           getDocDir = moduleName:
-            lib.cleanSourceWith {
-              name = "${moduleName}-docs";
-              src = inputs.${moduleName} + /doc;
-            };
+            # Each module gets put in its own directory, thus they get "mounted"
+            # on /${moduleName} on the generated website.
+            pkgs.runCommand "${moduleName}-docs-shifted" { } ''
+              mkdir -p $out/
+              cp -r ${inputs.${moduleName}}/doc $out/${moduleName}
+            '';
           moduleDocs = builtins.map getDocDir modules;
           modules = [
             "haskell-flake"

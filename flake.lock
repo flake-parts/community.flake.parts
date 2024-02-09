@@ -85,15 +85,16 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1707492649,
-        "narHash": "sha256-CxW8dw/knjI1k1deF9c1QkFCkvn1QCc8JzEmcnluFH0=",
+        "lastModified": 1707494564,
+        "narHash": "sha256-6HosmTYdFV1wREg0fdNeqTxTC/B7Av/ROznCJzYeW9c=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "9849d42910bfc1a52acae4e3e93e7588811edb3c",
+        "rev": "b2f566b4051683c26924b8f332f06aab9a162d4c",
         "type": "github"
       },
       "original": {
         "owner": "srid",
+        "ref": "index-notes",
         "repo": "emanote",
         "type": "github"
       }
@@ -185,11 +186,11 @@
     "haskell-flake_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1707242163,
-        "narHash": "sha256-w+cBynh7yqnpVtFdu1SEZxPgtlz/nWnv47D5crnPXHM=",
+        "lastModified": 1707501052,
+        "narHash": "sha256-gjZ9Q1IK5AupIDT5FAVZ3b1OK7nyOtWzkNdQIqwTF4Q=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "f9d17c3aa68e65529f424816c8b9346ae602d1de",
+        "rev": "c5b36777ba5edcc6bc25719fb82e7b9090f311b6",
         "type": "github"
       },
       "original": {
@@ -236,11 +237,11 @@
     "mission-control": {
       "flake": false,
       "locked": {
-        "lastModified": 1705982654,
-        "narHash": "sha256-7MvdCF0dxK8FRbBQXCC9JTuEh/7i5TAA1iU/8RNW/lI=",
+        "lastModified": 1707501043,
+        "narHash": "sha256-S3e8pfjXT335TuacspMyPbMnRX5c+qhvN4Jbm/R+3HM=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "7aff11c21bd7b2045fdd90e6d0a1c714e96020d4",
+        "rev": "c275dd195776b1b9735790231d874a3c5a7ee779",
         "type": "github"
       },
       "original": {
@@ -252,11 +253,11 @@
     "nixos-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1705990839,
-        "narHash": "sha256-Gb0bvp7BiHBn2PkssT4CiBhD7lVWqSHEBfiai/RFfSQ=",
+        "lastModified": 1707501063,
+        "narHash": "sha256-7CINolspTZ/pcj2o/Um7A1wrpa7Irt6Nhxwqw4gOHWE=",
         "owner": "srid",
         "repo": "nixos-flake",
-        "rev": "244072b1f9088833627046d703d7973b90fe7843",
+        "rev": "3891b2030114f8661402991eac9be0ed59f786ae",
         "type": "github"
       },
       "original": {
@@ -318,11 +319,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1706414413,
-        "narHash": "sha256-k56qLk1GI26Pv0HjCc0xeW1t67ADou/qLxqtPupa/B0=",
+        "lastModified": 1707501022,
+        "narHash": "sha256-vFpBhezqEd6WwcFya0zH2zCGYNoH2hwPRFJQ4SYPLc4=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "f1b453e251ad5fd7523436230146bae6f34c1229",
+        "rev": "b346fb30ad5fdee14e3edc3ba490eaa5db9ec0b7",
         "type": "github"
       },
       "original": {
@@ -353,11 +354,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1707323586,
-        "narHash": "sha256-QeP05m82Tt66G632xWO2PbGpAT5UKGlpn9sm06QUNXQ=",
+        "lastModified": 1707501073,
+        "narHash": "sha256-yAb2h9oaDjVcYTZn0PghijYQxV3izQ7qAEGgpj/KX0E=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "a0bde519ed10c5dc34cba4b452583dd367e242b0",
+        "rev": "9411399310e46afe8e6bae675b414503840e71eb",
         "type": "github"
       },
       "original": {
