@@ -43,6 +43,8 @@
       perSystem = { config, self', pkgs, lib, system, ... }:
         let
           getDocDir = moduleName:
+            # Each module gets put in its own directory, thus they get "mounted"
+            # on /${moduleName} on the generated website.
             pkgs.runCommand "${moduleName}-docs-shifted" { } ''
               mkdir -p $out/
               cp -r ${inputs.${moduleName}}/doc $out/${moduleName}
