@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=f188305a-c4d4-4b55-b7ee-9e3338eb2fe1' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=e7f97c08-10f9-4c96-87bc-050e6f07cd10' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1234,7 +1234,7 @@
     <p class='mb-3'>
       The below is a sample output when building <a href='https://github.com/srid/haskell-multi-nix/tree/debug' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a> with <code class='py-0.5 px-0.5 bg-gray-100'>--trace-verbose</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ nix --no-eval-cache build -L --trace-verbose github:srid/haskell-multi-nix 2&gt;&1 | ts '[%H:%M:%S]'
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='text language-text'>$ nix --no-eval-cache build -L --trace-verbose github:srid/haskell-multi-nix 2&gt;&1 | ts '[%H:%M:%S]'
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: default.findPackagesInCabalProject = {"bar":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./bar","foo":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./foo"}
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: defaults.packages = {"bar":{"imports":[{"_file":"/nix/store/sv90dpz2fgn93kvzc14szqn77wvjssv0-source/nix/modules/project/defaults.nix, via option perSystem.aarch64-darwin.haskellProjects.default.defaults.packages.bar","imports":[{"source":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./bar"}]}]},"foo":{"imports":[{"_file":"/nix/store/sv90dpz2fgn93kvzc14szqn77wvjssv0-source/nix/modules/project/defaults.nix, via option perSystem.aarch64-darwin.haskellProjects.default.defaults.packages.foo","imports":[{"source":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./foo"}]}]}}
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: bar.getCabalExecutables = bar
