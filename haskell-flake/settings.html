@@ -14,15 +14,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Building a docker image – haskell-flake
+    Package Settings – haskell-flake
   </title>
   
     
-      <meta property='og:description' content='Building a docker image is much simpler with Nix compared to writing Dockerfile. Since the entire build process is handled by Nix flakes, most of what’s left to do for docker image creation is copying of the derivations and configuration.' />
+      <meta property='og:description' content='Settings for individual Haskell packages can be specified in the settings attribute of a haskellProjects module.' />
       <meta property='og:site_name' content='haskell-flake' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Building a docker image' />
+      <meta property='og:title' content='Package Settings' />
       
         <meta name='twitter:card' content='summary_large_image' />
       
@@ -583,6 +583,10 @@
       <!-- Variable bindings for this tree-->
 
   
+    
+      
+    
+  
 
 
 
@@ -604,7 +608,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -659,7 +663,7 @@
       <!-- Variable bindings for this tree-->
 
   
-
+  
 
 
   
@@ -674,14 +678,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
         
     </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Package Settings' href='haskell-flake/settings'>
+    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Package Settings' href='haskell-flake/settings'>
       Package Settings
     </a>
     
@@ -902,10 +906,6 @@
       <!-- Variable bindings for this tree-->
 
   
-    
-      
-    
-  
 
 
 
@@ -927,7 +927,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='Reference' href='haskell-flake/ref'>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Reference' href='haskell-flake/ref'>
       Reference
     </a>
     
@@ -942,7 +942,7 @@
       <!-- Variable bindings for this tree-->
 
   
-  
+
 
 
   
@@ -957,14 +957,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
         
     </span>
-    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Building a docker image' href='haskell-flake/docker'>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Building a docker image' href='haskell-flake/docker'>
       Building a docker image
     </a>
     
@@ -1212,7 +1212,7 @@
   <main class='px-4 py-4'>
     <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Building a docker image
+    Package Settings
   </a>
 </h1>
     <article class='overflow-auto'>
@@ -1225,103 +1225,55 @@
 
 
     <p class='mb-3'>
-      Building a docker image is much simpler with Nix compared to writing <code class='py-0.5 px-0.5 bg-gray-100'>Dockerfile</code>. Since the entire build process is handled by Nix flakes, most of what’s left to do for docker image creation is copying of the derivations and configuration.
+      Settings for individual Haskell packages can be specified in the <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> attribute of a <code class='py-0.5 px-0.5 bg-gray-100'>haskellProjects</code> module.
     </p>
-  
-    <h2 id='writing-the-nix-to-build-the-docker-image' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
-      
-  Writing the Nix to build the docker image
-  
-  <a href='haskell-flake/docker#writing-the-nix-to-build-the-docker-image'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>haskellProjects.default = {
+  settings = {
+    ema = {  # This module can take `{self, super, ...}` args, optionally.
+      # Disable running tests
+      check = false;
 
+      # Disable building haddock (documentation)
+      haddock = false;
 
-    </h2>
-  
-    <p class='mb-3'>
-      Consider a haskell-flake project “foo”. To copy the binaries generated by the <code class='py-0.5 px-0.5 bg-gray-100'>default</code> package to <code class='py-0.5 px-0.5 bg-gray-100'>/bin</code> on the image, one can use <code class='py-0.5 px-0.5 bg-gray-100'>copyToRoot</code> attribute offered by <a href='https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>dockerTools.buildImage</code></a>. For example:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  # Inside perSystem
-  packages.dockerImage = pkgs.dockerTools.buildImage {
-    name = "foo";
-    copyToRoot = pkgs.buildEnv {
-      paths = with pkgs; [
-        self'.packages.default
-      ];
-      name = "foo-root";
-      pathsToLink = [ "/bin" ];
+      # Ignore Cabal version constraints
+      jailbreak = true;
+
+      # Extra non-Haskell dependencies
+      extraBuildDepends = [ pkgs.stork ];
+
+      # Source patches
+      patches = [ ./patches/ema-bug-fix.patch ];
+
+      # Enable/disable Cabal flags
+      cabalFlags.with-generics = true;
+
+      # Allow building a package marked as "broken"
+      broken = false;
     };
   };
-}</code></pre></div>
-    <p class='mb-3'>
-      In addition to copying over the flake <code class='py-0.5 px-0.5 bg-gray-100'>packages</code>, we may also copy <em>paths</em> in the project. <code class='py-0.5 px-0.5 bg-gray-100'>self</code> can be added to <code class='py-0.5 px-0.5 bg-gray-100'>paths</code> to expose the project directory.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  copyToRoot = pkgs.buildEnv {
-    paths = with pkgs; [
-      coreutils
-      bash
-      self
-    ];
-    name = "foo-root";
-    pathsToLink = [ "/foo_sub" "/bin" ];
-  };
-}</code></pre></div>
-    <p class='mb-3'>
-      If you’d like your docker image to run your haskell project’s default package when the container starts, use the following config:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  # Inside dockerImage's `buildImage`
-  config = {
-    Cmd = [ "${pkgs.lib.getExe self'.packages.default}" ];
-  };
-}</code></pre></div>
-    <h2 id='build-the-docker-image' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+};</code></pre></div><div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10' role='note'>
+  <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
+  </path>
+  <div class='callout-title'>
+    <div class='callout-icon'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
+        <circle cx='12' cy='12' r='10'></circle>
+<line x1='12' y1='16' x2='12' y2='12'></line>
+<line x1='12' y1='8' x2='12.01' y2='8'></line>
+      </svg>
+    </div>
+    <div class='callout-title-inner'>
+       Note
+    </div>
+  </div>
+  <div class='callout-content'>
+    
+    <h3 id='nixpkgs-functions' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
-  Build the docker image
+  <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> functions
   
-  <a href='haskell-flake/docker#build-the-docker-image'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h2>
-  
-    <p class='mb-3'>
-      To build the docker image <em>as a Nix derivation</em>, run:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix build .#dockerImage</code></pre></div>
-    <p class='mb-3'>
-      To load this image into your local docker image registry, run:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>docker load -i $(nix build .#dockerImage --print-out-paths)</code></pre></div>
-    <h2 id='tips' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
-      
-  Tips
-  
-  <a href='haskell-flake/docker#tips'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h2>
-  
-    <h3 id='size' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  Size
-  
-  <a href='haskell-flake/docker#size'>
+  <a href='haskell-flake/settings#nixpkgs-functions'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1330,116 +1282,123 @@
 
 
     </h3>
-  
-    <p class='mb-3'>
-      Docker images including Haskell packages can be optimized using the methods described <a href='haskell-flake/size' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>here</a>.
-    </p>
-  
-    <h3 id='time' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  Time
-  
-  <a href='haskell-flake/docker#time'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h3>
-  
-    <p class='mb-3'>
-      If you don’t want <code class='py-0.5 px-0.5 bg-gray-100'>docker images</code> showing that the image was created several decades ago, use the following:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  # Inside perSystem.packages' `dockerImage`:
-  pkgs.dockerTools.buildImage {
-    name = "foo";
-    created = "now";
-  };
-}</code></pre></div>
-    <h3 id='tag' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  Tag
-  
-  <a href='haskell-flake/docker#tag'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h3>
-  
-    <p class='mb-3'>
-      If you want to tag the images with the commit id of the working copy:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  # Inside perSystem.packages' `dockerImage`:
-  pkgs.dockerTools.buildImage {
-    name = "foo";
-    tag = builtins.substring 0 9 (self.rev or "dev");
-  };
-}</code></pre></div>
-    <p class='mb-3'>
-      <a href='https://nixos.org/manual/nix/stable/language/builtins.html#builtins-substring' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>builtins.substring 0 9 self.rev</code></a> is the same as <code class='py-0.5 px-0.5 bg-gray-100'>git rev-parse --short HEAD</code>. <code class='py-0.5 px-0.5 bg-gray-100'>self.rev</code> is non-null only on a clean working copy and hence the tag is set to <code class='py-0.5 px-0.5 bg-gray-100'>dev</code> when the working copy is dirty.
-    </p>
-  
-    <h3 id='ssl-certs' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  SSL certs
-  
-  <a href='haskell-flake/docker#ssl-certs'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h3>
-  
-    <p class='mb-3'>
-      In order to be able to make https connections from inside of the docker image, you must expose the cacert Nix package via the relevant environment variable:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  # Inside dockerTools.buildImage
-  config = {
-    Env = [ 
-      "SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt" 
-      # Ref: https://hackage.haskell.org/package/x509-system-1.6.7/docs/src/System.X509.Unix.html#getSystemCertificateStore
-      "SYSTEM_CERTIFICATE_PATH=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
-    ];
-  };
-}</code></pre></div>
-    <h2 id='example' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
-      
-  Example
-  
-  <a href='haskell-flake/docker#example'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h2>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/nammayatri/nammayatri/pull/14/files#diff-18ea3dd9a6a84702796b8dac608d0cad8e396a7c2e8c52732fcb7e5f52d1b0b9' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Sample flake-parts module for docker</a>
+          The <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.haskell.lib</code> module provides various utility functions that you can use to override Haskell packages. The canonical place to find documentation on these is <a href='https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/lib/compose.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the source</a>. haskell-flake provides a <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> submodule for convenience. For eg., the <code class='py-0.5 px-0.5 bg-gray-100'>dontCheck</code> function translates to <code class='py-0.5 px-0.5 bg-gray-100'>settings.&lt;name&gt;.check</code>; the full list of options can be seen <a href='https://github.com/srid/haskell-flake/blob/master/nix/modules/project/settings/all.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
         </li>
       
     </ul>
   
+  </div>
+</div>
+    <h2 id='share' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Sharing package settings
+  
+  <a href='haskell-flake/settings#share'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      <a href='haskell-flake/modules' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> options for reuse in downstream Haskell projects.
+    </p>
+  
+    <h2 id='custom' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Custom settings
+  
+  <a href='haskell-flake/settings#custom'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      You can provide custom settings for use in multiple packages (even across multiple repos). For example, see <a href='https://github.com/srid/emanote/commit/5b24bd04f94e03afe66ee01da723e4a05d854953' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this Emanote change</a> which demonstrates how to add a <em>new</em> setting option (<code class='py-0.5 px-0.5 bg-gray-100'>removeReferencesTo</code>).
+    </p>
+  
+    <h2 id='extra' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+      
+  Extra settings
+  
+  <a href='haskell-flake/settings#extra'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      haskell-flake provides the following settings on top of those provided by <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a>.
+    </p>
+  
+    <h3 id='removereferencesto' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  <code class='py-0.5 px-0.5 bg-gray-100'>removeReferencesTo</code>
+  
+  <a href='haskell-flake/settings#removereferencesto'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      Remove references to other packages from this Haskell package. This is useful to eliminate unnecessary data dependencies from your Haskell executable so as to reduce its closure size.
+    </p>
+  <div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10' role='note'>
+  <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
+  </path>
+  <div class='callout-title'>
+    <div class='callout-icon'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
+        <circle cx='12' cy='12' r='10'></circle>
+<line x1='12' y1='16' x2='12' y2='12'></line>
+<line x1='12' y1='8' x2='12.01' y2='8'></line>
+      </svg>
+    </div>
+    <div class='callout-title-inner'>
+       For more, see
+    </div>
+  </div>
+  <div class='callout-content'>
+    
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://github.com/NixOS/nixpkgs/pull/204675' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/NixOS/nixpkgs/pull/204675</a>
+        </li>
+      
+        <li>
+          <a href='https://srid.ca/remove-references-to' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://srid.ca/remove-references-to</a>
+        </li>
+      
+    </ul>
+  
+  </div>
+</div>
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/srid/haskell-flake/edit/master/doc/haskell-flake/docker.md'>
+      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/srid/haskell-flake/edit/master/doc/haskell-flake/settings.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -1456,14 +1415,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/ref'>
-            Reference
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/modules'>
+            Project modules
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
-      <div><a href='haskell-flake/docker' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Building a docker image</a></div>
+      <div><p>The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code>packages</code> (see <a href='haskell-flake/dependency' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code>settings</code> (see <a href='haskell-flake/settings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code>haskellProject.default</code> entry you can import “bar” as follows:</p></div>
     </div>
   
 </div>
@@ -1471,14 +1430,29 @@
         </li>
       
         <li>
-          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/size'>
-            Optimize package size
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/dependency'>
+            Overriding dependencies
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
-      <div><p>Build and scan <a href='haskell-flake/docker' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>the docker image</a> for store paths that are taking up the most space:</p></div>
+      <div><p>See <a href='haskell-flake/settings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Package Settings</a></p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/guide'>
+            Guide
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><a href='haskell-flake/settings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Package Settings</a></div>
     </div>
   
 </div>

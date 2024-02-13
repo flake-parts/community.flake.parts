@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=56c9d9ef-e022-4c91-be1e-bec225c9443b' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=f624e87d-9bdd-4cef-add4-3cdd698100a8' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -685,6 +685,46 @@
   
         
     </span>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Package Settings' href='haskell-flake/settings'>
+      Package Settings
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
     <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='DevShell' href='haskell-flake/devshell'>
       DevShell
     </a>
@@ -1260,7 +1300,7 @@
     </p>
   <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Module</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Contents</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>haskellFlakeProjectModules.output</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Local packages & dependency overrides</td></tr></tbody></table>
     <p class='mb-3'>
-      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides (<code class='py-0.5 px-0.5 bg-gray-100'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code>) from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100'>haskellProject.default</code> entry you can import “bar” as follows:
+      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> (see <a href='haskell-flake/dependency' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> (see <a href='haskell-flake/settings' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100'>haskellProject.default</code> entry you can import “bar” as follows:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># foo's flake.nix's perSystem
 { 
@@ -1327,6 +1367,21 @@
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div>Composition of dependency overrides, and other project settings, via <a href='haskell-flake/modules' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Project modules</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/settings'>
+            Package Settings
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><p><a href='haskell-flake/modules' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code>packages</code> and <code>settings</code> options for reuse in downstream Haskell projects.</p></div>
     </div>
   
 </div>
