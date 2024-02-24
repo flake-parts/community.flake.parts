@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=356634c9-ed76-4265-a90d-cf8401348b21' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=9d4befb8-f69f-4b89-a437-c534e5e8f6a7' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -846,6 +846,46 @@
   
 </div>
     
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Contributing' href='services-flake/contributing'>
+      Contributing
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
 
   </div>
 </nav>
@@ -922,21 +962,23 @@
     <p class='mb-3'>
       To change the database to <code class='py-0.5 px-0.5 bg-gray-100'>postgres</code>, we can use the following config:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>    services.postgres.pg1 = {
-      enable = true;
-      listen_addresses = "127.0.0.1";
-      initialScript.after = "CREATE USER root SUPERUSER;";
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  services.postgres.pg1 = {
+    enable = true;
+    listen_addresses = "127.0.0.1";
+    initialScript.after = "CREATE USER root SUPERUSER;";
+  };
+  services.grafana.gf1 = {
+    enable = true;
+    extraConf.database = with config.services.postgres.pg1; {
+      type = "postgres";
+      host = "${listen_addresses}:${builtins.toString port}";
+      name = "postgres"; # database name
     };
-    services.grafana.gf1 = {
-      enable = true;
-      extraConf.database = with config.services.postgres.pg1; {
-        type = "postgres";
-        host = "${listen_addresses}:${builtins.toString port}";
-        name = "postgres"; # database name
-      };
-    };
-    settings.processes."gf1".depends_on."pg1".condition = "process_healthy";
-    };</code></pre></div>
+  };
+  settings.processes."gf1".depends_on."pg1".condition = "process_healthy";
+  };
+}</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -965,13 +1007,12 @@
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div>
-          <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current' fill='none' viewBox='0 0 28 28'><desc>☐</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect></svg>
+          <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current fill-current' viewBox='0 0 28 28'><desc>☑</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect><path stroke='white' fill='none' stroke-linejoin='round' stroke-width='3.5' d='M7 14 l6 5L22 8'></path></svg>
 <span>
   
             <a href='services-flake/grafana' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Grafana</a>
           
 </span>
-
         </div>
     </div>
   

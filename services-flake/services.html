@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=356634c9-ed76-4265-a90d-cf8401348b21' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=9d4befb8-f69f-4b89-a437-c534e5e8f6a7' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -842,6 +842,46 @@
   
 </div>
     
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Contributing' href='services-flake/contributing'>
+      Contributing
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
 
   </div>
 </nav>
@@ -900,13 +940,13 @@
       
         <li>
           
-    <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current' fill='none' viewBox='0 0 28 28'><desc>☐</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect></svg>
+    <!-- FIXME: Fix list styling to use flexbox, so task lists don't botch them up -->
+    <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current fill-current' viewBox='0 0 28 28'><desc>☑</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect><path stroke='white' fill='none' stroke-linejoin='round' stroke-width='3.5' d='M7 14 l6 5L22 8'></path></svg>
 <span>
   
       <a href='services-flake/clickhouse' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Clickhouse</a>
     
 </span>
-
   
         </li>
       
@@ -996,13 +1036,13 @@
       
         <li>
           
-    <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current' fill='none' viewBox='0 0 28 28'><desc>☐</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect></svg>
+    <!-- FIXME: Fix list styling to use flexbox, so task lists don't botch them up -->
+    <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current fill-current' viewBox='0 0 28 28'><desc>☑</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect><path stroke='white' fill='none' stroke-linejoin='round' stroke-width='3.5' d='M7 14 l6 5L22 8'></path></svg>
 <span>
   
       <a href='services-flake/grafana' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkBranch'>Grafana</a>
     
 </span>
-
   
         </li>
       
@@ -1048,6 +1088,21 @@
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div><a href='services-flake/services' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Supported services</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='services-flake/contributing'>
+            Contributing
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><p>It is important to add documentation along with any new services you are contributing. Create a new file <code>./doc/&lt;service-name&gt;.md</code> (see <a href='services-flake/clickhouse' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> for example) and add the service to the list in <a href='services-flake/services' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Supported services</a>.</p></div>
     </div>
   
 </div>
