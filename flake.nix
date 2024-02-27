@@ -78,6 +78,7 @@
           devShells.default = pkgs.mkShell {
             buildInputs = [
               pkgs.nixpkgs-fmt
+              pkgs.just
             ];
           };
           formatter = pkgs.nixpkgs-fmt;
