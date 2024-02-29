@@ -14,15 +14,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Clickhouse – services-flake
+    pgAdmin – services-flake
   </title>
   
     
-      <meta property='og:description' content='ClickHouse is an open-source column-oriented DBMS (columnar database management system) for online analytical processing (OLAP) that allows users to generate analytical reports using SQL queries in real-time.' />
+      <meta property='og:description' content='pgAdmin is a feature rich Open Source administration and development platform for PostgreSQL.' />
       <meta property='og:site_name' content='services-flake' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Clickhouse' />
+      <meta property='og:title' content='pgAdmin' />
       
         <meta name='twitter:card' content='summary_large_image' />
       
@@ -800,7 +800,7 @@
       <!-- Variable bindings for this tree-->
 
   
-  
+
 
 
   
@@ -815,14 +815,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
         
     </span>
-    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Clickhouse' href='services-flake/clickhouse'>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Clickhouse' href='services-flake/clickhouse'>
       Clickhouse
     </a>
     
@@ -880,7 +880,7 @@
       <!-- Variable bindings for this tree-->
 
   
-
+  
 
 
   
@@ -895,14 +895,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
         
     </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='pgAdmin' href='services-flake/pgadmin'>
+    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='pgAdmin' href='services-flake/pgadmin'>
       pgAdmin
     </a>
     
@@ -974,7 +974,7 @@
   <main class='px-4 py-4'>
     <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Clickhouse
+    pgAdmin
   </a>
 </h1>
     <article class='overflow-auto'>
@@ -987,14 +987,14 @@
 
 
     <p class='mb-3'>
-      ClickHouse is an open-source column-oriented DBMS (columnar database management system) for online analytical processing (OLAP) that allows users to generate analytical reports using SQL queries in real-time.
+      <a href='https://www.pgadmin.org/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>pgAdmin</a> is a feature rich Open Source administration and development platform for PostgreSQL.
     </p>
   
     <h2 id='getting-started' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
       
   Getting Started
   
-  <a href='services-flake/clickhouse#getting-started'>
+  <a href='services-flake/pgadmin#getting-started'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1005,83 +1005,16 @@
     </h2>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
-  services.clickhouse."clickhouse-1".enable = true;
-}</code></pre></div>
-    <h2 id='tips' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
-      
-  Tips & Tricks
-  
-  <a href='services-flake/clickhouse#tips'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h2>
-  
-    <h3 id='change-port' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  Change the HTTP default port
-  
-  <a href='services-flake/clickhouse#change-port'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h3>
-  
-    <p class='mb-3'>
-      Clickhouse has <a href='https://clickhouse.com/docs/en/interfaces/http' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>HTTP Interface</a> that is enabled by default on port 8123. To change the default port, use the <code class='py-0.5 px-0.5 bg-gray-100'>extraConfig</code> option:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  services.clickhouse."clickhouse-1" = {
+  services.pgadmin."pgad1" = {
     enable = true;
-    extraConfig = {
-      http_port = 9050
-    };
-  };
-}</code></pre></div>
-    <h3 id='initial-database' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
-      
-  Initial database schema
-  
-  <a href='services-flake/clickhouse#initial-database'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
-        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
-        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
-      </svg></span>
-  </a>
-
-
-    </h3>
-  
-    <p class='mb-3'>
-      To load a database schema, you can use the <code class='py-0.5 px-0.5 bg-gray-100'>initialDatabases</code> option:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
-  services.clickhouse."clickhouse-1" = {
-    enable = true;
-    initialDatabases = [
-      {
-        name = "sample_db";
-        schemas = [ ./test.sql ];
-      }
-      # or just create the database:
-      {
-        name = "sample_db_without_schema";
-      }
-    ];
+    initialEmail = "email@gmail.com";
+    initialPassword = "password";
   };
 }</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/juspay/services-flake/edit/main/doc/services-flake/clickhouse.md'>
+      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/juspay/services-flake/edit/main/doc/services-flake/pgadmin.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -1105,29 +1038,7 @@
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
-      <div>
-          <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current fill-current' viewBox='0 0 28 28'><desc>☑</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect><path stroke='white' fill='none' stroke-linejoin='round' stroke-width='3.5' d='M7 14 l6 5L22 8'></path></svg>
-<span>
-  
-            <a href='services-flake/clickhouse' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Clickhouse</a>
-          
-</span>
-        </div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='services-flake/contributing'>
-            Contributing
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
-      <div><p>It is important to add documentation along with any new services you are contributing. Create a new file <code>./doc/&lt;service-name&gt;.md</code> (see <a href='services-flake/clickhouse' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> for example) and add the service to the list in <a href='services-flake/services' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Supported services</a>.</p></div>
+      <div>[X] <a href='services-flake/pgadmin' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>pgAdmin</a></div>
     </div>
   
 </div>
