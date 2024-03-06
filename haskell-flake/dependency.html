@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=938e6944-69e7-4214-aa84-4b9a423a0833' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=d862a11f-7db6-47ea-be6b-fd37c21e00d8' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -98,6 +98,10 @@
 
     div.callout-title div.callout-title-inner {
       margin-left: 0.5em;
+    }
+
+    a.--ema-toc:not(.toc-item-active) {
+      background-color: #ffffff !important;
     }
 
     /* External link icon */
@@ -1208,14 +1212,17 @@
   </div>
 </nav>
           <!-- Main body column -->
-          <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <div class='flex-1 w-full bg-white'>
   <main class='px-4 py-4'>
     <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
     Overriding dependencies
   </a>
 </h1>
-    <article class='overflow-auto'>
+    
+      <div class='grid gap-4 md:grid-cols-8'>
+        <div class='md:col-span-6'>
+          <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
 
@@ -1248,11 +1255,11 @@
       Step (3) above will try to fetch the package from the Haskell package set in <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> (<code class='py-0.5 px-0.5 bg-gray-100'>pkgs.haskellPackages</code> by default). For various reasons, this package may be either missing or marked as “broken”. In such cases, you will have to override the package locally in the project (see the next section).
     </p>
   
-    <h2 id='source' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='source' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Overriding a Haskell package source
   
-  <a href='haskell-flake/dependency#source'>
+  <a href='haskell-flake/dependency#source' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1270,7 +1277,7 @@
       
   Using a Git repo
   
-  <a href='haskell-flake/dependency#path'>
+  <a href='haskell-flake/dependency#path' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1317,7 +1324,7 @@
       
   Using a Hackage version
   
-  <a href='haskell-flake/dependency#hackage'>
+  <a href='haskell-flake/dependency#hackage' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1343,7 +1350,7 @@
       
   Using a nixpkgs version
   
-  <a href='haskell-flake/dependency#nixpkgs'>
+  <a href='haskell-flake/dependency#nixpkgs' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1357,11 +1364,11 @@
     fourmolu = { super, ...}: { custom = _: super.fourmolu_0_13_1_0; };
   };
 };</code></pre></div>
-    <h2 id='settings' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='settings' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Overriding a Haskell package settings
   
-  <a href='haskell-flake/dependency#settings'>
+  <a href='haskell-flake/dependency#settings' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1375,11 +1382,11 @@
       See <a href='haskell-flake/settings' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>
     </p>
   
-    <h2 id='share' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='share' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Sharing dependency overrides
   
-  <a href='haskell-flake/dependency#share'>
+  <a href='haskell-flake/dependency#share' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1409,6 +1416,139 @@
 </div>
 -->
 </article>
+        </div>
+        <div class='md:col-span-2 border-l'>
+          <nav id='toc' class='hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto'>
+  <div class='text-gray-600 text-sm -mt-2'>
+    
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Overriding a Haskell package source'>
+              <a href='haskell-flake/dependency#source' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Overriding a Haskell package source
+              </a>
+              
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Using a Git repo'>
+              <a href='haskell-flake/dependency#path' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Using a Git repo
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Using a Hackage version'>
+              <a href='haskell-flake/dependency#hackage' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Using a Hackage version
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Using a nixpkgs version'>
+              <a href='haskell-flake/dependency#nixpkgs' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Using a nixpkgs version
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Overriding a Haskell package settings'>
+              <a href='haskell-flake/dependency#settings' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Overriding a Haskell package settings
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Sharing dependency overrides'>
+              <a href='haskell-flake/dependency#share' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Sharing dependency overrides
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+  </div>
+  <script>
+    // Highlight the TOC, based from https://stackoverflow.com/a/75346369
+    // TODO: We should get rid of JavaScript! See https://github.com/srid/emanote/issues/520
+    function highlightTOC() {
+      // Grab the toc links
+      const links = document.querySelectorAll("ul > li > a.--ema-toc");
+
+      // Find the matching anchors in the document body
+      const sections = [];
+      links.forEach((link) => {
+        let found = {};
+        for (section of document.querySelectorAll("a.--ema-anchor")) {
+          if (link.href == section.href) {
+            found = section;
+            break;
+          }
+        }
+        sections.push(found);
+      });
+
+      // Current toc link is marked with the following class
+      const mark = "toc-item-active";
+
+      // Set window scroll handler to update the toc mark.
+      window.onscroll = () => {
+        // Remove previous mark
+        links.forEach((link) => {
+          link.classList.remove(mark);
+        });
+
+        // Mark the link of the section that is in view, starting from the end
+        let marked = false;
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (window.scrollY > sections[i].offsetTop - 80) {
+            links[i].classList.add(mark);
+            marked = true;
+            break;
+          }
+        }
+
+        // Special case for the first and last section which might not reach the top
+        if (!marked && window.scrollY > 0) {
+          let i = 0;
+          if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            // We are at the bottom
+            i = links.length - 1
+          }
+          links[i].classList.add(mark);
+        }
+      };
+    }
+    highlightTOC();
+  </script>
+</nav>
+        </div>
+      </div>
+      
     <div class='flex flex-col lg:flex-row lg:space-x-2'>
       
       
@@ -1475,7 +1615,6 @@
 </div>
         </div>
         
-
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
   
   <div>
@@ -1493,7 +1632,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.13.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.14.1'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=938e6944-69e7-4214-aa84-4b9a423a0833' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=d862a11f-7db6-47ea-be6b-fd37c21e00d8' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -98,6 +98,10 @@
 
     div.callout-title div.callout-title-inner {
       margin-left: 0.5em;
+    }
+
+    a.--ema-toc:not(.toc-item-active) {
+      background-color: #ffffff !important;
     }
 
     /* External link icon */
@@ -1204,14 +1208,17 @@
   </div>
 </nav>
           <!-- Main body column -->
-          <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <div class='flex-1 w-full bg-white'>
   <main class='px-4 py-4'>
     <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
     Getting Started
   </a>
 </h1>
-    <article class='overflow-auto'>
+    
+      <div class='grid gap-4 md:grid-cols-8'>
+        <div class='md:col-span-6'>
+          <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
 
@@ -1224,11 +1231,11 @@
       Before using <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> you must first <a href='https://flakular.in/install' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>install Nix</a>.
     </p>
   
-    <h2 id='existing-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='existing-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Existing projects
   
-  <a href='haskell-flake/start#existing-projects'>
+  <a href='haskell-flake/start#existing-projects' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1246,11 +1253,11 @@
       Open the generated <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> and change <code class='py-0.5 px-0.5 bg-gray-100'>self'.packages.example</code> to use your package name. For example, if your package is named <code class='py-0.5 px-0.5 bg-gray-100'>my-package</code> (with a <code class='py-0.5 px-0.5 bg-gray-100'>my-package.cabal</code> file), change <code class='py-0.5 px-0.5 bg-gray-100'>example</code> to <code class='py-0.5 px-0.5 bg-gray-100'>my-package</code>. Follow the comments along the <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> to make any necessary changes to the project configuration.
     </p>
   
-    <h2 id='new-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='new-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   New projects
   
-  <a href='haskell-flake/start#new-projects'>
+  <a href='haskell-flake/start#new-projects' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1269,7 +1276,7 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
       
   Template
   
-  <a href='haskell-flake/start#template'>
+  <a href='haskell-flake/start#template' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1283,11 +1290,11 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
       You may also use <a href='https://github.com/srid/haskell-template' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/haskell-template</a> which already uses <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> along with other opinionated defaults.
     </p>
   
-    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Under the hood
   
-  <a href='haskell-flake/start#under-the-hood'>
+  <a href='haskell-flake/start#under-the-hood' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1365,11 +1372,11 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
   
   </div>
 </section>
-    <h2 id='next-steps' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl border-b-2'>
+    <h2 id='next-steps' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Next steps
   
-  <a href='haskell-flake/start#next-steps'>
+  <a href='haskell-flake/start#next-steps' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1399,6 +1406,128 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
 </div>
 -->
 </article>
+        </div>
+        <div class='md:col-span-2 border-l'>
+          <nav id='toc' class='hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto'>
+  <div class='text-gray-600 text-sm -mt-2'>
+    
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Existing projects'>
+              <a href='haskell-flake/start#existing-projects' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Existing projects
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='New projects'>
+              <a href='haskell-flake/start#new-projects' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                New projects
+              </a>
+              
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Template'>
+              <a href='haskell-flake/start#template' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Template
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Under the hood'>
+              <a href='haskell-flake/start#under-the-hood' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Under the hood
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Next steps'>
+              <a href='haskell-flake/start#next-steps' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Next steps
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+  </div>
+  <script>
+    // Highlight the TOC, based from https://stackoverflow.com/a/75346369
+    // TODO: We should get rid of JavaScript! See https://github.com/srid/emanote/issues/520
+    function highlightTOC() {
+      // Grab the toc links
+      const links = document.querySelectorAll("ul > li > a.--ema-toc");
+
+      // Find the matching anchors in the document body
+      const sections = [];
+      links.forEach((link) => {
+        let found = {};
+        for (section of document.querySelectorAll("a.--ema-anchor")) {
+          if (link.href == section.href) {
+            found = section;
+            break;
+          }
+        }
+        sections.push(found);
+      });
+
+      // Current toc link is marked with the following class
+      const mark = "toc-item-active";
+
+      // Set window scroll handler to update the toc mark.
+      window.onscroll = () => {
+        // Remove previous mark
+        links.forEach((link) => {
+          link.classList.remove(mark);
+        });
+
+        // Mark the link of the section that is in view, starting from the end
+        let marked = false;
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (window.scrollY > sections[i].offsetTop - 80) {
+            links[i].classList.add(mark);
+            marked = true;
+            break;
+          }
+        }
+
+        // Special case for the first and last section which might not reach the top
+        if (!marked && window.scrollY > 0) {
+          let i = 0;
+          if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            // We are at the bottom
+            i = links.length - 1
+          }
+          links[i].classList.add(mark);
+        }
+      };
+    }
+    highlightTOC();
+  </script>
+</nav>
+        </div>
+      </div>
+      
     <div class='flex flex-col lg:flex-row lg:space-x-2'>
       
       
@@ -1450,7 +1579,6 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
 </div>
         </div>
         
-
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
   
   <div>
@@ -1468,7 +1596,7 @@ nix flake init -t github:srid/haskell-flake#example</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.13.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.14.1'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
