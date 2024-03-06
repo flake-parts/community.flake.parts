@@ -5,7 +5,7 @@
   };
 
   inputs = {
-    emanote.url = "github:srid/emanote";
+    emanote.url = "github:srid/emanote/mount-point"; # https://github.com/srid/emanote/pull/523
     nixpkgs.follows = "emanote/nixpkgs";
     flake-parts.follows = "emanote/flake-parts";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
@@ -42,14 +42,13 @@
       herculesCI.ciSystems = [ "x86_64-linux" ];
       perSystem = { config, self', pkgs, lib, system, ... }:
         let
-          getDocDir = moduleName:
-            # Each module gets put in its own directory, thus they get "mounted"
-            # on /${moduleName} on the generated website.
-            pkgs.runCommand "${moduleName}-docs-shifted" { } ''
-              mkdir -p $out/
-              cp -r ${inputs.${moduleName}}/doc $out/${moduleName}
-            '';
-          moduleDocs = builtins.map getDocDir modules;
+          # Emanote sub-notebook layers for all modules
+          moduleDocLayers = builtins.map
+            (name: {
+              path = inputs.${name} + /doc;
+              mountPoint = name;
+            })
+            modules;
           modules = [
             "haskell-flake"
             "nixos-flake"
@@ -61,8 +60,7 @@
         {
           emanote = {
             sites."default" = {
-              layers = [ ./doc ] ++ moduleDocs;
-              layersString = [ "./doc" ] ++ builtins.map builtins.toString moduleDocs;
+              layers = [{ path = ./doc; pathString = "./doc"; }] ++ moduleDocLayers;
               port = 5566;
               prettyUrls = true;
             };
