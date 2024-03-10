@@ -27,7 +27,6 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       imports = [
-        inputs.emanote.flakeModule
         inputs.hercules-ci-effects.flakeModule
         (import ./nix/flake-module.nix { inherit inputs; })
       ];

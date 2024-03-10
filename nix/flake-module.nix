@@ -9,6 +9,9 @@ let
     types;
 in
 {
+  imports = [
+    current-flake.inputs.emanote.flakeModule
+  ];
   options = {
     perSystem = mkPerSystemOption
       ({ config, self', inputs', pkgs, system, ... }: {
