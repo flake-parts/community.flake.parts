@@ -25,7 +25,6 @@ in
                     options = {
                       path = lib.mkOption {
                         type = types.path;
-                        default = current-flake.inputs.${name} + /doc;
                       };
                       pathString = lib.mkOption {
                         type = types.str;
@@ -39,11 +38,11 @@ in
                   }));
                   default = {
                     "".path = current-flake.inputs.self + /doc;
-                    "haskell-flake" = { };
-                    "nixos-flake" = { };
-                    "services-flake" = { };
-                    "process-compose-flake" = { };
-                    "mission-control" = { };
+                    "haskell-flake".path = current-flake.inputs."haskell-flake" + /doc;
+                    "nixos-flake".path = current-flake.inputs."nixos-flake" + /doc;
+                    "services-flake".path = current-flake.inputs."services-flake" + /doc;
+                    "process-compose-flake".path = current-flake.inputs."process-compose-flake" + /doc;
+                    "mission-control".path = current-flake.inputs."mission-control" + /doc;
                   };
                   description = "List of modules to generate documentation for";
                 };
