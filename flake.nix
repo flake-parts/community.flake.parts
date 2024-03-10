@@ -29,7 +29,7 @@
       imports = [
         inputs.emanote.flakeModule
         inputs.hercules-ci-effects.flakeModule
-        ./nix/flake-module.nix
+        (import ./nix/flake-module.nix { inherit inputs; })
       ];
       hercules-ci.flake-update = {
         enable = true;

@@ -1,5 +1,5 @@
-# A flake-parts module for building and running Emanote sites
-{ self, inputs, lib, flake-parts-lib, ... }:
+current-flake:
+{ self, lib, flake-parts-lib, ... }:
 
 let
   inherit (flake-parts-lib)
@@ -16,7 +16,7 @@ in
           # Emanote sub-notebook layers for all modules
           moduleDocLayers = builtins.map
             (name: {
-              path = inputs.${name} + /doc;
+              path = current-flake.inputs.${name} + /doc;
               mountPoint = name;
             })
             modules;
