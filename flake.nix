@@ -42,6 +42,7 @@
       };
       herculesCI.ciSystems = [ "x86_64-linux" ];
       perSystem = { config, self', pkgs, lib, system, ... }: {
+        flake-parts-docs.enable = true;
         apps.preview.program = pkgs.writeShellApplication {
           name = "emanote-static-preview";
           runtimeInputs = [ pkgs.static-web-server ];
