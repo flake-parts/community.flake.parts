@@ -7,6 +7,21 @@ let
   inherit (lib)
     mkOption
     types;
+  docLayerModule = types.submodule ({ name, config, ... }: {
+    options = {
+      path = lib.mkOption {
+        type = types.path;
+      };
+      pathString = lib.mkOption {
+        type = types.str;
+        default = "${config.path}";
+      };
+      mountPoint = lib.mkOption {
+        type = types.str;
+        default = name;
+      };
+    };
+  });
 in
 {
   imports = [
@@ -20,22 +35,8 @@ in
             {
               options = {
                 enable = lib.mkEnableOption "Enable flake-parts-docs";
-                modules = lib.mkOption {
-                  type = types.attrsOf (types.submodule ({ name, config, ... }: {
-                    options = {
-                      path = lib.mkOption {
-                        type = types.path;
-                      };
-                      pathString = lib.mkOption {
-                        type = types.str;
-                        default = "${config.path}";
-                      };
-                      mountPoint = lib.mkOption {
-                        type = types.str;
-                        default = name;
-                      };
-                    };
-                  }));
+                defaultModules = lib.mkOption {
+                  type = types.attrsOf docLayerModule;
                   default = {
                     "".path = current-flake.inputs.self + /doc;
                     "haskell-flake".path = current-flake.inputs."haskell-flake" + /doc;
@@ -45,6 +46,12 @@ in
                     "mission-control".path = current-flake.inputs."mission-control" + /doc;
                   };
                   description = "List of modules to generate documentation for";
+                };
+                modules = lib.mkOption {
+                  type = types.attrsOf docLayerModule;
+                  default = { };
+                  apply = x: config.flake-parts-docs.defaultModules // x;
+                  description = "Modules to override on the default list";
                 };
               };
             };
