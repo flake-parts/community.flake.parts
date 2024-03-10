@@ -5,7 +5,7 @@
   };
 
   inputs = {
-    emanote.url = "github:srid/emanote/mount-point"; # https://github.com/srid/emanote/pull/523
+    emanote.url = "github:srid/emanote";
     nixpkgs.follows = "emanote/nixpkgs";
     flake-parts.follows = "emanote/flake-parts";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
