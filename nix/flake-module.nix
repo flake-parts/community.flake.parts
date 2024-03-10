@@ -14,7 +14,7 @@ in
   ];
   options = {
     perSystem = mkPerSystemOption
-      ({ config, self', inputs', pkgs, system, ... }: {
+      ({ config, self', pkgs, system, ... }: {
         options.flake-parts-docs = mkOption {
           type = types.submodule
             {
@@ -52,6 +52,7 @@ in
 
         config = {
           emanote = lib.mkIf config.flake-parts-docs.enable {
+            package = current-flake.inputs.emanote.packages.${system}.default;
             sites."docs" = {
               layers = lib.attrValues config.flake-parts-docs.modules;
               port = 5566;
