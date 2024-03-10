@@ -48,9 +48,8 @@ in
         };
 
         config = {
-          emanote = lib.mkIf config.flake-parts.enable {
-            # TODO: to "docs"
-            sites."default" = {
+          emanote = lib.mkIf config.flake-parts-docs.enable {
+            sites."docs" = {
               layers = lib.attrValues config.flake-parts-docs.modules;
               port = 5566;
               prettyUrls = true;

@@ -35,9 +35,8 @@ For further information, see [Emanote guide](https://emanote.srid.ca/guide). You
 
 - In `flake.nix`,
   - Add an flake input pointing to your module's repo
-  - Add your module input name to `modules` list
+  - Add your module input to the default value of `flake-parts-docs.modules` option.
 - In `doc/mods.md`, add a link to your module's documentation
-- Run `nix flake lock`
 - Run `nix run` to test the site locally. You can run `nix run .#preview` to preview the statically generated site.
 - Open a PR
 
