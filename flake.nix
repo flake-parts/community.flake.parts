@@ -47,10 +47,13 @@
         apps.default = self'.apps.docs;
         apps.preview.program = pkgs.writeShellApplication {
           name = "emanote-static-preview";
+          meta.description = ''
+            Run a locally running preview of the statically generated docs.
+          '';
           runtimeInputs = [ pkgs.static-web-server ];
           text = ''
             set -x
-            static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
+            static-web-server -d ${self'.packages.docs} -p ${builtins.toString (1 + config.emanote.sites.docs.port)} "$@"
           '';
         };
         devShells.default = pkgs.mkShell {
