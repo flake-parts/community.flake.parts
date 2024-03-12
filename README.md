@@ -4,37 +4,34 @@ A place to host documentation for [flake modules](/modules) created using [flake
 
 We use [Emanote](https://emanote.srid.ca/) to serve the documentation from their individual repos.
 
-## Conventions for documenting an individual module
+## How to add documentation for a new module
 
 >[!CAUTION] 
 > We are working to simplify the documentation setup for new modules. See https://github.com/flake-parts/community.flake.parts/issues/6
 
-In order to best host your flake-parts module's documentation in this site, please follow these conventions:
-
-- Use `[[..]]` style wiki-links to link between pages.
-- For better composition of multiple module docs:
-    - Keep your docs under `./doc/NAME/` directory[^imp] of your repo, where NAME is the URL slug for your module's name.
-    - Store all `.md` files under this directory, except the index page, which should reside in `./doc/NAME.md`.[^imp] 
-    - Add the following YAML meta[^imp] to your index page:
+1. Put your Markdown docs in a sub-folder, eg: `./doc`:
+    - Use `[[..]]` style wiki-links to link between pages.
+    - Add the following YAML meta[^imp] to your `index.md` page, replacing `NAME` with your module name:
         
         ```yaml
-        short-title: haskell-flake
+        short-title: NAME
         template:
-        sidebar:
+          sidebar:
             collapsed: true
         emanote:
-        folder-folgezettel: false
+          folder-folgezettel: false
         ```
-        
-
-[^imp]: These organizational clutches will be fixed in future versions of Emanote (see https://github.com/srid/emanote/issues/494), such that you can just write all docs under `./doc`.
-
-For further information, see [Emanote guide](https://emanote.srid.ca/guide). You can test your docs locally by running `nix run github:srid/emanote` under the `./doc` directory of your repository.
-
-## Building and previewing your local module docs
-
-Assuming your docs are in the `./doc` directory:
-
+    - Add a file `index.yaml` containing the following, replacing `NAME` with your module name, and `USER/REPO` with your GitHub repo info:
+        ```yaml
+        page:
+          siteTitle: NAME
+        headHtml: |
+          <snippet var="js.highlightjs" />
+        template:
+          editBaseUrl: https://github.com/USER/REPO/edit/main/doc
+        sidebar:
+            collapsed: false
+        ```
 1. Create a `doc/flake.nix` file with the following content, replacing `NAME` with your module name:
 
     ```nix
@@ -66,7 +63,12 @@ Assuming your docs are in the `./doc` directory:
 1. Run `nix run ./doc` to live preview the docs
 1. Run `nix build ./doc` to build statically generated website of the docs
 
-This will give you a local copy of https://community.flake.parts/ but using your local module docs (overriding the upstream one if any).
+This will give you a local copy of <https://community.flake.parts/> but using your local module docs (overriding the upstream one if any).
+
+[^imp]: These organizational clutches will be fixed in future versions of Emanote (see https://github.com/srid/emanote/issues/494), such that you can just write all docs under `./doc`.
+
+For further information, see [Emanote guide](https://emanote.srid.ca/guide).
+
 
 ## Publishing a module to this repository
 
