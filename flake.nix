@@ -27,8 +27,8 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       imports = [
-        inputs.emanote.flakeModule
         inputs.hercules-ci-effects.flakeModule
+        (import ./nix/flake-module.nix { inherit inputs; })
       ];
       hercules-ci.flake-update = {
         enable = true;
@@ -40,46 +40,27 @@
         };
       };
       herculesCI.ciSystems = [ "x86_64-linux" ];
-      perSystem = { config, self', pkgs, lib, system, ... }:
-        let
-          # Emanote sub-notebook layers for all modules
-          moduleDocLayers = builtins.map
-            (name: {
-              path = inputs.${name} + /doc;
-              mountPoint = name;
-            })
-            modules;
-          modules = [
-            "haskell-flake"
-            "nixos-flake"
-            "services-flake"
-            "process-compose-flake"
-            "mission-control"
-          ];
-        in
-        {
-          emanote = {
-            sites."default" = {
-              layers = [{ path = ./doc; pathString = "./doc"; }] ++ moduleDocLayers;
-              port = 5566;
-              prettyUrls = true;
-            };
-          };
-          apps.preview.program = pkgs.writeShellApplication {
-            name = "emanote-static-preview";
-            runtimeInputs = [ pkgs.static-web-server ];
-            text = ''
-              set -x
-              static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
-            '';
-          };
-          devShells.default = pkgs.mkShell {
-            buildInputs = [
-              pkgs.nixpkgs-fmt
-              pkgs.just
-            ];
-          };
-          formatter = pkgs.nixpkgs-fmt;
+      flake.flakeModules.default = import ./nix/flake-module.nix { inherit inputs; };
+      perSystem = { config, self', pkgs, lib, system, ... }: {
+        flake-parts-docs.enable = true;
+        apps.preview.program = pkgs.writeShellApplication {
+          name = "emanote-static-preview";
+          meta.description = ''
+            Run a locally running preview of the statically generated docs.
+          '';
+          runtimeInputs = [ pkgs.static-web-server ];
+          text = ''
+            set -x
+            static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
+          '';
         };
+        devShells.default = pkgs.mkShell {
+          buildInputs = [
+            pkgs.nixpkgs-fmt
+            pkgs.just
+          ];
+        };
+        formatter = pkgs.nixpkgs-fmt;
+      };
     };
 }

@@ -31,13 +31,49 @@ In order to best host your flake-parts module's documentation in this site, plea
 
 For further information, see [Emanote guide](https://emanote.srid.ca/guide). You can test your docs locally by running `nix run github:srid/emanote` under the `./doc` directory of your repository.
 
+## Building and previewing your local module docs
+
+Assuming your docs are in the `./doc` directory:
+
+1. Create a `doc/flake.nix` file with the following content, replacing `NAME` with your module name:
+
+    ```nix
+    {
+        inputs = {
+          cfp.url = "github:flake-parts/community.flake.parts/mod";
+          nixpkgs.follows = "cfp/nixpkgs";
+          flake-parts.follows = "cfp/flake-parts";
+        };
+
+        outputs = inputs:
+          inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+            systems = inputs.nixpkgs.lib.systems.flakeExposed;
+            imports = [
+                inputs.cfp.flakeModules.default
+            ];
+            perSystem = {
+              flake-parts-docs = {
+                enable = true;
+                modules."NAME" = {
+                  path = ./.;
+                  pathString = "./.";
+                };
+              };
+            };
+        };
+    }
+    ```
+1. Run `nix run ./doc` to live preview the docs
+1. Run `nix build ./doc` to build statically generated website of the docs
+
+This will give you a local copy of https://community.flake.parts/ but using your local module docs (overriding the upstream one if any).
+
 ## Publishing a module to this repository
 
 - In `flake.nix`,
   - Add an flake input pointing to your module's repo
-  - Add your module input name to `modules` list
+  - Add your module input to the default value of `flake-parts-docs.modules` option.
 - In `doc/mods.md`, add a link to your module's documentation
-- Run `nix flake lock`
 - Run `nix run` to test the site locally. You can run `nix run .#preview` to preview the statically generated site.
 - Open a PR
 
