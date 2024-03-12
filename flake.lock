@@ -409,11 +409,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1708547820,
-        "narHash": "sha256-xU/KC1PWqq5zL9dQ9wYhcdgxAwdeF/dJCLPH3PNZEBg=",
+        "lastModified": 1710270110,
+        "narHash": "sha256-DSByMaY4UKPv7UhObH0GwJ2D0ay6CBqMWTRn4wcIb2s=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "0ca27bd58e4d5be3135a4bef66b582e57abe8f4a",
+        "rev": "3e81b3a33980f6596aafbe308abd78daea0bfa7d",
         "type": "github"
       },
       "original": {
@@ -576,11 +576,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1710181465,
-        "narHash": "sha256-eLFZMASdZk5dDLUimcXRWt9sg/elromdA8FYD11P5iY=",
+        "lastModified": 1710271617,
+        "narHash": "sha256-yGiPLEOp2LM2Mf1kI6+r2Xcn8qL+F3u2xibgKzTyEf8=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "1c6e8fc86792e31abe719968f3a50e43f2508854",
+        "rev": "0db2423f20756c04877feb804f8f4e1fd20763b2",
         "type": "github"
       },
       "original": {
