@@ -35,6 +35,11 @@ in
             {
               options = {
                 enable = lib.mkEnableOption "Enable flake-parts-docs";
+                outputName = lib.mkOption {
+                  type = types.str;
+                  default = "default";
+                  description = "Name of the flake outputs";
+                };
                 defaultModules = lib.mkOption {
                   type = types.attrsOf docLayerModule;
                   default = {
@@ -60,7 +65,7 @@ in
         config = {
           emanote = lib.mkIf config.flake-parts-docs.enable {
             package = current-flake.inputs.emanote.packages.${system}.default;
-            sites."docs" = {
+            sites.${config.flake-parts-docs.outputName} = {
               layers = lib.attrValues config.flake-parts-docs.modules;
               port = 5566;
               prettyUrls = true;

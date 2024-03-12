@@ -43,8 +43,6 @@
       flake.flakeModules.default = import ./nix/flake-module.nix { inherit inputs; };
       perSystem = { config, self', pkgs, lib, system, ... }: {
         flake-parts-docs.enable = true;
-        packages.default = self'.packages.docs;
-        apps.default = self'.apps.docs;
         apps.preview.program = pkgs.writeShellApplication {
           name = "emanote-static-preview";
           meta.description = ''
@@ -53,7 +51,7 @@
           runtimeInputs = [ pkgs.static-web-server ];
           text = ''
             set -x
-            static-web-server -d ${self'.packages.docs} -p ${builtins.toString (1 + config.emanote.sites.docs.port)} "$@"
+            static-web-server -d ${self'.packages.default} -p ${builtins.toString (1 + config.emanote.sites.default.port)} "$@"
           '';
         };
         devShells.default = pkgs.mkShell {
