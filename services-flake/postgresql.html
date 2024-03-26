@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=65e95886-80c1-4518-985a-7c9cb4bec3e9' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=f6e9e1d0-b392-46d8-96fe-1f7c28c808a7' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1584,7 +1584,29 @@
 
 
     </h3>
+  <div data-callout-metadata data-callout-fold data-callout='warning' class='callout bg-opacity-10' role='note'>
+  <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
+  </path>
+  <div class='callout-title'>
+    <div class='callout-icon'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
+        <path d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'></path>
+<line x1='12' y1='9' x2='12' y2='13'></line>
+<line x1='12' y1='17' x2='12.01' y2='17'></line>
+      </svg>
+    </div>
+    <div class='callout-title-inner'>
+      Warning
+    </div>
+  </div>
+  <div class='callout-content'>
+    
+    <p class='mb-3'>
+      Only relevant if <code class='py-0.5 px-0.5 bg-gray-100'>socketDir</code> is set. If not, postgres uses TCP/IP by default.
+    </p>
   
+  </div>
+</div>
     <p class='mb-3'>
       We already talk about this in the <a href='services-flake/datadir#socket-path' class='text-sky-600 mavenLinkBold hover:underline'>data directory guide</a>. In case of postgres, you can set <code class='py-0.5 px-0.5 bg-gray-100'>socketDir</code> while keeping the <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> unchanged.
     </p>
