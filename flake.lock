@@ -358,11 +358,11 @@
     "haskell-flake_3": {
       "flake": false,
       "locked": {
-        "lastModified": 1713599050,
-        "narHash": "sha256-TDnvGInwe24zqhUVmQOLt3EkfP9vVpWIwfScJPopTg0=",
+        "lastModified": 1713662406,
+        "narHash": "sha256-kli8vgOyXls7HX+RSARDJztSJLiiFImyaogkg4EpefY=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "53e434d194f08c5ef9b2ba448b250f0321e6d529",
+        "rev": "e43bc631b413078ffe7b772850005596f7295050",
         "type": "github"
       },
       "original": {
@@ -541,11 +541,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1712911844,
-        "narHash": "sha256-act5Q5zSruTmwKMrZQeFAwWVxARAkYx96Ed423jDWFM=",
+        "lastModified": 1713665906,
+        "narHash": "sha256-kuOJ5pK03axDx4F5GBhNMn6ZtTG3V4Cd85iHUsu5eWk=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "522b77b195d039a6fdb98d86447f9fba8a6efbce",
+        "rev": "128a50fb7bb03eb41c8f65923c355ad4d7a57935",
         "type": "github"
       },
       "original": {
