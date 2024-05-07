@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=93bbae4f-7fe7-4920-a75e-50f8a21f529a' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=14d0bb31-1c0a-46f4-b1c5-ba1e70e5f9b8' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -811,6 +811,52 @@ nix run</code></pre></div>
       You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> to run your processes.
     </p>
   
+    <h3 id='prehook' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  preHook
+  
+  <a href='process-compose-flake#prehook' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      If you’d like to run certain commands before starting the processes, you can add them to <code class='py-0.5 px-0.5 bg-gray-100'>preHook</code>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  preHook = ''
+    # Cleanup on EXIT, this runs irrespective of exit-code of process-compose
+    trap "rm -rf ./data" EXIT
+    export USER=foo
+  '';
+};</code></pre></div>
+    <h3 id='posthook' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  postHook
+  
+  <a href='process-compose-flake#posthook' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      Or if you’d like to run certain commands upon successful execution of <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code>, i.e exits with <code class='py-0.5 px-0.5 bg-gray-100'>exit-code: 0</code>, then add them to <code class='py-0.5 px-0.5 bg-gray-100'>postHook</code>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  postHook = ''
+    cat foo.txt
+  '';
+};</code></pre></div>
     <h2 id='module-api' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Module API
@@ -929,6 +975,28 @@ nix run</code></pre></div>
               </a>
               
         <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='preHook'>
+              <a href='process-compose-flake#prehook' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                preHook
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='postHook'>
+              <a href='process-compose-flake#posthook' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                postHook
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
           
         </ul>
       
