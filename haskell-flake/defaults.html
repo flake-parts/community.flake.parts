@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=0e6effa3-a4e1-47d8-a85e-24ad68463dee' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=68eef5b9-f349-4727-abe1-e22826206bd6' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -756,6 +756,42 @@
 
 
   
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700' fill='currentColor'>
+        <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
+      </svg>
+      
+  
+        
+    </span>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='DevShell' href='haskell-flake/devshell'>
+      DevShell
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+
+  
+
+
+
+  
 
 
 <!-- Rendering of this tree -->
@@ -774,8 +810,8 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='DevShell' href='haskell-flake/devshell'>
-      DevShell
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='IDE configuration (HLS)' href='haskell-flake/hls'>
+      IDE configuration (HLS)
     </a>
     
       
@@ -785,6 +821,9 @@
     TODO: Use <details> to toggle visibility?
   -->
   
+    
+  
+</div>
     
   
 </div>
@@ -1484,6 +1523,21 @@
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div><p>Local Haskell packages are defined in the <code>packages.*.source</code> option under <code>haskellProjects.&lt;name&gt;</code> module. They are automatically detected if you have a single top-level Cabal package, or multiple Cabal packages defined in a <code>cabal.project</code> file, via <a href='haskell-flake/defaults' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>default settings</a>.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='haskell-flake/hls'>
+            IDE configuration (HLS)
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><p>[!tip] Default options Alternatively, disabling the <a href='haskell-flake/defaults' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>default options</a> (i.e., <code>haskellProjects.&lt;proj-name&gt;.defaults.enable = false;</code>) automatically removes HLS.</p></div>
     </div>
   
 </div>
