@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=6c017594-745e-405b-ab70-8d209e93dfa2' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=9e3298ac-af51-4689-86c2-7a6cc4c082c9' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1594,7 +1594,13 @@
 
 
     <p class='mb-3'>
-      <a href='https://grafana.com/docs/grafana/latest/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Grafana open source</a> is open source visualization and analytics software. It allows you to query, visualize, alert on, and explore your metrics, logs, and traces no matter where they are stored. It provides you with tools to turn your time-series database (TSDB) data into insightful graphs and visualizations.
+      <a href='https://grafana.com/docs/grafana/latest/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Grafana open source</a>
+    <sup class='px-0.5'>
+      <a class='text-sky-600 hover:underline' href='services-flake/grafana#fn1'>
+        1
+      </a>
+    </sup>
+   is open source visualization and analytics software. It allows you to query, visualize, alert on, and explore your metrics, logs, and traces no matter where they are stored. It provides you with tools to turn your time-series database (TSDB) data into insightful graphs and visualizations.
     </p>
   
     <h2 id='getting-started' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
@@ -1666,6 +1672,20 @@
   settings.processes."gf1".depends_on."pg1".condition = "process_healthy";
   };
 }</code></pre></div>
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            Grafana is broken on Darwin since <code class='py-0.5 px-0.5 bg-gray-100'>11.0.0</code> (<a href='https://github.com/NixOS/nixpkgs/pull/311701' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/NixOS/nixpkgs/pull/311701</a>). Also see the issue to track the fix: <a href='https://github.com/NixOS/nixpkgs/issues/316954' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/NixOS/nixpkgs/issues/316954</a>
+          </div>
+        </div>
+      
+    </div>
+  
   <div class='flex items-center justify-center mt-2'>
   
     
