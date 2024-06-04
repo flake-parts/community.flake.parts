@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=9e3298ac-af51-4689-86c2-7a6cc4c082c9' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=a84bc794-17f1-4f76-96f9-b9b56e54939c' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1658,7 +1658,7 @@
     </h3>
   
     <p class='mb-3'>
-      unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>. If your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> option of the service to a shorter path as a workaround.
+      Some services create unix domain socket files under the data directory. As the unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>, if your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> option of the service to a shorter path as a workaround.
     </p>
   
   <div class='flex items-center justify-center mt-2'>

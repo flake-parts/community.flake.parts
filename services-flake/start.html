@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=9e3298ac-af51-4689-86c2-7a6cc4c082c9' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=a84bc794-17f1-4f76-96f9-b9b56e54939c' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1627,16 +1627,19 @@ nix run</code></pre></div>
       services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> in your flake:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  # 1. Add the inputs
   inputs.process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
   inputs.services-flake.url = "github:juspay/services-flake";
   ...
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
+        # 2. Import the flake-module
         inputs.process-compose-flake.flakeModule
       ];
       perSystem = { ... }: {
-        process-compose."default" = {
+        # 3. Create the process-compose configuration, importing services-flake
+        process-compose."myservices" = {
           imports = [
             inputs.services-flake.processComposeModules.default
           ];
@@ -1647,14 +1650,14 @@ nix run</code></pre></div>
     <p class='mb-3'>
       As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100'>redis</code> service to your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside `perSystem.process-compose.default`
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
 {
   services.redis."r1".enable = true;
 }</code></pre></div>
     <p class='mb-3'>
       Time to run the service:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix run</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
     <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Under the hood
@@ -1676,13 +1679,13 @@ nix run</code></pre></div>
         </li>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100'>packages.${system}.default</code>
+          The <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100'>packages.${system}.myservices</code>
     <sup class='px-0.5'>
       <a class='text-sky-600 hover:underline' href='services-flake/start#fn1'>
         1
       </a>
     </sup>
-   (<code class='py-0.5 px-0.5 bg-gray-100'>nix run</code> above, runs this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
+   (<code class='py-0.5 px-0.5 bg-gray-100'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
     <sup class='px-0.5'>
       <a class='text-sky-600 hover:underline' href='services-flake/start#fn2'>
         2
@@ -1723,7 +1726,7 @@ nix run</code></pre></div>
             1.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            <code class='py-0.5 px-0.5 bg-gray-100'>default</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100'>perSystem.process-compose</code>.
+            <code class='py-0.5 px-0.5 bg-gray-100'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100'>perSystem.process-compose</code>.
           </div>
         </div>
       
