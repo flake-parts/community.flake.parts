@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=a84bc794-17f1-4f76-96f9-b9b56e54939c' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=aaeda539-fd2b-4ab5-ae07-58c380f665e8' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1636,6 +1636,52 @@
       
     </ul>
   
+    <h2 id='guide' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+      
+  Guide
+  
+  <a href='services-flake/postgresql#guide' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <h3 id='init' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  Creating users & tables
+  
+  <a href='services-flake/postgresql#init' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      Assuming your initial schema is defined in <code class='py-0.5 px-0.5 bg-gray-100'>./scripts/db.sql</code>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
+{
+  services.postgres."pg1" = {
+    enable = true;
+    initialScript.before = ''
+      CREATE USER myuser WITH password 'mypasswd';
+    '';
+    initialDatabases = [
+      {
+        name = "mydb";
+        schemas = [ ./scripts/db.sql ];
+      }
+    ];
+  };
+}</code></pre></div>
     <h2 id='gotchas' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Gotchas
@@ -1752,6 +1798,28 @@
               </a>
               
         <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Guide'>
+              <a href='services-flake/postgresql#guide' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Guide
+              </a>
+              
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Creating users & tables'>
+              <a href='services-flake/postgresql#init' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Creating users & tables
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
           
         </ul>
       
