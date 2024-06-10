@@ -410,11 +410,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1713898448,
-        "narHash": "sha256-6q6ojsp/Z9P2goqnxyfCSzFOD92T3Uobmj8oVAicUOs=",
+        "lastModified": 1718018037,
+        "narHash": "sha256-03rLBd/lKecgaKz0j5ESUf9lDn5R0SJatZTKLL5unWE=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "c0302ec12d569532a6b6bd218f698bc402e93adc",
+        "rev": "0ab08b23ce3c3f75fe9a5598756b6fb8bcf0b414",
         "type": "github"
       },
       "original": {
@@ -559,11 +559,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1717682476,
-        "narHash": "sha256-EjmlQSBs6XxsOEk7KQSpk2m/mkRtUpH++jZQix2jFgE=",
+        "lastModified": 1718031437,
+        "narHash": "sha256-+RrlkAVZx0QhyeHAGFJnjST+/7Dc3zsDU3zAKXoDXaI=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "8a6fae467d4862f2be9aa2954ab2d1e324c399f4",
+        "rev": "9344fac44edced4c686721686a6ad904d067c546",
         "type": "github"
       },
       "original": {
