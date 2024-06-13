@@ -18,7 +18,7 @@
   </title>
   
     
-      <meta property='og:description' content='Ollama enables you to get up and running with Llama 3, Mistral, Gemma, and other large language models.Ollama' />
+      <meta property='og:description' content='Ollama enables you to easily run large language models (LLMs) locally. It supports Llama 3, Mistral, Gemma and many others.Ollamamany others' />
       <meta property='og:site_name' content='services-flake' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=7878be3e-9570-4779-9628-e56c8af43d54' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=70f221f9-1c89-4a28-8ae1-8471f6a643ca' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1634,9 +1634,12 @@
 
 
     <p class='mb-3'>
-      <a href='https://github.com/ollama/ollama' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Ollama</a> enables you to get up and running with Llama 3, Mistral, Gemma, and other large language models.
+      <a href='https://github.com/ollama/ollama' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Ollama</a> enables you to easily run large language models (LLMs) locally. It supports Llama 3, Mistral, Gemma and <a href='https://ollama.com/library' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>many others</a>.
     </p>
-  
+  <div xmlhtmlRaw><center>
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">❄️You can now perform LLM inference with Ollama in services-flake!<a href="https://t.co/rtHIYdnPfb">https://t.co/rtHIYdnPfb</a> <a href="https://t.co/1hBqMyViEm">pic.twitter.com/1hBqMyViEm</a></p>&mdash; NixOS Asia (@nixos_asia) <a href="https://twitter.com/nixos_asia/status/1800855562072322052?ref_src=twsrc%5Etfw">June 12, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+</div>
     <h2 id='getting-started' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Getting Started
@@ -1674,7 +1677,7 @@
   
     <h3 id='cuda' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
-  Cuda
+  CUDA
   
   <a href='services-flake/ollama#cuda' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
@@ -1685,6 +1688,10 @@
 
 
     </h3>
+  
+    <p class='mb-3'>
+      For NVIDIA GPUs.
+    </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
   services.ollama."ollama1" = {
@@ -1705,6 +1712,10 @@
 
 
     </h3>
+  
+    <p class='mb-3'>
+      For Radeon GPUs.
+    </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
   services.ollama."ollama1" = {
@@ -1749,9 +1760,9 @@
               
         <ul class='ml-2'>
           
-            <li class='whitespace-nowrap truncate mt-2' title='Cuda'>
+            <li class='whitespace-nowrap truncate mt-2' title='CUDA'>
               <a href='services-flake/ollama#cuda' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
-                Cuda
+                CUDA
               </a>
               
         <ul class='ml-2'>
