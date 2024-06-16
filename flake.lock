@@ -359,11 +359,11 @@
     "haskell-flake_3": {
       "flake": false,
       "locked": {
-        "lastModified": 1717944201,
-        "narHash": "sha256-h9cBnB1hfF73g/K7FJtsOdcE0mbi00qBGCJ+CFH7jRQ=",
+        "lastModified": 1718548230,
+        "narHash": "sha256-ujnapsW0FTUgvQyMTKhUscR0sjpfWin1Ik0JRqB1STU=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "8bffb2266b38fe7983d14fc4858aea2e64ad2175",
+        "rev": "f533f1446f138cbdda464ee6e37fc401ae5610a9",
         "type": "github"
       },
       "original": {
