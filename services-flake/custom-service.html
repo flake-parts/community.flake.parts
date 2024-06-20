@@ -14,15 +14,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Apache Kafka – services-flake
+    Custom service – services-flake
   </title>
   
     
-      <meta property='og:description' content='[!warning] 🚧 WIP' />
+      <meta property='og:description' content='When using services-flake you are not just limited to the builtin services. You can also define your own service.builtin services' />
       <meta property='og:site_name' content='services-flake' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Apache Kafka' />
+      <meta property='og:title' content='Custom service' />
       
         <meta name='twitter:card' content='summary_large_image' />
       
@@ -769,7 +769,7 @@
       <!-- Variable bindings for this tree-->
 
   
-
+  
 
 
   
@@ -784,14 +784,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
         
     </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Custom service' href='services-flake/custom-service'>
+    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Custom service' href='services-flake/custom-service'>
       Custom service
     </a>
     
@@ -967,10 +967,6 @@
       <!-- Variable bindings for this tree-->
 
   
-    
-      
-    
-  
 
 
 
@@ -992,7 +988,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
       Services
     </a>
     
@@ -1007,7 +1003,7 @@
       <!-- Variable bindings for this tree-->
 
   
-  
+
 
 
   
@@ -1022,14 +1018,14 @@
         
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
         
     </span>
-    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Apache Kafka' href='services-flake/apache-kafka'>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Apache Kafka' href='services-flake/apache-kafka'>
       Apache Kafka
     </a>
     
@@ -1698,11 +1694,13 @@
   <main class='px-4 py-4'>
     <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Apache Kafka
+    Custom service
   </a>
 </h1>
     
-      <article class='overflow-auto'>
+      <div class='md:grid md:gap-4 md:grid-cols-8'>
+        <div class='md:col-span-6'>
+          <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
 
@@ -1710,33 +1708,235 @@
 
 
 
-<div data-callout-metadata data-callout-fold data-callout='warning' class='callout bg-opacity-10' role='note'>
-  <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
-  </path>
-  <div class='callout-title'>
-    <div class='callout-icon'>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
-        <path d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'></path>
-<line x1='12' y1='9' x2='12' y2='13'></line>
-<line x1='12' y1='17' x2='12.01' y2='17'></line>
-      </svg>
-    </div>
-    <div class='callout-title-inner'>
-       🚧 WIP
-    </div>
-  </div>
-  <div class='callout-content'>
-    
-  </div>
-</div>
+
     <p class='mb-3'>
-      Usage example: <a href='https://github.com/juspay/services-flake/blob/main/nix/apache-kafka_test.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/juspay/services-flake/blob/main/nix/apache-kafka_test.nix</a>
+      When using <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> you are not just limited to the <a href='services-flake/services' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>builtin services</a>. You can also define your own service.
     </p>
+  
+    <p class='mb-3'>
+      By default, <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> supports multiple instances for each service, allowing you to run several instances of the same service simultaneously. However, you also have the option to create custom single-instance services. In the following sections, we’ll explore how to define custom services of both types.
+    </p>
+  
+    <h2 id='single-instance' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+      
+  Single instance service
+  
+  <a href='services-flake/custom-service#single-instance' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      We will create a <code class='py-0.5 px-0.5 bg-gray-100'>hello</code> service that will return a greeting message:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{ config, lib, pkgs, ... }:
+{
+  options = {
+    services.hello = {
+      enable = lib.mkEnableOption "Enable hello service";
+      package = lib.mkPackageOption pkgs "hello" { };
+      message = lib.mkOption {
+        type = lib.types.str;
+        default = "Hello, world!";
+        description = "The message to be displayed";
+      };
+    };
+  };
+  config =
+    let
+      cfg = config.services.hello;
+    in
+    lib.mkIf cfg.enable {
+      settings.processes.hello = {
+        command = "${lib.getExe cfg.package} --greeting='${cfg.message}'";
+      };
+    };
+}</code></pre></div>
+    <p class='mb-3'>
+      Let’s call this file <code class='py-0.5 px-0.5 bg-gray-100'>hello.nix</code>.
+    </p>
+  
+    <p class='mb-3'>
+      Now, we can import this service in our flake. In this example, we will configure an existing service, <a href='services-flake/ollama' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Ollama</a>, and our custom service from above:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  description = "A demo of importing a single instance custom service";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
+    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
+    services-flake.url = "github:juspay/services-flake";
+  };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
+      imports = [
+        inputs.process-compose-flake.flakeModule
+      ];
+      perSystem = { self', pkgs, lib, ... }: {
+        process-compose."default" = { config, ... }: {
+          imports = [
+            inputs.services-flake.processComposeModules.default
+            ./hello.nix
+          ];
+
+          services.ollama."ollama1".enable = true;
+          services.hello.enable = true;
+        };
+      };
+    };
+}</code></pre></div>
+    <p class='mb-3'>
+      Finally, <code class='py-0.5 px-0.5 bg-gray-100'>nix run</code>: <img class='inline mb-3' src='services-flake/single-instance-hello.png' alt='[[single-instance-hello.png]]' style='width: inherit;' />
+    </p>
+  
+    <h2 id='multi-instance' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+      
+  Multi-instance service
+  
+  <a href='services-flake/custom-service#multi-instance' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      For this purpose, <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> exports a <a href='https://github.com/juspay/services-flake/blob/647bff2c44b42529461f60a7fe07851ff93fb600/nix/lib.nix#L1-L34' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>multiService</a> library function. It aims to provide an interface wherein the user just writes the configuration like they would for a single instance service, and the library takes care of creating multiple instances of the service.
+    </p>
+  
+    <p class='mb-3'>
+      Let’s write the same <code class='py-0.5 px-0.5 bg-gray-100'>hello</code> service as above, in <code class='py-0.5 px-0.5 bg-gray-100'>hello.nix</code>, but this time as a multi-instance service:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{ config, lib, name, pkgs, ... }:
+{
+  options = {
+    enable = lib.mkEnableOption "Enable ${name} service";
+    package = lib.mkPackageOption pkgs "hello" { };
+    message = lib.mkOption {
+      type = lib.types.str;
+      default = "Hello, world!";
+      description = "The message to be displayed";
+    };
+    outputs.settings = lib.mkOption {
+      type = lib.types.deferredModule;
+      internal = true;
+      readOnly = true;
+      default = {
+        processes.${name} = {
+          command = "${lib.getExe config.package} --greeting='${config.message}'";
+        };
+      };
+    };
+  };
+}</code></pre></div>
+    <p class='mb-3'>
+      The primary differences from the single instance service are:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          The module now takes an additional argument <code class='py-0.5 px-0.5 bg-gray-100'>name</code>, which is the name of the instance of the service.
+        </li>
+      
+        <li>
+          We no longer have to write the <code class='py-0.5 px-0.5 bg-gray-100'>config</code> block, as it is now handled by the library by importing the <code class='py-0.5 px-0.5 bg-gray-100'>outputs.settings</code> option.
+        </li>
+      
+        <li>
+          And we don’t have to write <code class='py-0.5 px-0.5 bg-gray-100'>options.services."${name}"</code>, as that is abstracted away by the library.
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Now that we have defined the multi-instance service, we can import it in our flake:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  description = "A demo of importing a multi-instance custom service";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
+    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
+    services-flake.url = "github:juspay/services-flake";
+  };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
+      imports = [
+        inputs.process-compose-flake.flakeModule
+      ];
+      perSystem = { self', pkgs, lib, ... }: {
+        process-compose."default" = 
+        let
+          inherit (inputs.services-flake.lib) multiService;
+        in
+        {
+          imports = [
+            inputs.services-flake.processComposeModules.default
+            (multiService ./hello.nix)
+          ];
+
+          services.ollama."ollama1".enable = true;
+          services.hello = {
+            hello1 = {
+              enable = true;
+              message = "Hello, world!";
+            };
+            hello2 = {
+              enable = true;
+              message = "Hello, Nix!";
+            };
+          };
+        };
+      };
+    };
+}</code></pre></div>
+    <p class='mb-3'>
+      And finally, <code class='py-0.5 px-0.5 bg-gray-100'>nix run</code>: <img class='inline mb-3' src='services-flake/multi-instance-hello.png' alt='[[multi-instance-hello.png]]' style='width: inherit;' />
+    </p>
+  
+    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+      
+  See also
+  
+  <a href='services-flake/custom-service#see-also' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://github.com/nammayatri/nammayatri/blob/main/Backend/nix/services/postgres-with-replica.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Postgres with replica</a>
+        </li>
+      
+        <li>
+          <a href='https://github.com/nammayatri/passetto/blob/nixify/process-compose.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Passetto (A custom encryption service)</a>, is <a href='https://github.com/nammayatri/nammayatri/blob/e8032f1fac3581b9062e2469dfc778d2913d3665/Backend/nix/services/nammayatri.nix#L32' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>imported</a> and <a href='https://github.com/nammayatri/nammayatri/blob/e8032f1fac3581b9062e2469dfc778d2913d3665/Backend/nix/services/nammayatri.nix#L285-L297' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>configured in the Nammayatri flake</a>.
+        </li>
+      
+    </ul>
   
   <div class='flex items-center justify-center mt-2'>
   
     
-      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/juspay/services-flake/edit/main/doc/apache-kafka.md'>
+      <a class='text-gray-300 hover:text-sky-600 text-sm' title='Edit this page on GitHub' href='https://github.com/juspay/services-flake/edit/main/doc/custom-service.md'>
         <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'></path>
         </svg>
@@ -1745,7 +1945,106 @@
   
 </div>
 </article>
+        </div>
+        <div class='hidden md:block md:col-span-2 md:border-l'>
+          <nav id='toc' class='hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto'>
+  <div class='text-gray-600 text-sm -mt-2'>
     
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Single instance service'>
+              <a href='services-flake/custom-service#single-instance' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Single instance service
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Multi-instance service'>
+              <a href='services-flake/custom-service#multi-instance' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Multi-instance service
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='See also'>
+              <a href='services-flake/custom-service#see-also' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                See also
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+  </div>
+  <script>
+    // Highlight the TOC, based from https://stackoverflow.com/a/75346369
+    // TODO: We should get rid of JavaScript! See https://github.com/srid/emanote/issues/520
+    function highlightTOC() {
+      // Grab the toc links
+      const links = document.querySelectorAll("ul > li > a.--ema-toc");
+
+      // Find the matching anchors in the document body
+      const sections = [];
+      links.forEach((link) => {
+        let found = {};
+        for (section of document.querySelectorAll("a.--ema-anchor")) {
+          if (link.href == section.href) {
+            found = section;
+            break;
+          }
+        }
+        sections.push(found);
+      });
+
+      // Current toc link is marked with the following class
+      const mark = "toc-item-active";
+
+      // Set window scroll handler to update the toc mark.
+      window.onscroll = () => {
+        // Remove previous mark
+        links.forEach((link) => {
+          link.classList.remove(mark);
+        });
+
+        // Mark the link of the section that is in view, starting from the end
+        let marked = false;
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (window.scrollY > sections[i].offsetTop - 80) {
+            links[i].classList.add(mark);
+            marked = true;
+            break;
+          }
+        }
+
+        // Special case for the first and last section which might not reach the top
+        if (!marked && window.scrollY > 0) {
+          let i = 0;
+          if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            // We are at the bottom
+            i = links.length - 1
+          }
+          links[i].classList.add(mark);
+        }
+      };
+    }
+    highlightTOC();
+  </script>
+</nav>
+        </div>
+      </div>
+      
     <div class='flex flex-col lg:flex-row lg:space-x-2'>
       
       
@@ -1754,14 +2053,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='services-flake/services'>
-            Supported services
+          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='services-flake'>
+            Running services using <code>services-flake</code>
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
-      <div><a href='services-flake/apache-kafka' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Apache Kafka</a></div>
+      <div><a href='services-flake/custom-service' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Custom service</a></div>
     </div>
   
 </div>
