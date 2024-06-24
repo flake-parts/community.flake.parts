@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=708de1de-118f-45f3-a715-9443d602d949' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=7147e563-86ef-410c-b63e-f9c9d5b05617' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1811,6 +1811,24 @@
   
     <p class='mb-3'>
       For NVIDIA GPUs.
+    </p>
+  
+    <p class='mb-3'>
+      Firstly, allow unfree packages:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside perSystem = { system, ... }: { ...
+{
+  imports = [
+    "${inputs.nixpkgs}/nixos/modules/misc/nixpkgs.nix"
+  ];
+  nixpkgs = {
+    hostPlatform = system;
+    # Required for CUDA
+    config.allowUnfree = true;
+  };
+}</code></pre></div>
+    <p class='mb-3'>
+      And then enable CUDA acceleration:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
