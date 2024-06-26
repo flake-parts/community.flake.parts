@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=64c88b44-0f54-41dc-ba2e-3facf98ab905' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=3c7a9240-9dd1-4442-845d-9fea2693276e' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -681,6 +681,46 @@
       <!-- Variable bindings for this tree-->
 
   
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    <span>
+      
+        
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+        
+    </span>
+    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Activation' href='nixos-flake/activate'>
+      Activation
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+
+  
   
 
 
@@ -757,86 +797,6 @@
     
   
 </div>
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-
-  
-  
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
-      
-        
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
-        </path>
-      </svg>
-      
-  
-        
-    </span>
-    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Module outputs' href='nixos-flake/module-outputs'>
-      Module outputs
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-
-  
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
-      
-        
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-        
-    </span>
-    <a class='hover:bg-sky-200 rounded px-1.5 truncate' title='Flake Templates' href='nixos-flake/templates'>
-      Flake Templates
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
     
   
 </div>
@@ -999,7 +959,19 @@
     <p class='mb-3'>
       Importing the <code class='py-0.5 px-0.5 bg-gray-100'>nixos-flake</code> flake-parts module will autowire the following flake outputs in your flake:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>nixos-flake.lib</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Functions <code class='py-0.5 px-0.5 bg-gray-100'>mkLinuxSystem</code>, <code class='py-0.5 px-0.5 bg-gray-100'>mkMacosSystem</code> and <code class='py-0.5 px-0.5 bg-gray-100'>mkHomeConfiguration</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>nixosModules.home-manager</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for NixOS</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>darwinModules_.home-manager</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for Darwin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>packages.update</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to update key flake inputs</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>packages.activate</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the system</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>packages.activate-home</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the <code class='py-0.5 px-0.5 bg-gray-100'>homeConfigurations</code> for current user</td></tr></tbody></table>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>nixos-flake.lib</strong></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Functions <code class='py-0.5 px-0.5 bg-gray-100'>mkLinuxSystem</code>, <code class='py-0.5 px-0.5 bg-gray-100'>mkMacosSystem</code> and <code class='py-0.5 px-0.5 bg-gray-100'>mkHomeConfiguration</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>nixosModules.home-manager</strong></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for NixOS</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>darwinModules_.home-manager</strong>
+    <sup class='px-0.5'>
+      <a class='text-sky-600 hover:underline' href='nixos-flake/module-outputs#fn1'>
+        1
+      </a>
+    </sup>
+  </td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for Darwin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>packages.update</strong></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to update key flake inputs</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>packages.activate</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the system (locally or remotely over SSH)</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>packages.activate-home</strong>
+    <sup class='px-0.5'>
+      <a class='text-sky-600 hover:underline' href='nixos-flake/module-outputs#fn2'>
+        2
+      </a>
+    </sup>
+  </td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the <code class='py-0.5 px-0.5 bg-gray-100'>homeConfigurations</code> for current user</td></tr></tbody></table>
     <p class='mb-3'>
       In addition, all of your NixOS/nix-darwin/home-manager modules implicitly receive the following <code class='py-0.5 px-0.5 bg-gray-100'>specialArgs</code>:
     </p>
@@ -1016,9 +988,28 @@
       
     </ul>
   
-    <p class='mb-3'>
-      <strong>NOTE</strong>: The module API is open to change. <a href='https://github.com/srid/nixos-flake/issues/new' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>All feedback welcome</a>.
-    </p>
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            Why the underscore in <code class='py-0.5 px-0.5 bg-gray-100'>darwinModules_</code>? This is to workaround a segfault with flake-parts. See <a href='https://github.com/srid/nixos-config/issues/31' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/nixos-config/issues/31</a>
+          </div>
+        </div>
+      
+        <div id='fn2'>
+          <header class='italic'>
+            2.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            This will soon be removed in favour of the <a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>activate app</a>. See <a href='https://github.com/srid/nixos-flake/issues/18' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/nixos-flake/issues/18</a>
+          </div>
+        </div>
+      
+    </div>
   
   <div class='flex items-center justify-center mt-2'>
   
