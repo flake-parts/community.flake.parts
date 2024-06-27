@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=df75a020-2f76-4a24-8a3c-e8c8ba8fb176' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=7fbe46ea-5ab4-4d14-8df0-aa58d10e7a91' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -965,13 +965,7 @@
         1
       </a>
     </sup>
-  </td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for Darwin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>packages.update</strong></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to update key flake inputs</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>packages.activate</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the system (locally or remotely over SSH)</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>packages.activate-home</strong>
-    <sup class='px-0.5'>
-      <a class='text-sky-600 hover:underline' href='nixos-flake/module-outputs#fn2'>
-        2
-      </a>
-    </sup>
-  </td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the <code class='py-0.5 px-0.5 bg-gray-100'>homeConfigurations</code> for current user</td></tr></tbody></table>
+  </td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Home-manager setup module for Darwin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>packages.update</strong></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to update key flake inputs</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>packages.activate</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Flake app to build & activate the system (locally or remotely over SSH) or home configuration</td></tr></tbody></table>
     <p class='mb-3'>
       In addition, all of your NixOS/nix-darwin/home-manager modules implicitly receive the following <code class='py-0.5 px-0.5 bg-gray-100'>specialArgs</code>:
     </p>
@@ -997,15 +991,6 @@
           </header>
           <div class='inline-block mb-2 ml-4'>
             Why the underscore in <code class='py-0.5 px-0.5 bg-gray-100'>darwinModules_</code>? This is to workaround a segfault with flake-parts. See <a href='https://github.com/srid/nixos-config/issues/31' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/nixos-config/issues/31</a>
-          </div>
-        </div>
-      
-        <div id='fn2'>
-          <header class='italic'>
-            2.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            This will soon be removed in favour of the <a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>activate app</a>. See <a href='https://github.com/srid/nixos-flake/issues/18' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/nixos-flake/issues/18</a>
           </div>
         </div>
       
