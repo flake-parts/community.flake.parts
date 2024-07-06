@@ -459,11 +459,11 @@
     "nixos-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1719951852,
-        "narHash": "sha256-D3DfPYFacEgVmFMSW7VzDZIJy9EzNgq3SzZt2aYcPEo=",
+        "lastModified": 1720281493,
+        "narHash": "sha256-Lic3N1H2k5RsYDtfbmfO+9K2u7uwyXIj+aCaTj2/zSY=",
         "owner": "srid",
         "repo": "nixos-flake",
-        "rev": "face52ad2209fa6c50c7c0b88e1e71d177e0485b",
+        "rev": "cab6539d198792f94fbac029e5a63523604fd172",
         "type": "github"
       },
       "original": {
@@ -594,11 +594,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1720202735,
-        "narHash": "sha256-UPM7HkCVAZQJt+/vXj0ffxqkuRwbKj5dY23EbpyhTF4=",
+        "lastModified": 1720279385,
+        "narHash": "sha256-vvVMtCXzCSlGnFV4pJlAsekCC72WRRM0Aa/tlkx4e4w=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "ea3a18a991fd5e0df3543f17c9209a6942068c4a",
+        "rev": "b02b6c802548cb7814cd4d03098d1414c99652b9",
         "type": "github"
       },
       "original": {
