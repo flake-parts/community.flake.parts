@@ -594,11 +594,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1720312163,
-        "narHash": "sha256-KKp4fYHr09AhtfaiKbakVeD5dAoqQw/+qLErqv4R7fE=",
+        "lastModified": 1720533616,
+        "narHash": "sha256-PBRvwEdUoHTXolXAVFsjQwkHYC5sqsJ1C8xrurlv3BY=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "e0a37dc16dc15a064f25d9d3e21304f3e30b33d3",
+        "rev": "f48d891b1435559da562d772d4a64b5e95264a39",
         "type": "github"
       },
       "original": {
