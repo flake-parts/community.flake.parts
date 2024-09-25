@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=8960c8a7-e3c8-41a4-b78c-31ba203b5199' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=1dfea9f0-5f0b-449c-b03b-448aca6f8969' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1003,7 +1003,7 @@
     <p class='mb-3'>
       NixOS, nix-darwin, <a href='https://github.com/nix-community/home-manager' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>home-manager</a> configuration combined, with common modules.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix --accept-flake-config run github:juspay/omnix --
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix --accept-flake-config run github:juspay/omnix -- \
   init -o ~/nix-config github:srid/nixos-flake#both</code></pre></div>
     <h3 id='nixos' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
@@ -1022,7 +1022,7 @@
     <p class='mb-3'>
       NixOS configuration only, with <a href='https://github.com/nix-community/home-manager' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>home-manager</a>
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix --accept-flake-config run github:juspay/omnix --
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix --accept-flake-config run github:juspay/omnix -- \
   init -o ~/nix-config github:srid/nixos-flake#linux</code></pre></div>
     <h3 id='macos' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
@@ -1041,7 +1041,7 @@
     <p class='mb-3'>
       nix-darwin configuration only, with <a href='https://github.com/nix-community/home-manager' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>home-manager</a>
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix --accept-flake-config run github:juspay/omnix --
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix --accept-flake-config run github:juspay/omnix -- \
   init -o ~/nix-config github:srid/nixos-flake#macos</code></pre></div>
     <h3 id='home' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
@@ -1060,7 +1060,7 @@
     <p class='mb-3'>
       <a href='https://github.com/nix-community/home-manager' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>home-manager</a> configuration only (useful if you use other Linux distros or do not have admin access to the machine)
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix --accept-flake-config run github:juspay/omnix --
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix --accept-flake-config run github:juspay/omnix -- \
   init -o ~/nix-config github:srid/nixos-flake#home</code></pre></div>
     <h2 id='after-initializing-the-template' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
@@ -1076,28 +1076,10 @@
 
     </h2>
   
-    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
-      
-        <li>
-          Open <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> and change the user (from <code class='py-0.5 px-0.5 bg-gray-100'>john</code>) and hostname (from <code class='py-0.5 px-0.5 bg-gray-100'>example1</code>)
-    <sup class='px-0.5'>
-      <a class='text-sky-600 hover:underline' href='nixos-flake/templates#fn2'>
-        2
-      </a>
-    </sup>
+    <p class='mb-3'>
+      Run <code class='py-0.5 px-0.5 bg-gray-100'>nix run .#activate</code> (<code class='py-0.5 px-0.5 bg-gray-100'>nix run .#activate $USER</code> if you are using the 4th template, “Home only”) to activate the configuration.
+    </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Run <code class='py-0.5 px-0.5 bg-gray-100'>echo $USER</code> and <code class='py-0.5 px-0.5 bg-gray-100'>hostname -s</code> to determine the new values.
-        </li>
-      
-    </ul>
-  
-        </li>
-      
-        <li>
-          Then run <code class='py-0.5 px-0.5 bg-gray-100'>nix run .#activate</code> (<code class='py-0.5 px-0.5 bg-gray-100'>nix run .#activate $USER</code> if you are using the 4th template, “Home only”) to activate the configuration.
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
@@ -1111,10 +1093,6 @@ nix --extra-experimental-features "nix-command flakes" run .#activate</code></pr
       
     </ul>
   
-        </li>
-      
-    </ul>
-  
     <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2'>
       <header class='font-semibold'>Footnotes</header>
       
@@ -1124,15 +1102,6 @@ nix --extra-experimental-features "nix-command flakes" run .#activate</code></pr
           </header>
           <div class='inline-block mb-2 ml-4'>
             If you do not use Omnix, you must use <code class='py-0.5 px-0.5 bg-gray-100'>nix flake init</code>, and manually change the template values such as username and hostname.
-          </div>
-        </div>
-      
-        <div id='fn2'>
-          <header class='italic'>
-            2.
-          </header>
-          <div class='inline-block mb-2 ml-4'>
-            If you are on an Intel Mac, also change <code class='py-0.5 px-0.5 bg-gray-100'>nixpkgs.hostPlatform</code> accordingly.
           </div>
         </div>
       
