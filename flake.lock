@@ -426,11 +426,11 @@
     "mission-control": {
       "flake": false,
       "locked": {
-        "lastModified": 1727538070,
-        "narHash": "sha256-M05ezjs1OaRNg0iJjdM2BZdZo0rAeYIrICONAYd0vt8=",
+        "lastModified": 1727581548,
+        "narHash": "sha256-LDAHv2KECDaf9hf6oFV2dMCqPzEaYFcmeQCOnA+/eh8=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "b39297d74f55a8dc707de6319f09ac4ddac3756a",
+        "rev": "781a209a8cdeb9e63a26d19b2e3b75565266db97",
         "type": "github"
       },
       "original": {
@@ -588,11 +588,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1727541872,
-        "narHash": "sha256-LNzdPD1SFi/UrNqZZJdFOnPKUrhUov8OLo3uNjA6bY8=",
+        "lastModified": 1727569642,
+        "narHash": "sha256-zUv7IlKo3x3PtEV4QOOuYaFqVArNg2gvvGNKqt08JVo=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "a997c1fccf41a10a5ffd9f806185268b15a9a9b9",
+        "rev": "832eadd935c5d077247f59434762c144a5cb5d7b",
         "type": "github"
       },
       "original": {
