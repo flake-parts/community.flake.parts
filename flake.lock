@@ -459,11 +459,11 @@
     "nixos-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1727477509,
-        "narHash": "sha256-XJ9uyX56tEj5ketnpaGRJ25RLUctDReh44tRySh2yEA=",
+        "lastModified": 1727721805,
+        "narHash": "sha256-Kn+/1OTckX3V0vKnGleGDP/omq7HaaInJ+OyoQa4680=",
         "owner": "srid",
         "repo": "nixos-flake",
-        "rev": "f76d630f1d3a271ae9af118b54e9493d231236ea",
+        "rev": "05e9c47eb229bd348861ba92556202d24e4f0bbc",
         "type": "github"
       },
       "original": {
@@ -553,11 +553,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1724606023,
-        "narHash": "sha256-rdGeNa/lCS8E1lXzPqgl+vZUUvnbEZT11Bqkx5jfYug=",
+        "lastModified": 1727723765,
+        "narHash": "sha256-/3az0h2Zp02bjJQKliR0PEQiT+FMLOR1GumhH42jA4w=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "f6ce9481df9aec739e4e06b67492401a5bb4f0b1",
+        "rev": "22f2aeb7e0b88006d1d27065f8422f2790d99e47",
         "type": "github"
       },
       "original": {
