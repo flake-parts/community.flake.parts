@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=78297f2c-96e2-4b2e-8274-286525e7d4e7' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=3ee999a2-7311-41b4-bacf-e7a8480f308b' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -966,16 +966,32 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
+          <strong>One-click activation & deployment</strong>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
           <a href='nixos-flake/activate' class='text-sky-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Activation</a>: An <code class='py-0.5 px-0.5 bg-gray-100'>.#activate</code> flake app that works both on macOS and NixOS.
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100'>.#activate</code> can also <em>remotely</em> activate machines (be it macOS or NixOS) over SSH.
+          <code class='py-0.5 px-0.5 bg-gray-100'>.#activate</code> can also <em>remotely</em> activate machines (be it macOS or NixOS) over SSH, thus acting as a simple alternative to deployment tools like <code class='py-0.5 px-0.5 bg-gray-100'>deploy-rs</code> and <code class='py-0.5 px-0.5 bg-gray-100'>colmena</code>.
         </li>
       
     </ul>
   
         </li>
+      
+        <li>
+          Also: an <code class='py-0.5 px-0.5 bg-gray-100'>.#update</code> flake app to update the primary inputs (which can be overriden)
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          <strong>Seamless access to top-level flake</strong>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
           All NixOS/ nix-darwin/ home-manager modules receive <code class='py-0.5 px-0.5 bg-gray-100'>specialArgs</code> which includes all the information in the top-level flake.
@@ -989,8 +1005,20 @@
   
         </li>
       
+    </ul>
+  
+        </li>
+      
         <li>
-          A <code class='py-0.5 px-0.5 bg-gray-100'>.#update</code> flake app to update the primary inputs (which can be overriden)
+          <strong>Sensible defaults</strong>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Sensible defaults for home-manager/ nix-darwin/ and NixOS configurations (<a href='https://github.com/srid/nixos-flake/pull/75' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>#75</a>).
+        </li>
+      
+    </ul>
+  
         </li>
       
     </ul>
