@@ -8,7 +8,6 @@ template:
 # Modules
 
 - [[haskell-flake]]#
-- [[nixos-flake]]#
 - [[services-flake]]#
 - [[process-compose-flake]]#
 - [[mission-control]]#

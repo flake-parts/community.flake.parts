@@ -456,22 +456,6 @@
         "type": "github"
       }
     },
-    "nixos-flake": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1727820086,
-        "narHash": "sha256-1TOnEqzI+AFDCFeN5nAo8nsz2ctjyU/Aq4Ykx3V+G4Q=",
-        "owner": "srid",
-        "repo": "nixos-flake",
-        "rev": "cb794a48592d35da5650a958244aae78430d72df",
-        "type": "github"
-      },
-      "original": {
-        "owner": "srid",
-        "repo": "nixos-flake",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1704842529,
@@ -576,7 +560,6 @@
         "haskell-flake": "haskell-flake_3",
         "hercules-ci-effects": "hercules-ci-effects",
         "mission-control": "mission-control",
-        "nixos-flake": "nixos-flake",
         "nixpkgs": [
           "emanote",
           "nixpkgs"

@@ -13,8 +13,6 @@
     # Individual flake-parts modules go here
     haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.flake = false;
-    nixos-flake.url = "github:srid/nixos-flake";
-    nixos-flake.flake = false;
     services-flake.url = "github:juspay/services-flake";
     services-flake.flake = false;
     process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
