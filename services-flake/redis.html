@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=5bdcd30a-5205-4827-a6e9-62dc01203caa' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=e94cc3f0-00b1-4013-a953-4235fe63b00c' rel='stylesheet' type='text/css' />
 
   <style>
     /* Heist error element */
@@ -1896,7 +1896,9 @@
   </a>
 </h1>
     
-      <article class='overflow-auto'>
+      <div class='md:grid md:gap-4 md:grid-cols-8'>
+        <div class='md:col-span-6'>
+          <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
 
@@ -1909,6 +1911,32 @@
       <a href='https://redis.io/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Redis</a> is an in-memory data structure store used as a database, cache, and message broker.
     </p>
   
+    <h2 id='unix-socket' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+      
+  Unix socket
+  
+  <a href='services-flake/redis#unix-socket' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      Redis supports the usage of <a href='https://man7.org/linux/man-pages/man2/socket.2.html' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Unix socket</a> to listen to connections. By default, Redis listens to connections over TCP on port <code class='py-0.5 px-0.5 bg-gray-100'>6379</code>. When using Unix socket, you can decide to either enable listening on both or disable listening on TCP by setting port to <code class='py-0.5 px-0.5 bg-gray-100'>0</code> (recommended).
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside `process-compose.&lt;name&gt;`
+{
+  services.redis."r1" = {
+    enable = true;
+    port = 0;
+    # relative paths are relative to the data directory, which is `$PWD/data/r1` by default
+    unixSocket = "./redis.sock";
+  };
+}</code></pre></div>
     <h2 id='usage-example' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
       
   Usage example
@@ -1939,7 +1967,95 @@
   
 </div>
 </article>
+        </div>
+        <div class='hidden md:block md:col-span-2 md:border-l'>
+          <nav id='toc' class='hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto'>
+  <div class='text-gray-600 text-sm -mt-2'>
     
+        <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Unix socket'>
+              <a href='services-flake/redis#unix-socket' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Unix socket
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Usage example'>
+              <a href='services-flake/redis#usage-example' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Usage example
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+        </ul>
+      
+  </div>
+  <script>
+    // Highlight the TOC, based from https://stackoverflow.com/a/75346369
+    // TODO: We should get rid of JavaScript! See https://github.com/srid/emanote/issues/520
+    function highlightTOC() {
+      // Grab the toc links
+      const links = document.querySelectorAll("ul > li > a.--ema-toc");
+
+      // Find the matching anchors in the document body
+      const sections = [];
+      links.forEach((link) => {
+        let found = {};
+        for (section of document.querySelectorAll("a.--ema-anchor")) {
+          if (link.href == section.href) {
+            found = section;
+            break;
+          }
+        }
+        sections.push(found);
+      });
+
+      // Current toc link is marked with the following class
+      const mark = "toc-item-active";
+
+      // Set window scroll handler to update the toc mark.
+      window.onscroll = () => {
+        // Remove previous mark
+        links.forEach((link) => {
+          link.classList.remove(mark);
+        });
+
+        // Mark the link of the section that is in view, starting from the end
+        let marked = false;
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (window.scrollY > sections[i].offsetTop - 80) {
+            links[i].classList.add(mark);
+            marked = true;
+            break;
+          }
+        }
+
+        // Special case for the first and last section which might not reach the top
+        if (!marked && window.scrollY > 0) {
+          let i = 0;
+          if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            // We are at the bottom
+            i = links.length - 1
+          }
+          links[i].classList.add(mark);
+        }
+      };
+    }
+    highlightTOC();
+  </script>
+</nav>
+        </div>
+      </div>
+      
     <div class='flex flex-col lg:flex-row lg:space-x-2'>
       
       
