@@ -519,11 +519,11 @@
     "process-compose-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1728868941,
-        "narHash": "sha256-yEMzxZfy+EE9gSqn++SyZeAVHXYupFT8Wyf99Z/CXXU=",
+        "lastModified": 1729388329,
+        "narHash": "sha256-ziJLH/BuBlcfSdFZH+FbITNzwkIZZwdVzuAYUKoSoWg=",
         "owner": "Platonic-Systems",
         "repo": "process-compose-flake",
-        "rev": "29301aec92d73c9b075fcfd06a6fb18665bfe6b5",
+        "rev": "00f00687efba844f356aca8bfb44105f93756c26",
         "type": "github"
       },
       "original": {
@@ -553,11 +553,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1728811751,
-        "narHash": "sha256-IrwycNtt6jxJGCi+QJ8Bbzt9flg0vNeGLAR0KBbj4a8=",
+        "lastModified": 1729384149,
+        "narHash": "sha256-hFeqf0YXDzBQ75S1rx2LGUr/kmdHtaMj88vsw2exzns=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "e9f663036f3b1b1a12b0f136628ef93a8be92443",
+        "rev": "902f4d79d92ee42684d2e9efc7da75fee9fe1556",
         "type": "github"
       },
       "original": {
