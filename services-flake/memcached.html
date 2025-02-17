@@ -43,107 +43,64 @@
 
   
   
-  <link href='tailwind.css?instanceId=71346b1e-3014-4fce-b11f-fad694867cee' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=ddc7e976-d650-4c66-b212-3c1a6e27f79d' rel='stylesheet' type='text/css' />
 
-  <style>
-    /* Heist error element */
-    strong.error {
-      color: lightcoral;
-      font-size: 90%;
-      font-family: monospace;
-    }
+  <style data-category='error'>
+  /* Heist error element */
+  strong.error {
+    color: lightcoral;
+    font-size: 90%;
+    font-family: monospace;
+  }
+</style>
 
-    /* <kbd> styling */
-    kbd {
-      background-color: #eee;
-      border-radius: 3px;
-      border: 1px solid #b4b4b4;
-      box-shadow:
-        0 1px 1px rgba(0, 0, 0, 0.2),
-        0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
-      display: inline-block;
-      line-height: 1;
-      padding: 2px 4px;
-      white-space: nowrap;
-    }
+<style data-category='kbd'>
+  /* <kbd> styling */
+  kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.2),
+      0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    display: inline-block;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+</style>
 
-    /* Callouts */
-    div.callout {
-      background-color: #f5f5f5;
-      padding: 1em 1em 0.5em;
-      border-radius: 0.5em;
-      margin-bottom: 1em;
-    }
+<style data-category='callout'>
+  /* To prevent overemphasis of link styles in callout titles */
+  .callout .callout-title a {
+    color: inherit;
+    text-decoration: underline;
+  }
+</style>
 
-    .callout[data-callout="note"] {
-      --callout-color: 8, 109, 221;
-    }
+<style data-category='toc'>
+  a.--ema-toc:not(.toc-item-active) {
+    background-color: #ffffff !important;
+  }
+</style>
 
-    .callout[data-callout="info"] {
-      --callout-color: 8, 109, 221;
-    }
+<style data-category='external-link'>
+  /* External link icon */
+  a[data-linkicon=""]::after {
+    content: ""
+  }
 
-    .callout[data-callout="tip"] {
-      --callout-color: 8, 191, 188;
-    }
+  a[data-linkicon=none]::after {
+    content: ""
+  }
 
-    .callout[data-callout="warning"] {
-      --callout-color: 236, 117, 0;
-    }
+  a[data-linkicon="external"] {
+    padding-right: 24px;
+  }
 
-    .callout[data-callout="failure"] {
-      --callout-color: 233, 49, 71;
-    }
-
-    .callout[data-callout="quote"] {
-      --callout-color: 158, 158, 158;
-    }
-
-    /* To prevent overemphasis of link styles in callout titles */
-    .callout .callout-title a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    div.callout {
-      background-color: rgba(var(--callout-color), 0.1);
-    }
-
-    .callout .callout-title {
-      color: rgb(var(--callout-color));
-    }
-
-    div.callout-title {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.5em;
-      font-variation-settings: 'wght' 600;
-    }
-
-    div.callout-title div.callout-title-inner {
-      margin-left: 0.5em;
-    }
-
-    a.--ema-toc:not(.toc-item-active) {
-      background-color: #ffffff !important;
-    }
-
-    /* External link icon */
-    a[data-linkicon=""]::after {
-      content: ""
-    }
-
-    a[data-linkicon=none]::after {
-      content: ""
-    }
-
-    a[data-linkicon="external"] {
-      padding-right: 24px;
-    }
-
-    a[data-linkicon="external"]::after {
-      margin-right: -24px;
-      content: url('data:image/svg+xml,\
+  a[data-linkicon="external"]::after {
+    margin-right: -24px;
+    content: url('data:image/svg+xml,\
       <svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
         <g style="stroke:gray;stroke-width:1"> \
           <line x1="5" y1="5" x2="5" y2="14" /> \
@@ -155,10 +112,10 @@
           <line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
         </g> \
       </svg>');
-    }
+  }
 
-    a[data-linkicon="external"][href^="mailto:"]::after {
-      content: url('data:image/svg+xml,\
+  a[data-linkicon="external"][href^="mailto:"]::after {
+    content: url('data:image/svg+xml,\
         <svg \
           xmlns="http://www.w3.org/2000/svg" \
           height="0.7em" \
@@ -171,11 +128,11 @@
             stroke-linejoin="round" \
             d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
         </svg>');
-    }
-  </style>
+  }
+</style>
   <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
 
-<style>
+<style data-category='fonts'>
   @font-face {
     font-family: 'WorkSans';
     /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
@@ -185,15 +142,22 @@
 
   body {
     font-family: 'WorkSans', sans-serif;
+
+    /* Set the default font weight */
     font-variation-settings: 'wght' 350;
+
+    /* Define css variables so they may be used outside of this file */
+    --font-variation-bold: 'wght' 500;
+    --font-variation-link: 'wght' 400;
   }
 
-  a.mavenLinkBold {
-    font-variation-settings: 'wght' 400;
+  .emanoteBoldLink {
+    font-variation-settings: var(--font-variation-link);
   }
 
+  .emanoteBold,
   strong {
-    font-variation-settings: 'wght' 500;
+    font-variation-settings: var(--font-variation-bold);
   }
 
   h1,
@@ -220,7 +184,6 @@
   }
 </style>
 
-
   
     <style>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
@@ -243,7 +206,7 @@
   
   <link rel='stylesheet' href='_emanote-static/stork/flat.css' />
 <!-- Custom Stork-search styling for Emanote -->
-<style>
+<style data-category='stork'>
   #stork-search-container {
     z-index: 1000;
     background-color: rgb(15 23 42/.8);
@@ -482,7 +445,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -652,7 +615,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -1090,7 +1053,7 @@
   
         
     </span>
-    <a class='mavenLinkBold hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
+    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
       Services
     </a>
     
@@ -1366,7 +1329,7 @@
   
         
     </span>
-    <a class='mavenLinkBold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Memcached' href='services-flake/memcached'>
+    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Memcached' href='services-flake/memcached'>
       Memcached
     </a>
     
@@ -2096,7 +2059,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 mavenLinkBold hover:bg-sky-50' href='services-flake/services'>
+          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/services'>
             Supported services
           </a>
           
@@ -2141,7 +2104,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.24.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
