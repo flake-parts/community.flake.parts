@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -604,7 +552,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -721,7 +669,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Package Settings' href='haskell-flake/settings'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Package Settings' href='haskell-flake/settings'>
       Package Settings
     </a>
     
@@ -1297,9 +1245,9 @@
 
 
     <p class='mb-3'>
-      Settings for individual Haskell packages can be specified in the <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> attribute of a <code class='py-0.5 px-0.5 bg-gray-100'>haskellProjects</code> module.
+      Settings for individual Haskell packages can be specified in the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> attribute of a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellProjects</code> module.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>haskellProjects.default = {
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>haskellProjects.default = {
   settings = {
     ema = {  # This module can take `{self, super, ...}` args, optionally.
       # Disable running tests
@@ -1327,7 +1275,7 @@
 };</code></pre></div><div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1343,7 +1291,7 @@
   </div>
   <div class='callout-content'>
     
-    <h3 id='nixpkgs-functions' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='nixpkgs-functions' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> functions
   
@@ -1360,14 +1308,14 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.haskell.lib</code> module provides various utility functions that you can use to override Haskell packages. The canonical place to find documentation on these is <a href='https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/lib/compose.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the source</a>. haskell-flake provides a <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> submodule for convenience. For eg., the <code class='py-0.5 px-0.5 bg-gray-100'>dontCheck</code> function translates to <code class='py-0.5 px-0.5 bg-gray-100'>settings.&lt;name&gt;.check</code>; the full list of options can be seen <a href='https://github.com/srid/haskell-flake/blob/master/nix/modules/project/settings/all.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
+          The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs.haskell.lib</code> module provides various utility functions that you can use to override Haskell packages. The canonical place to find documentation on these is <a href='https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/lib/compose.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the source</a>. haskell-flake provides a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> submodule for convenience. For eg., the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dontCheck</code> function translates to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings.&lt;name&gt;.check</code>; the full list of options can be seen <a href='https://github.com/srid/haskell-flake/blob/master/nix/modules/project/settings/all.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>here</a>.
         </li>
       
     </ul>
   
   </div>
 </div>
-    <h2 id='share' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='share' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Sharing package settings
   
@@ -1382,10 +1330,10 @@
     </h2>
   
     <p class='mb-3'>
-      <a href='haskell-flake/modules' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> options for reuse in downstream Haskell projects.
+      <a href='haskell-flake/modules' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> options for reuse in downstream Haskell projects.
     </p>
   
-    <h2 id='custom' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='custom' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Custom settings
   
@@ -1400,10 +1348,10 @@
     </h2>
   
     <p class='mb-3'>
-      You can provide custom settings for use in multiple packages (even across multiple repos). For example, see <a href='https://github.com/srid/emanote/commit/5b24bd04f94e03afe66ee01da723e4a05d854953' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this Emanote change</a> which demonstrates how to add a <em>new</em> setting option (<code class='py-0.5 px-0.5 bg-gray-100'>removeReferencesTo</code>).
+      You can provide custom settings for use in multiple packages (even across multiple repos). For example, see <a href='https://github.com/srid/emanote/commit/5b24bd04f94e03afe66ee01da723e4a05d854953' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this Emanote change</a> which demonstrates how to add a <em>new</em> setting option (<code class='py-0.5 px-0.5 bg-gray-100 font-mono'>removeReferencesTo</code>).
     </p>
   
-    <h2 id='extra' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='extra' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Extra settings
   
@@ -1421,9 +1369,9 @@
       haskell-flake provides the following settings on top of those provided by <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a>.
     </p>
   
-    <h3 id='removereferencesto' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='removereferencesto' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
-  <code class='py-0.5 px-0.5 bg-gray-100'>removeReferencesTo</code>
+  <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>removeReferencesTo</code>
   
   <a href='haskell-flake/settings#removereferencesto' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
@@ -1441,7 +1389,7 @@
   <div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1471,9 +1419,9 @@
   
   </div>
 </div>
-    <h3 id='buildfromsdist' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='buildfromsdist' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
-  <code class='py-0.5 px-0.5 bg-gray-100'>buildFromSdist</code>
+  <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>buildFromSdist</code>
   
   <a href='haskell-flake/settings#buildfromsdist' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
@@ -1486,12 +1434,12 @@
     </h3>
   
     <p class='mb-3'>
-      Newer versions of <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> provide <code class='py-0.5 px-0.5 bg-gray-100'>buildFromSdist</code> to build your package from the <code class='py-0.5 px-0.5 bg-gray-100'>cabal sdist</code> tarball. This is enabled by default, to help with checking release-worthiness of your packages.
+      Newer versions of <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> provide <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>buildFromSdist</code> to build your package from the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>cabal sdist</code> tarball. This is enabled by default, to help with checking release-worthiness of your packages.
     </p>
   <div data-callout-metadata data-callout-fold data-callout='warning' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #EC750020'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #EC7500'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #EC7500'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1502,20 +1450,20 @@
       </svg>
     </div>
     <div class='ml-2'>
-       Issues with <code class='py-0.5 px-0.5 bg-gray-100'>buildFromSdist</code>
+       Issues with <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>buildFromSdist</code>
     </div>
   </div>
   <div class='callout-content'>
     
     <p class='mb-3'>
-      If you encounter issues with <code class='py-0.5 px-0.5 bg-gray-100'>buildFromSdist</code> you can disable it by setting <code class='py-0.5 px-0.5 bg-gray-100'>settings.&lt;name&gt;.buildFromSdist</code> to <code class='py-0.5 px-0.5 bg-gray-100'>true</code>.
+      If you encounter issues with <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>buildFromSdist</code> you can disable it by setting <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings.&lt;name&gt;.buildFromSdist</code> to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>true</code>.
     </p>
   
   </div>
 </div>
-    <h3 id='stan' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='stan' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
-  <code class='py-0.5 px-0.5 bg-gray-100'>stan</code>
+  <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>stan</code>
   
   <a href='haskell-flake/settings#stan' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
@@ -1528,12 +1476,12 @@
     </h3>
   
     <p class='mb-3'>
-      Run <strong>ST</strong>atic <strong>AN</strong>alysis on the package using <a href='https://github.com/kowainik/stan' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>stan</a> and generate an HTML report. The report is created in the <code class='py-0.5 px-0.5 bg-gray-100'>/nix/store</code> path alongside your package outputs.
+      Run <strong>ST</strong>atic <strong>AN</strong>alysis on the package using <a href='https://github.com/kowainik/stan' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>stan</a> and generate an HTML report. The report is created in the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>/nix/store</code> path alongside your package outputs.
     </p>
   <div data-callout-metadata data-callout-fold data-callout='note' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1543,7 +1491,7 @@
       </svg>
     </div>
     <div class='ml-2'>
-       stan configuration<br />This setting looks for a <code class='py-0.5 px-0.5 bg-gray-100'>.stan.toml</code> file in the root of the package source. See a sample <a href='https://github.com/kowainik/stan/blob/main/.stan.toml' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>.stan.toml</a> configuration for reference.
+       stan configuration<br />This setting looks for a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>.stan.toml</code> file in the root of the package source. See a sample <a href='https://github.com/kowainik/stan/blob/main/.stan.toml' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>.stan.toml</a> configuration for reference.
     </div>
   </div>
   <div class='callout-content'>
@@ -1703,7 +1651,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/modules'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/modules'>
             Project modules
           </a>
           
@@ -1718,7 +1666,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/dependency'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/dependency'>
             Overriding dependencies
           </a>
           
@@ -1733,7 +1681,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/guide'>
             Guide
           </a>
           
@@ -1778,7 +1726,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

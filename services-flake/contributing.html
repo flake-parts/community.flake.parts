@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -615,7 +563,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -692,7 +640,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Contributing' href='services-flake/contributing'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Contributing' href='services-flake/contributing'>
       Contributing
     </a>
     
@@ -2010,7 +1958,7 @@
 
 
 
-    <h2 id='devshell' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='devshell' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Development Shell
   
@@ -2025,14 +1973,14 @@
     </h2>
   
     <p class='mb-3'>
-      A Nix dev shell is available, providing <code class='py-0.5 px-0.5 bg-gray-100'>nixpkgs-fmt</code> and <code class='py-0.5 px-0.5 bg-gray-100'>just</code>. To enter the dev shell, run:
+      A Nix dev shell is available, providing <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nixpkgs-fmt</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>just</code>. To enter the dev shell, run:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix develop ./dev</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>nix develop ./dev</code></pre></div>
     <p class='mb-3'>
-      An <code class='py-0.5 px-0.5 bg-gray-100'>.envrc</code> is also provided, so it is recommended to use <code class='py-0.5 px-0.5 bg-gray-100'>direnv</code> to automatically enter the dev shell when you <code class='py-0.5 px-0.5 bg-gray-100'>cd</code> into the project directory. See <a href='https://nixos.asia/en/direnv' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this tutorial</a>.
+      An <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>.envrc</code> is also provided, so it is recommended to use <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>direnv</code> to automatically enter the dev shell when you <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>cd</code> into the project directory. See <a href='https://nixos.asia/en/direnv' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>this tutorial</a>.
     </p>
   
-    <h2 id='new-service' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='new-service' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Adding a new service
   
@@ -2052,7 +2000,7 @@
   <div data-callout-metadata data-callout-fold data-callout='info' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -2081,7 +2029,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Create a new file <code class='py-0.5 px-0.5 bg-gray-100'>./nix/services/&lt;service-name&gt;.nix</code> file (see <a href='https://github.com/juspay/services-flake/blob/main/nix/services/redis.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>./nix/services/redis.nix</a> for inspiration)
+          Create a new file <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>./nix/services/&lt;service-name&gt;.nix</code> file (see <a href='https://github.com/juspay/services-flake/blob/main/nix/services/redis.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>./nix/services/redis.nix</a> for inspiration)
         </li>
       
         <li>
@@ -2089,7 +2037,7 @@
         </li>
       
         <li>
-          Create a new test file <code class='py-0.5 px-0.5 bg-gray-100'>./nix/services/&lt;service-name&gt;_test.nix</code> (see <a href='https://github.com/juspay/services-flake/blob/main/nix/services/redis_test.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>./nix/services/redis_test.nix</a>).
+          Create a new test file <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>./nix/services/&lt;service-name&gt;_test.nix</code> (see <a href='https://github.com/juspay/services-flake/blob/main/nix/services/redis_test.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>./nix/services/redis_test.nix</a>).
         </li>
       
         <li>
@@ -2098,7 +2046,7 @@
       
     </ul>
   
-    <h3 id='run-service' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='run-service' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   Run the service
   
@@ -2111,8 +2059,8 @@
 
 
     </h3>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>just run &lt;service-name&gt;</code></pre></div>
-    <h3 id='run-tests' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>just run &lt;service-name&gt;</code></pre></div>
+    <h3 id='run-tests' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   Run the tests for the service
   
@@ -2129,12 +2077,12 @@
     <p class='mb-3'>
       The previous command will run the services but not the tests. To run the tests, use:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>just test &lt;service-name&gt;</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>just test &lt;service-name&gt;</code></pre></div>
     <p class='mb-3'>
       or test all services:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>just test-all</code></pre></div>
-    <h3 id='service-doc' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>just test-all</code></pre></div>
+    <h3 id='service-doc' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   Add documentation for the new service
   
@@ -2149,12 +2097,12 @@
     </h3>
   
     <p class='mb-3'>
-      It is important to add documentation along with any new services you are contributing. Create a new file <code class='py-0.5 px-0.5 bg-gray-100'>./doc/&lt;service-name&gt;.md</code> (see <a href='services-flake/clickhouse' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> for example) and add the service to the list in <a href='services-flake/services' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Supported services</a>.
+      It is important to add documentation along with any new services you are contributing. Create a new file <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>./doc/&lt;service-name&gt;.md</code> (see <a href='services-flake/clickhouse' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> for example) and add the service to the list in <a href='services-flake/services' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Supported services</a>.
     </p>
   <div data-callout-metadata data-callout-fold data-callout='note' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -2175,7 +2123,7 @@
   
   </div>
 </div>
-    <h2 id='docs' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='docs' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Documentation
   
@@ -2194,9 +2142,9 @@
     </p>
   
     <p class='mb-3'>
-      We use <a href='https://emanote.srid.ca/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>emanote</a> to render our documentation. The source files are in the <code class='py-0.5 px-0.5 bg-gray-100'>doc</code> directory. To run the docs, use:
+      We use <a href='https://emanote.srid.ca/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>emanote</a> to render our documentation. The source files are in the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>doc</code> directory. To run the docs, use:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>just doc # Or, `cd doc && nix run`</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>just doc # Or, `cd doc && nix run`</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -2350,7 +2298,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake'>
             Running services using <code>services-flake</code>
           </a>
           
@@ -2395,7 +2343,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

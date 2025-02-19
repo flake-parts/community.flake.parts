@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -615,7 +563,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -652,7 +600,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Getting started' href='services-flake/start'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Getting started' href='services-flake/start'>
       Getting started
     </a>
     
@@ -2010,7 +1958,7 @@
 
 
 
-    <h2 id='new-project' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='new-project' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   New project
   
@@ -2025,12 +1973,12 @@
     </h2>
   
     <p class='mb-3'>
-      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code>:
+      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services-flake</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>mkdir example && cd ./example
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>mkdir example && cd ./example
 nix flake init -t github:juspay/services-flake
 nix run</code></pre></div>
-    <h2 id='existing-project' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='existing-project' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Existing project
   
@@ -2045,9 +1993,9 @@ nix run</code></pre></div>
     </h2>
   
     <p class='mb-3'>
-      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> in your flake:
+      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services-flake</code> in your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   # 1. Add the inputs
   inputs.process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
   inputs.services-flake.url = "github:juspay/services-flake";
@@ -2069,17 +2017,17 @@ nix run</code></pre></div>
     };
 }</code></pre></div>
     <p class='mb-3'>
-      As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100'>redis</code> service to your flake:
+      As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>redis</code> service to your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
 {
   services.redis."r1".enable = true;
 }</code></pre></div>
     <p class='mb-3'>
       Time to run the service:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
-    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
+    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Under the hood
   
@@ -2096,17 +2044,17 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code>.
+          The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose-flake</code>.
         </li>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100'>packages.${system}.myservices</code>
+          The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages.${system}.myservices</code>
     <sup class='px-0.5'>
       <a class='text-sky-600 hover:underline' href='services-flake/start#fn1'>
         1
       </a>
     </sup>
-   (<code class='py-0.5 px-0.5 bg-gray-100'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
+   (<code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
     <sup class='px-0.5'>
       <a class='text-sky-600 hover:underline' href='services-flake/start#fn2'>
         2
@@ -2117,7 +2065,7 @@ nix run</code></pre></div>
       
     </ul>
   
-    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Examples
   
@@ -2147,7 +2095,7 @@ nix run</code></pre></div>
             1.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            <code class='py-0.5 px-0.5 bg-gray-100'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100'>perSystem.process-compose</code>.
+            <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>perSystem.process-compose</code>.
           </div>
         </div>
       
@@ -2293,7 +2241,7 @@ nix run</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake'>
             Running services using <code>services-flake</code>
           </a>
           
@@ -2346,7 +2294,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

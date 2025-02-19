@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -615,7 +563,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -894,7 +842,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='services-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='services-flake/guide'>
       Guide
     </a>
     
@@ -971,7 +919,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Data directory' href='services-flake/datadir'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Data directory' href='services-flake/datadir'>
       Data directory
     </a>
     
@@ -2015,14 +1963,14 @@
 
 
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> is a an option present in all the services, allowing users to specify the directory where a given service will store its data files. Essentially, it is to persist the state of the service even when you exit the <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code> window.
+      <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dataDir</code> is a an option present in all the services, allowing users to specify the directory where a given service will store its data files. Essentially, it is to persist the state of the service even when you exit the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> window.
     </p>
   
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> of these services tend to take <em>relative</em> paths, which are usually relative to the project root. As such, when you run these services using <code class='py-0.5 px-0.5 bg-gray-100'>nix run</code>, their data files are created relative to whichever directory you are in. If you want these data files to always reside relative to the project directory, instead of using <code class='py-0.5 px-0.5 bg-gray-100'>nix run</code> consider wrapping the process-compose packages in script, via either <a href='https://community.flake.parts/mission-control' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> module or a <a href='https://just.systems/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>justfile</a>. <code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code> uses the latter.
+      The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dataDir</code> of these services tend to take <em>relative</em> paths, which are usually relative to the project root. As such, when you run these services using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix run</code>, their data files are created relative to whichever directory you are in. If you want these data files to always reside relative to the project directory, instead of using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix run</code> consider wrapping the process-compose packages in script, via either <a href='https://community.flake.parts/mission-control' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> module or a <a href='https://just.systems/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>justfile</a>. <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services-flake</code> uses the latter.
     </p>
   
-    <h2 id='default-structure' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='default-structure' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Default data directory structure
   
@@ -2039,7 +1987,7 @@
     <p class='mb-3'>
       Let’s say your project defines the following services:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
     # Inside `perSystem.process-compose.&lt;name&gt;`
     services.postgres.pg.enable = true;
     services.redis.rd.enable = true;
@@ -2047,10 +1995,10 @@
     <p class='mb-3'>
       The data directory structure will look like this:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>|-- data
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>|-- data
 |   |-- pg
 |   |-- rd</code></pre></div>
-    <h2 id='gotchas' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='gotchas' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Gotchas
   
@@ -2064,7 +2012,7 @@
 
     </h2>
   
-    <h3 id='socket-path' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='socket-path' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   Unix-domain socket path is too long
   
@@ -2079,7 +2027,7 @@
     </h3>
   
     <p class='mb-3'>
-      Some services create unix domain socket files under the data directory. As the unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>, if your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100'>dataDir</code> option of the service to a shorter path as a workaround.
+      Some services create unix domain socket files under the data directory. As the unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>, if your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dataDir</code> option of the service to a shorter path as a workaround.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -2202,7 +2150,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/postgresql'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/postgresql'>
             PostgreSQL
           </a>
           
@@ -2217,7 +2165,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/guide'>
             Guide
           </a>
           
@@ -2262,7 +2210,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

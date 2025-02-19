@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -604,7 +552,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -840,7 +788,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Debugging logs' href='haskell-flake/debugging'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Debugging logs' href='haskell-flake/debugging'>
       Debugging logs
     </a>
     
@@ -1296,7 +1244,7 @@
 <div data-callout-metadata data-callout-fold data-callout='warning' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #EC750020'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #EC7500'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #EC7500'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1319,12 +1267,12 @@
   </div>
 </div>
     <p class='mb-3'>
-      Passing <code class='py-0.5 px-0.5 bg-gray-100'>--trace-verbose</code> to Nix commands causes haskell-flake to print verbose logging of its activity. To enable it:
+      Passing <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>--trace-verbose</code> to Nix commands causes haskell-flake to print verbose logging of its activity. To enable it:
     </p>
   <div data-callout-metadata data-callout-fold data-callout='tip' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #08BFBC20'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #08BFBC'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #08BFBC'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1340,15 +1288,15 @@
   <div class='callout-content'>
     
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100'>moreutils</code> provides the <code class='py-0.5 px-0.5 bg-gray-100'>ts</code> command that you can pipe your nix command output to in order to get timestamps in the logs.
+      <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>moreutils</code> provides the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>ts</code> command that you can pipe your nix command output to in order to get timestamps in the logs.
     </p>
   
   </div>
 </div>
     <p class='mb-3'>
-      The below is a sample output when building <a href='https://github.com/srid/haskell-multi-nix/tree/debug' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a> with <code class='py-0.5 px-0.5 bg-gray-100'>--trace-verbose</code>:
+      The below is a sample output when building <a href='https://github.com/srid/haskell-multi-nix/tree/debug' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a> with <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>--trace-verbose</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='text language-text'>$ nix --no-eval-cache build -L --trace-verbose github:srid/haskell-multi-nix 2&gt;&1 | ts '[%H:%M:%S]'
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='text language-text'>$ nix --no-eval-cache build -L --trace-verbose github:srid/haskell-multi-nix 2&gt;&1 | ts '[%H:%M:%S]'
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: default.findPackagesInCabalProject = {"bar":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./bar","foo":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./foo"}
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: defaults.packages = {"bar":{"imports":[{"_file":"/nix/store/sv90dpz2fgn93kvzc14szqn77wvjssv0-source/nix/modules/project/defaults.nix, via option perSystem.aarch64-darwin.haskellProjects.default.defaults.packages.bar","imports":[{"source":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./bar"}]}]},"foo":{"imports":[{"_file":"/nix/store/sv90dpz2fgn93kvzc14szqn77wvjssv0-source/nix/modules/project/defaults.nix, via option perSystem.aarch64-darwin.haskellProjects.default.defaults.packages.foo","imports":[{"source":"/nix/store/5zvwxw2n801bbjcz3685dp20y8afjmld-source/./foo"}]}]}}
 [22:45:38] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: bar.getCabalExecutables = bar
@@ -1364,7 +1312,7 @@
 [22:45:41] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: foo.cabal2nixDeriver /nix/store/i36x01zcdpm7c3m3fjjq1qa4slv61jpw-cabal2nix-foo
 [22:45:41] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: foo.fromSdist /nix/store/qrsy0bm4khcs1hxy0rhb6m3g2bvi15sm-foo-0.1.0.0
 [22:45:41] trace: DEBUG[haskell-flake] [haskell-multi-nix#haskellProjects.default]: bar.fromSdist /nix/store/anyx51rm5gjdclafcz5is7jpqgfq2i4w-bar-0.1.0.0</code></pre></div>
-    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   See also
   
@@ -1381,7 +1329,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Read more about <a href='https://nixos.asia/en/traceVerbose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the <code class='py-0.5 px-0.5 bg-gray-100'>traceVerbose</code> function</a> which haskell-flake uses to produce the above logs.
+          Read more about <a href='https://nixos.asia/en/traceVerbose' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>traceVerbose</code> function</a> which haskell-flake uses to produce the above logs.
         </li>
       
     </ul>
@@ -1407,7 +1355,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/guide'>
             Guide
           </a>
           
@@ -1452,7 +1400,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

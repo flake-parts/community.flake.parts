@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -604,7 +552,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -920,7 +868,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Project modules' href='haskell-flake/modules'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Project modules' href='haskell-flake/modules'>
       Project modules
     </a>
     
@@ -1297,13 +1245,13 @@
 
 
     <p class='mb-3'>
-      haskell-flake’s per-project configuration can be modularized and shared among multiple repos. This is done using the <code class='py-0.5 px-0.5 bg-gray-100'>flake.haskellFlakeProjectModules</code> flake output.
+      haskell-flake’s per-project configuration can be modularized and shared among multiple repos. This is done using the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake.haskellFlakeProjectModules</code> flake output.
     </p>
   
     <p class='mb-3'>
-      Let’s say you have two repositories – <code class='py-0.5 px-0.5 bg-gray-100'>common</code> and <code class='py-0.5 px-0.5 bg-gray-100'>myapp</code>. The <code class='py-0.5 px-0.5 bg-gray-100'>common</code> repository may expose some shared haskell-flake settings as follows:
+      Let’s say you have two repositories – <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>common</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>myapp</code>. The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>common</code> repository may expose some shared haskell-flake settings as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   # Inside flake-parts' `mkFlake`:
   flake.haskellFlakeProjectModules.default = { pkgs, ... }: {
     devShell.tools = hp: {
@@ -1318,9 +1266,9 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This module can then be imported in multiple projects, such as the <code class='py-0.5 px-0.5 bg-gray-100'>myapp</code> project:
+      This module can then be imported in multiple projects, such as the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>myapp</code> project:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   # Inside flake-parts' `perSystem`:
   haskellProjects.default = {
     imports = [
@@ -1332,10 +1280,10 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This way your <code class='py-0.5 px-0.5 bg-gray-100'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
+      This way your <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
     </p>
   
-    <h2 id='module-arguments' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='module-arguments' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Module arguments
   
@@ -1352,8 +1300,8 @@
     <p class='mb-3'>
       A haskell-flake project module takes the following arguments:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100'>self</code></td></tr></tbody></table>
-    <h2 id='default-modules' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>self</code></td></tr></tbody></table>
+    <h2 id='default-modules' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Default modules
   
@@ -1368,13 +1316,13 @@
     </h2>
   
     <p class='mb-3'>
-      By default, haskell-flake will generate the following modules for the “default” <code class='py-0.5 px-0.5 bg-gray-100'>haskellProject</code>:
+      By default, haskell-flake will generate the following modules for the “default” <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellProject</code>:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Module</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Contents</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>haskellFlakeProjectModules.output</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='haskell-flake/local' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Local packages</a> & dependency overrides</td></tr></tbody></table>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Module</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Contents</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellFlakeProjectModules.output</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='haskell-flake/local' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Local packages</a> & dependency overrides</td></tr></tbody></table>
     <p class='mb-3'>
-      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> (see <a href='haskell-flake/dependency' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> (see <a href='haskell-flake/settings' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100'>haskellProject.default</code> entry you can import “bar” as follows:
+      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages</code> (see <a href='haskell-flake/dependency' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> (see <a href='haskell-flake/settings' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellProject.default</code> entry you can import “bar” as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># foo's flake.nix's perSystem
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># foo's flake.nix's perSystem
 { 
   haskellProjects.default = {
     imports = [
@@ -1386,10 +1334,10 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100'>output</code> project module, you automatically get the overrides from “bar” as well as the <a href='haskell-flake/local' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a>. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
+      By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>output</code> project module, you automatically get the overrides from “bar” as well as the <a href='haskell-flake/local' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a>. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
     </p>
   
-    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Examples
   
@@ -1406,7 +1354,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/nammayatri/nammayatri</a> (imports <code class='py-0.5 px-0.5 bg-gray-100'>shared-kernel</code> which in turn imports <code class='py-0.5 px-0.5 bg-gray-100'>euler-hs</code>)
+          <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/nammayatri/nammayatri</a> (imports <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>shared-kernel</code> which in turn imports <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>euler-hs</code>)
         </li>
       
     </ul>
@@ -1531,7 +1479,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/under-the-hood'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/under-the-hood'>
             Under the hood
           </a>
           
@@ -1546,7 +1494,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/settings'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/settings'>
             Package Settings
           </a>
           
@@ -1561,7 +1509,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/dependency'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/dependency'>
             Overriding dependencies
           </a>
           
@@ -1576,7 +1524,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/guide'>
             Guide
           </a>
           
@@ -1591,7 +1539,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/package-set'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/package-set'>
             Creating package sets
           </a>
           
@@ -1636,7 +1584,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -615,7 +563,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -735,7 +683,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Examples' href='services-flake/examples'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Examples' href='services-flake/examples'>
       Examples
     </a>
     
@@ -812,7 +760,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Share services' href='services-flake/share-services'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Share services' href='services-flake/share-services'>
       Share services
     </a>
     
@@ -2015,14 +1963,14 @@
 
 
     <p class='mb-3'>
-      Let’s say you have two projects: <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>. <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> defines a service that needs to be used by <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>. Both <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>, being separate projects, have their own <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code>. In order for <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> to reuse <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> service instead of redefining it, <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> can export <code class='py-0.5 px-0.5 bg-gray-100'>processComposeModules</code> in its flake <code class='py-0.5 px-0.5 bg-gray-100'>outputs</code>. <code class='py-0.5 px-0.5 bg-gray-100'>processComposeModules</code> is not a reserved output; it can be named anything, but the naming is appropriate for this scenario.
+      Let’s say you have two projects: <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>. <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> defines a service that needs to be used by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>. Both <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>, being separate projects, have their own <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake.nix</code>. In order for <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> to reuse <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> service instead of redefining it, <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> can export <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>processComposeModules</code> in its flake <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>outputs</code>. <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>processComposeModules</code> is not a reserved output; it can be named anything, but the naming is appropriate for this scenario.
     </p>
   
     <p class='mb-3'>
-      Next, we will see basic <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> for <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>. You can find a more real-world example at <a href='https://github.com/juspay/services-flake/tree/main/example/share-services' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/juspay/services-flake/tree/main/example/share-services</a>.
+      Next, we will see basic <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake.nix</code> for <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>. You can find a more real-world example at <a href='https://github.com/juspay/services-flake/tree/main/example/share-services' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/juspay/services-flake/tree/main/example/share-services</a>.
     </p>
   
-    <h2 id='foo-exports-its-service' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='foo-exports-its-service' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   foo (Exports its service)
   
@@ -2035,7 +1983,7 @@
 
 
     </h2>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># foo/flake.nix
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># foo/flake.nix
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -2061,9 +2009,9 @@
     };
 }</code></pre></div>
     <p class='mb-3'>
-      <a href='services-flake/custom-service' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Custom service</a> exported by <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> as <code class='py-0.5 px-0.5 bg-gray-100'>processComposeModules.default</code>:
+      <a href='services-flake/custom-service' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Custom service</a> exported by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> as <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>processComposeModules.default</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># foo/services.nix
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># foo/services.nix
 { pkgs, lib, ... }: {
     options = {
     services.foo = {
@@ -2078,7 +2026,7 @@
         };
     };
 }</code></pre></div>
-    <h2 id='bar-imports-foo-service' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='bar-imports-foo-service' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   bar (Imports foo service)
   
@@ -2093,9 +2041,9 @@
     </h2>
   
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> wants to reuse <code class='py-0.5 px-0.5 bg-gray-100'>foo</code>’s service.
+      <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> wants to reuse <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code>’s service.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># bar/flake.nix
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># bar/flake.nix
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -2234,7 +2182,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/examples'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/examples'>
             Examples
           </a>
           
@@ -2279,7 +2227,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

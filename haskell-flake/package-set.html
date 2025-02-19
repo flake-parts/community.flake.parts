@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -604,7 +552,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -960,7 +908,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Creating package sets' href='haskell-flake/package-set'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Creating package sets' href='haskell-flake/package-set'>
       Creating package sets
     </a>
     
@@ -1299,9 +1247,9 @@
     </p>
   
     <p class='mb-3'>
-      A “project” in haskell-flake primarily serves the purpose of developing Haskell projects. Additionally, a project also exposes the final <em>package set</em> via the readonly option <code class='py-0.5 px-0.5 bg-gray-100'>outputs.finalPackages</code>. This package set includes the base packages (<code class='py-0.5 px-0.5 bg-gray-100'>basePackages</code>), the <a href='haskell-flake/local' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> as well as any <a href='haskell-flake/dependency' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>dependency overrides</a> you set. Since we are are only interested in creating a new package set, we can use empty local packages and disable the dev shell:
+      A “project” in haskell-flake primarily serves the purpose of developing Haskell projects. Additionally, a project also exposes the final <em>package set</em> via the readonly option <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>outputs.finalPackages</code>. This package set includes the base packages (<code class='py-0.5 px-0.5 bg-gray-100 font-mono'>basePackages</code>), the <a href='haskell-flake/local' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> as well as any <a href='haskell-flake/dependency' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>dependency overrides</a> you set. Since we are are only interested in creating a new package set, we can use empty local packages and disable the dev shell:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   haskellProjects.ghc810 = {
     defaults.packages = {};  # Disable scanning for local package
     devShell.enable = false; # Disable devShells
@@ -1312,9 +1260,9 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      You can access this package set as <code class='py-0.5 px-0.5 bg-gray-100'>config.haskellProjects.ghc810.outputs.finalPackages</code>. But this is not terribly interesting, because it is the exact same as the package set <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.haskell.packages.ghc8107</code> from nixpkgs. So let’s add and override some packages in this set:
+      You can access this package set as <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>. But this is not terribly interesting, because it is the exact same as the package set <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs.haskell.packages.ghc8107</code> from nixpkgs. So let’s add and override some packages in this set:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   haskellProjects.ghc810 = {
     defaults.packages = {};  # No local packages
     devShell.enable = false;
@@ -1334,13 +1282,13 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This will create a package set that overrides the <code class='py-0.5 px-0.5 bg-gray-100'>aeson</code> and <code class='py-0.5 px-0.5 bg-gray-100'>dhall</code> packages using the specified versions from Hackage, but with the <code class='py-0.5 px-0.5 bg-gray-100'>aeson</code> package having the <code class='py-0.5 px-0.5 bg-gray-100'>jailbreak</code> flag set (which relaxes its Cabal constraints). It also adds the <code class='py-0.5 px-0.5 bg-gray-100'>mylib</code> package which exists neither in nixpkgs nor in Hackage, but comes from somewhere arbitrary and specified as flake input.
+      This will create a package set that overrides the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>aeson</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dhall</code> packages using the specified versions from Hackage, but with the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>aeson</code> package having the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>jailbreak</code> flag set (which relaxes its Cabal constraints). It also adds the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>mylib</code> package which exists neither in nixpkgs nor in Hackage, but comes from somewhere arbitrary and specified as flake input.
     </p>
   
     <p class='mb-3'>
-      In your <em>actual</em> haskell project, you can use this package set (<code class='py-0.5 px-0.5 bg-gray-100'>config.haskellProjects.ghc810.outputs.finalPackages</code>) as its base package set:
+      In your <em>actual</em> haskell project, you can use this package set (<code class='py-0.5 px-0.5 bg-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>) as its base package set:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   haskellProjects.myproject = {
     packages.mypackage.source = ./.;
 
@@ -1348,10 +1296,10 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      Finally, you can externalize this <code class='py-0.5 px-0.5 bg-gray-100'>ghc810</code> package set as either a flake-parts module or as a <a href='haskell-flake/modules' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>haskell-flake module</a>, and thereon import it from multiple repositories.
+      Finally, you can externalize this <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>ghc810</code> package set as either a flake-parts module or as a <a href='haskell-flake/modules' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>haskell-flake module</a>, and thereon import it from multiple repositories.
     </p>
   
-    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Examples
   
@@ -1394,7 +1342,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/guide'>
             Guide
           </a>
           
@@ -1439,7 +1387,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

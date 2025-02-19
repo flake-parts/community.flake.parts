@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -525,7 +473,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Getting Started' href='haskell-flake/start'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Getting Started' href='haskell-flake/start'>
       Getting Started
     </a>
     
@@ -562,7 +510,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Under the hood' href='haskell-flake/under-the-hood'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Under the hood' href='haskell-flake/under-the-hood'>
       Under the hood
     </a>
     
@@ -1296,7 +1244,7 @@
 <div data-callout-metadata data-callout-fold data-callout='tip' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #08BFBC20'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #08BFBC'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #08BFBC'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -1318,7 +1266,7 @@
   </div>
 </div>
     <p class='mb-3'>
-      When nixifying a Haskell project without flake-parts (thus without haskell-flake) you would generally use the <a href='https://nixos.asia/en/nixify-haskell-nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>raw Haskell infrastructure from nixpkgs</a>. haskell-flake uses these functions, while exposing a simpler <a href='https://flake.parts' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>modular</a> API on top: your <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> becomes more <a href='https://github.com/srid/haskell-template/blob/033913a6fe418ea0c25ec2c2604ab4030563ba2e/flake.nix#L22-L59' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>declarative</a> and less <a href='https://github.com/srid/haskell-template/blob/3fc6858830ecee3d2fe1dfe9a8bfa2047cf561ac/flake.nix#L20-L79' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>imperative</a>.
+      When nixifying a Haskell project without flake-parts (thus without haskell-flake) you would generally use the <a href='https://nixos.asia/en/nixify-haskell-nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>raw Haskell infrastructure from nixpkgs</a>. haskell-flake uses these functions, while exposing a simpler <a href='https://flake.parts' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>modular</a> API on top: your <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake.nix</code> becomes more <a href='https://github.com/srid/haskell-template/blob/033913a6fe418ea0c25ec2c2604ab4030563ba2e/flake.nix#L22-L59' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>declarative</a> and less <a href='https://github.com/srid/haskell-template/blob/3fc6858830ecee3d2fe1dfe9a8bfa2047cf561ac/flake.nix#L20-L79' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>imperative</a>.
     </p>
   
     <p class='mb-3'>
@@ -1328,25 +1276,25 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Auto-detection of <a href='haskell-flake/local' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> based on <code class='py-0.5 px-0.5 bg-gray-100'>cabal.project</code> file (via <a href='https://github.com/srid/haskell-flake/tree/master/nix/haskell-parsers' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-parsers</a>)
+          Auto-detection of <a href='haskell-flake/local' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> based on <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>cabal.project</code> file (via <a href='https://github.com/srid/haskell-flake/tree/master/nix/haskell-parsers' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-parsers</a>)
         </li>
       
         <li>
-          Parse executables from <code class='py-0.5 px-0.5 bg-gray-100'>.cabal</code> file, to create Flake apps.
+          Parse executables from <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>.cabal</code> file, to create Flake apps.
         </li>
       
         <li>
-          Modular interface to <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.haskell.lib.compose.*</code> (via <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100'>settings</code> submodules)
+          Modular interface to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs.haskell.lib.compose.*</code> (via <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> submodules)
         </li>
       
         <li>
-          Composition of dependency overrides, and other project settings, via <a href='haskell-flake/modules' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a>
+          Composition of dependency overrides, and other project settings, via <a href='haskell-flake/modules' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a>
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      See <a href='haskell-flake/start' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkTag'>Getting Started</a> for getting started with haskell-flake.
+      See <a href='haskell-flake/start' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkTag'>Getting Started</a> for getting started with haskell-flake.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -1370,7 +1318,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake'>
             Haskell development using <code>haskell-flake</code>
           </a>
           
@@ -1385,7 +1333,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/start'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/start'>
             Getting Started
           </a>
           
@@ -1430,7 +1378,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -615,7 +563,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -1053,7 +1001,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
       Services
     </a>
     
@@ -1569,7 +1517,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Ollama' href='services-flake/ollama'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Ollama' href='services-flake/ollama'>
       Ollama
     </a>
     
@@ -2021,7 +1969,7 @@
 <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">❄️You can now perform LLM inference with Ollama in services-flake!<a href="https://t.co/rtHIYdnPfb">https://t.co/rtHIYdnPfb</a> <a href="https://t.co/1hBqMyViEm">pic.twitter.com/1hBqMyViEm</a></p>&mdash; NixOS Asia (@nixos_asia) <a href="https://twitter.com/nixos_asia/status/1800855562072322052?ref_src=twsrc%5Etfw">June 12, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 </div>
-    <h2 id='getting-started' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='getting-started' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Getting Started
   
@@ -2034,11 +1982,11 @@
 
 
     </h2>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
   services.ollama."ollama1".enable = true;
 }</code></pre></div>
-    <h2 id='acceleration' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='acceleration' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Acceleration
   
@@ -2058,7 +2006,7 @@
   <div data-callout-metadata data-callout-fold data-callout='note' class='callout bg-opacity-10 bg-[#f5f5f5] p-4 pt-4 pb-2 rounded-lg mb-4' role='note' style='background-color: #086DD320'>
   <path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'>
   </path>
-  <div class='callout-title flex items-center mb-2 emanoteBold' style='color: #086DD3'>
+  <div class='callout-title flex items-center mb-2 font-bold' style='color: #086DD3'>
     <div class='callout-icon'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='w-5 h-5'>
         
@@ -2079,7 +2027,7 @@
   
   </div>
 </div>
-    <h3 id='cuda' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='cuda' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   CUDA
   
@@ -2100,7 +2048,7 @@
     <p class='mb-3'>
       Firstly, allow unfree packages:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># Inside perSystem = { system, ... }: { ...
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># Inside perSystem = { system, ... }: { ...
 {
   imports = [
     "${inputs.nixpkgs}/nixos/modules/misc/nixpkgs.nix"
@@ -2114,14 +2062,14 @@
     <p class='mb-3'>
       And then enable CUDA acceleration:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
   services.ollama."ollama1" = {
     enable = true;
     acceleration = "cuda";
   };
 }</code></pre></div>
-    <h3 id='rocm' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='rocm' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   ROCm
   
@@ -2138,7 +2086,7 @@
     <p class='mb-3'>
       For Radeon GPUs.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
 {
   services.ollama."ollama1" = {
     enable = true;
@@ -2276,7 +2224,7 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/services'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/services'>
             Supported services
           </a>
           
@@ -2291,7 +2239,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/open-webui'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/open-webui'>
             Open WebUI
           </a>
           
@@ -2314,7 +2262,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/llm'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/llm'>
             Local AI chatbot
           </a>
           
@@ -2329,7 +2277,7 @@
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='services-flake/custom-service'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/custom-service'>
             Custom service
           </a>
           
@@ -2374,7 +2322,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

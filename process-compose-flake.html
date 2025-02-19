@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -365,7 +313,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -436,7 +384,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -561,7 +509,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='process-compose-flake' href='process-compose-flake'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='process-compose-flake' href='process-compose-flake'>
       process-compose-flake
     </a>
     
@@ -653,14 +601,14 @@
     </p>
   
     <p class='mb-3'>
-      This <code class='py-0.5 px-0.5 bg-gray-100'>flake-parts</code> module allows you to declare one or more <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code> configurations using Nix attribute sets. It will generate corresponding <code class='py-0.5 px-0.5 bg-gray-100'>packages</code> that wrap the <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code> binary with the given configuration.
+      This <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake-parts</code> module allows you to declare one or more <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> configurations using Nix attribute sets. It will generate corresponding <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages</code> that wrap the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> binary with the given configuration.
     </p>
   
     <p class='mb-3'>
-      This module is practical for local development e.g. if you have a lot of runtime dependencies that depend on each other. Stop executing these programs imperatively over and over again in a specific order, and stop the need to write complicated shell scripts to automate this. <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code> gives you a process dashboard for monitoring, inspecting logs for each process, and much more, all of this in a TUI.
+      This module is practical for local development e.g. if you have a lot of runtime dependencies that depend on each other. Stop executing these programs imperatively over and over again in a specific order, and stop the need to write complicated shell scripts to automate this. <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> gives you a process dashboard for monitoring, inspecting logs for each process, and much more, all of this in a TUI.
     </p>
   
-    <h2 id='quick-example' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='quick-example' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Quick Example
   
@@ -675,24 +623,24 @@
     </h2>
   
     <p class='mb-3'>
-      See <a href='https://github.com/Platonic-Systems/process-compose-flake/blob/main/example/flake.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>example/flake.nix</code></a> for an example flake. This example shows a demo of <a href='https://github.com/coleifer/sqlite-web' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>sqlite-web</a> using the sample <a href='https://github.com/lerocha/chinook-database' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>chinhook-database</a>.
+      See <a href='https://github.com/Platonic-Systems/process-compose-flake/blob/main/example/flake.nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>example/flake.nix</code></a> for an example flake. This example shows a demo of <a href='https://github.com/coleifer/sqlite-web' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>sqlite-web</a> using the sample <a href='https://github.com/lerocha/chinook-database' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>chinhook-database</a>.
     </p>
   
     <p class='mb-3'>
       To run this example locally,
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>mkdir example && cd example
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>mkdir example && cd example
 nix flake init -t github:Platonic-Systems/process-compose-flake
 nix run</code></pre></div>
     <p class='mb-3'>
-      This should open <a href='http://127.0.0.1:8213/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://127.0.0.1:8213/</a> in your web browser. If not, navigate to the logs for the <code class='py-0.5 px-0.5 bg-gray-100'>sqlite-web</code> process and access the URL. Use <code class='py-0.5 px-0.5 bg-gray-100'>demo</code> as the password to access sqlite-web. The interface should look like this:
+      This should open <a href='http://127.0.0.1:8213/' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://127.0.0.1:8213/</a> in your web browser. If not, navigate to the logs for the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>sqlite-web</code> process and access the URL. Use <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>demo</code> as the password to access sqlite-web. The interface should look like this:
     </p>
   
     <p class='mb-3'>
       <img src='https://github.com/Platonic-Systems/process-compose-flake/assets/3998/254443fa-f3c2-4675-9ced-2a39ac23591d' alt />
     </p>
   
-    <h2 id='usage' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='usage' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Usage
   
@@ -707,13 +655,13 @@ nix run</code></pre></div>
     </h2>
   
     <p class='mb-3'>
-      Let’s say you want to have a <code class='py-0.5 px-0.5 bg-gray-100'>devShell</code> that makes a command <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> available, that you can use to spin up your projects <code class='py-0.5 px-0.5 bg-gray-100'>backend-server</code>, <code class='py-0.5 px-0.5 bg-gray-100'>frontend-server</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>proxy-server</code>.
+      Let’s say you want to have a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>devShell</code> that makes a command <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>watch-server</code> available, that you can use to spin up your projects <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>backend-server</code>, <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>frontend-server</code>, and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>proxy-server</code>.
     </p>
   
     <p class='mb-3'>
-      To achieve this using <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> you can simply add the following code to the <code class='py-0.5 px-0.5 bg-gray-100'>perSystem</code> function in your <code class='py-0.5 px-0.5 bg-gray-100'>flake-parts</code> flake.
+      To achieve this using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose-flake</code> you can simply add the following code to the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>perSystem</code> function in your <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake-parts</code> flake.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
   settings.processes = {
     backend-server.command = "${self'.apps.backend-server.program} --port 9000";
     frontend-server.command = "${self'.apps.frontend-server.program} --port 9001";
@@ -730,17 +678,17 @@ nix run</code></pre></div>
   };
 };</code></pre></div>
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100'>process-compose-flake</code> will generate the <code class='py-0.5 px-0.5 bg-gray-100'>packages.${system}.watch-server</code> output for you.
+      <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose-flake</code> will generate the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages.${system}.watch-server</code> output for you.
     </p>
   
     <p class='mb-3'>
-      You can then spin up the processes by running <code class='py-0.5 px-0.5 bg-gray-100'>nix run .#watch-server</code>.
+      You can then spin up the processes by running <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix run .#watch-server</code>.
     </p>
   
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100'>package</code> output in turn can be used to make the <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> command available in your <code class='py-0.5 px-0.5 bg-gray-100'>devShell</code>:
+      The <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>package</code> output in turn can be used to make the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>watch-server</code> command available in your <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>devShell</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>devShells = {
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>devShells = {
   default = pkgs.mkShell {
     name = "my-shell";
     nativeBuildInputs = [
@@ -749,10 +697,10 @@ nix run</code></pre></div>
   };
 };</code></pre></div>
     <p class='mb-3'>
-      You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100'>watch-server</code> to run your processes.
+      You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>watch-server</code> to run your processes.
     </p>
   
-    <h3 id='prehook' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='prehook' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   preHook
   
@@ -767,16 +715,16 @@ nix run</code></pre></div>
     </h3>
   
     <p class='mb-3'>
-      If you’d like to run certain commands before starting the processes, you can add them to <code class='py-0.5 px-0.5 bg-gray-100'>preHook</code>:
+      If you’d like to run certain commands before starting the processes, you can add them to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>preHook</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
   preHook = ''
     # Cleanup on EXIT, this runs irrespective of exit-code of process-compose
     trap "rm -rf ./data" EXIT
     export USER=foo
   '';
 };</code></pre></div>
-    <h3 id='posthook' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+    <h3 id='posthook' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   postHook
   
@@ -791,14 +739,14 @@ nix run</code></pre></div>
     </h3>
   
     <p class='mb-3'>
-      Or if you’d like to run certain commands upon successful execution of <code class='py-0.5 px-0.5 bg-gray-100'>process-compose</code>, i.e exits with <code class='py-0.5 px-0.5 bg-gray-100'>exit-code: 0</code>, then add them to <code class='py-0.5 px-0.5 bg-gray-100'>postHook</code>:
+      Or if you’d like to run certain commands upon successful execution of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code>, i.e exits with <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>exit-code: 0</code>, then add them to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>postHook</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
   postHook = ''
     cat foo.txt
   '';
 };</code></pre></div>
-    <h2 id='module-api' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='module-api' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Module API
   
@@ -819,20 +767,20 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;.environment</code>: In the YAML config, a list of environment strings are specified. While this is supported, you can also specify the env vars as a Nix attrset
+          <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose.&lt;name&gt;.environment</code>: In the YAML config, a list of environment strings are specified. While this is supported, you can also specify the env vars as a Nix attrset
         </li>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;.processes.&lt;name&gt;.command</code>: The command string does not have access to the process environment, so if your command becomes shellscript-like you probably want to wrap it in a <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.writeShellApplication</code> (see <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/22' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>#22</a>).
+          <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose.&lt;name&gt;.processes.&lt;name&gt;.command</code>: The command string does not have access to the process environment, so if your command becomes shellscript-like you probably want to wrap it in a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs.writeShellApplication</code> (see <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/22' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>#22</a>).
         </li>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100'>process-compose.&lt;name&gt;.shell</code>: This is set to <code class='py-0.5 px-0.5 bg-gray-100'>pkgs.bash</code> by default, obviating reproducibility issues due to depending on globally available bash.
+          <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose.&lt;name&gt;.shell</code>: This is set to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs.bash</code> by default, obviating reproducibility issues due to depending on globally available bash.
         </li>
       
     </ul>
   
-    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   See also
   
@@ -854,7 +802,7 @@ nix run</code></pre></div>
       
     </ul>
   
-    <h2 id='related-projects' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='related-projects' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Related projects
   
@@ -871,11 +819,11 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://community.flake.parts/services-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>services-flake</code></a>: NixOS-like services built on top of process-compose-flake. Use this if you want to run popular services (like postgres).
+          <a href='https://community.flake.parts/services-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services-flake</code></a>: NixOS-like services built on top of process-compose-flake. Use this if you want to run popular services (like postgres).
         </li>
       
         <li>
-          <a href='https://github.com/srid/proc-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>proc-flake</code></a>: A similar module that uses a <code class='py-0.5 px-0.5 bg-gray-100'>Procfile</code>-based runner. It is less feature-rich, but <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/30' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>at times more reliable</a> than process-compose.
+          <a href='https://github.com/srid/proc-flake' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>proc-flake</code></a>: A similar module that uses a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>Procfile</code>-based runner. It is less feature-rich, but <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/30' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>at times more reliable</a> than process-compose.
         </li>
       
     </ul>
@@ -1044,7 +992,7 @@ nix run</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='modules'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='modules'>
             Modules
           </a>
           
@@ -1089,7 +1037,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

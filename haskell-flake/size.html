@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d0260305-bf43-426f-a22c-a2c073ba1a35' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=94d105c2-85cb-407f-a27e-3d804f8e9ad2' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -130,59 +130,7 @@
         </svg>');
   }
 </style>
-  <!-- What goes in this file will appear on near the end of <head>--><link rel='preload' href='_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf' as='font' type='font/ttf' crossorigin />
-
-<style data-category='fonts'>
-  @font-face {
-    font-family: 'WorkSans';
-    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf */
-    src: url(_emanote-static/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf) format("truetype");
-    font-display: swap;
-  }
-
-  body {
-    font-family: 'WorkSans', sans-serif;
-
-    /* Set the default font weight */
-    font-variation-settings: 'wght' 350;
-
-    /* Define css variables so they may be used outside of this file */
-    --font-variation-bold: 'wght' 500;
-    --font-variation-link: 'wght' 400;
-  }
-
-  .emanoteBoldLink {
-    font-variation-settings: var(--font-variation-link);
-  }
-
-  .emanoteBold,
-  strong {
-    font-variation-settings: var(--font-variation-bold);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  header,
-  .header-font {
-    font-family: 'WorkSans', sans-serif;
-  }
-
-  h1 {
-    font-variation-settings: 'wght' 500;
-  }
-
-  h2 {
-    font-variation-settings: 'wght' 400;
-  }
-
-  h3 {
-    font-variation-settings: 'wght' 300;
-  }
-</style>
+  <!-- What goes in this file will appear on near the end of <head>-->
 
   
     <style>
@@ -374,7 +322,7 @@
       
         <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:shadow-2xl md:mb-8'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
+          <nav id='sidebar' class='flex-shrink hidden font-sans leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
   <div class='px-2 py-2 text-gray-800'>
     <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
       <a href='-/tags' title='View tags'>
@@ -445,7 +393,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -485,7 +433,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -604,7 +552,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
+    <a class='font-bold hover:bg-sky-200 rounded px-1.5 truncate' title='Guide' href='haskell-flake/guide'>
       Guide
     </a>
     
@@ -1000,7 +948,7 @@
   
         
     </span>
-    <a class='emanoteBoldLink bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Optimize package size' href='haskell-flake/size'>
+    <a class='font-bold bg-sky-100 hover:bg-sky-200 rounded px-1.5 truncate' title='Optimize package size' href='haskell-flake/size'>
       Optimize package size
     </a>
     
@@ -1295,11 +1243,11 @@
 
 
     <p class='mb-3'>
-      Haskell package derivations created by <code class='py-0.5 px-0.5 bg-gray-100'>haskell-flake</code> are shipped with symlinks to other store paths, like <code class='py-0.5 px-0.5 bg-gray-100'>$out/lib</code>, <code class='py-0.5 px-0.5 bg-gray-100'>$out/nix-support</code> and <code class='py-0.5 px-0.5 bg-gray-100'>$out/share/doc</code>. In addition, enabling profiling or haddock can increase the size of these packages. If your Haskell application is end-user software, you will want to strip all but the executables. This can be achieved using <code class='py-0.5 px-0.5 bg-gray-100'>justStaticExecutables</code>:
+      Haskell package derivations created by <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskell-flake</code> are shipped with symlinks to other store paths, like <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>$out/lib</code>, <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>$out/nix-support</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>$out/share/doc</code>. In addition, enabling profiling or haddock can increase the size of these packages. If your Haskell application is end-user software, you will want to strip all but the executables. This can be achieved using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>justStaticExecutables</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>  # Inside perSystem
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>  # Inside perSystem
   packages.default = pkgs.haskell.lib.justStaticExecutables self'.packages.foo;</code></pre></div>
-    <h2 id='removing-unnecessary-nix-dependencies' class='group mt-6 mb-4 font-bold text-gray-700 text-4xl'>
+    <h2 id='removing-unnecessary-nix-dependencies' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Removing unnecessary Nix dependencies
   
@@ -1314,7 +1262,7 @@
     </h2>
   
     <p class='mb-3'>
-      There can be cases where <code class='py-0.5 px-0.5 bg-gray-100'>justStaticExecutables</code> doesn’t work. In such cases, you can manually remove references to the store paths that you don’t want to ship. Let’s say you have a haskell project <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> that is dependendent on <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> relies on <code class='py-0.5 px-0.5 bg-gray-100'>data-files</code> in its cabal (which data-files can be, for instance, <code class='py-0.5 px-0.5 bg-gray-100'>js</code> or <code class='py-0.5 px-0.5 bg-gray-100'>html</code> files). Considering you are using <code class='py-0.5 px-0.5 bg-gray-100'>cabal-install &lt; 3.10.1.0</code> the final executable of <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> will have a reference to <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> will depend on <code class='py-0.5 px-0.5 bg-gray-100'>ghc</code>, thus increasing the overal size of the docker image.
+      There can be cases where <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>justStaticExecutables</code> doesn’t work. In such cases, you can manually remove references to the store paths that you don’t want to ship. Let’s say you have a haskell project <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> that is dependendent on <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> relies on <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>data-files</code> in its cabal (which data-files can be, for instance, <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>js</code> or <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>html</code> files). Considering you are using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>cabal-install &lt; 3.10.1.0</code> the final executable of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> will have a reference to <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> will depend on <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>ghc</code>, thus increasing the overal size of the docker image.
     </p>
   
     <p class='mb-3'>
@@ -1326,9 +1274,9 @@
         <li>
           
     <p class='mb-3'>
-      Build and scan <a href='haskell-flake/docker' class='text-sky-600 emanoteBoldLink hover:underline' data-wikilink-type='WikiLinkNormal'>the docker image</a> for store paths that are taking up the most space:
+      Build and scan <a href='haskell-flake/docker' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>the docker image</a> for store paths that are taking up the most space:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix build .#dockerImage
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>nix build .#dockerImage
 docker load -i &lt; result
 docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tail</code></pre></div>
         </li>
@@ -1336,7 +1284,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
         <li>
           
     <p class='mb-3'>
-      After the scan you will notice that <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> will be present and its quite obvious it shouldn’t be present because all of that will be packaged in the executable of <code class='py-0.5 px-0.5 bg-gray-100'>foo</code>.
+      After the scan you will notice that <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> will be present and its quite obvious it shouldn’t be present because all of that will be packaged in the executable of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code>.
     </p>
   
         </li>
@@ -1344,17 +1292,17 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
         <li>
           
     <p class='mb-3'>
-      It might not be obvious to you that <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> is causing the increase in size. In such cases you can use <code class='py-0.5 px-0.5 bg-gray-100'>nix why-depends</code> to find out why <code class='py-0.5 px-0.5 bg-gray-100'>ghc</code> is present in the docker image:
+      It might not be obvious to you that <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> is causing the increase in size. In such cases you can use <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>nix why-depends</code> to find out why <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>ghc</code> is present in the docker image:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>nix why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>nix why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x</code></pre></div>
         </li>
       
         <li>
           
     <p class='mb-3'>
-      Now that you know that <code class='py-0.5 px-0.5 bg-gray-100'>bar</code> is causing the increase in size, let’s wrap the executable of <code class='py-0.5 px-0.5 bg-gray-100'>foo</code> <a href='https://srid.ca/remove-references-to' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>removing references to</a> <code class='py-0.5 px-0.5 bg-gray-100'>bar</code>:
+      Now that you know that <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> is causing the increase in size, let’s wrap the executable of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> <a href='https://srid.ca/remove-references-to' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>removing references to</a> <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
   # Inside `haskellProjects`
   haskellProjects.default = 
     let
@@ -1418,7 +1366,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/guide'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/guide'>
             Guide
           </a>
           
@@ -1433,7 +1381,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
         </li>
       
         <li>
-          <a class='text-sky-600 emanoteBoldLink hover:bg-sky-50' href='haskell-flake/docker'>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='haskell-flake/docker'>
             Building a docker image
           </a>
           
@@ -1478,7 +1426,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.25.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.3.26.0'>
       <img class='w-6 h-6 hover:text-sky-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
