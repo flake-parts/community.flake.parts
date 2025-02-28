@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=9db897f4-a319-4237-9c82-54dfa149d684' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=2be0d795-e509-4552-975c-4913d1b85f7c' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -2073,7 +2073,6 @@
   <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{ config, lib, name, pkgs, ... }:
 {
   options = {
-    enable = lib.mkEnableOption "Enable ${name} service";
     package = lib.mkPackageOption pkgs "hello" { };
     message = lib.mkOption {
       type = lib.types.str;
@@ -2104,7 +2103,7 @@
         </li>
       
         <li>
-          And we don’t have to write <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>options.services."${name}"</code>, as that is abstracted away by the library.
+          And we don’t have to write <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>options.services."${name}"</code> or define <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>enable</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dataDir</code> options, as that is abstracted away by the library.
         </li>
       
     </ul>
