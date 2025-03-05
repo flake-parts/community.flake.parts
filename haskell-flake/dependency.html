@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=073dc223-1ded-466b-b1bc-9d4599a9ecbb' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=65ce13ba-5da7-4583-b142-1254ce712774' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -1333,6 +1333,50 @@
       
     </ul>
   
+    <h3 id='multi-path' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
+      
+  Using a multi-package Haskell Git repo
+  
+  <a href='haskell-flake/dependency#multi-path' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      If you want to override multiple dependencies whose source exist in the same mono repo (for e.g., <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code> in <a href='https://github.com/srid/haskell-multi-nix' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a>, you can do so as follows:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          Add a flake input pointing to the monorepo (eg., <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskell-multi-nix</code> Git repo) in <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>flake.nix</code>:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  inputs = {
+    haskell-multi-nix.url = "github:srid/haskell-multi-nix";
+    haskell-multi-nix.flake = false;
+  };
+}</code></pre></div>
+        </li>
+      
+        <li>
+          Add a separate entry in <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellProjects.&lt;name&gt;.packages</code> for each of the package in the subdirectories:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  perSystem = { self', config, pkgs, ... }: {
+    haskellProjects.default = {
+      packages = {
+        foo.source = inputs.haskell-multi-nix + /foo;
+        bar.source = inputs.haskell-multi-nix + /bar;
+      };
+    };
+  };
+}</code></pre></div>
+        </li>
+      
+    </ul>
+  
     <h3 id='hackage' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   Using a Hackage version
@@ -1442,6 +1486,17 @@
             <li class='whitespace-nowrap truncate mt-2' title='Using a Git repo'>
               <a href='haskell-flake/dependency#path' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
                 Using a Git repo
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Using a multi-package Haskell Git repo'>
+              <a href='haskell-flake/dependency#multi-path' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Using a multi-package Haskell Git repo
               </a>
               
         <ul class='ml-2'>
