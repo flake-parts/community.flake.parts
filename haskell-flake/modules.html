@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fe0d284b-1b76-4c50-8f11-2ba1b99d3718' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=a0023c9c-6c1b-4350-b5a6-5bb1ae8c18d9' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -1283,11 +1283,11 @@
       This way your <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
     </p>
   
-    <h2 id='module-arguments' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
+    <h2 id='args' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Module arguments
   
-  <a href='haskell-flake/modules#module-arguments' class='--ema-anchor'>
+  <a href='haskell-flake/modules#args' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1301,11 +1301,11 @@
       A haskell-flake project module takes the following arguments:
     </p>
   <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 font-mono'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>self</code></td></tr></tbody></table>
-    <h2 id='default-modules' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
+    <h2 id='default' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Default modules
   
-  <a href='haskell-flake/modules#default-modules' class='--ema-anchor'>
+  <a href='haskell-flake/modules#default' class='--ema-anchor'>
     <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
@@ -1337,6 +1337,44 @@
       By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>output</code> project module, you automatically get the overrides from “bar” as well as the <a href='haskell-flake/local' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a>. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
     </p>
   
+    <h2 id='non-default' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
+      
+  Export non-default project modules
+  
+  <a href='haskell-flake/modules#non-default' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      The flake output <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellFlakeProjectModules.output</code> exports <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>packages</code> and <a href='haskell-flake/settings' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a> options of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellProject.default</code>, but you could create custom flake output that does the same for an arbitrary project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>bar</code>, as follows:
+    </p>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># Inside foo/flake.nix's outputs
+{
+  flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
+    flake.haskellFlakeProjectModules = {
+      bar = { pkgs, lib, ... }: withSystem pkgs.system ({ config, ... }:
+        config.haskellProjects.bar.defaults.projectModules.output
+      );
+    };
+  });
+}</code></pre></div>
+    <p class='mb-3'>
+      The flake output <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>haskellFlakeProjectModules.bar</code> of <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>foo</code> can be imported in another project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>baz</code>, as:
+    </p>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># baz/flake.nix's perSystem
+{ 
+  haskellProjects.default = {
+    imports = [
+      inputs.foo.haskellFlakeProjectModules.bar
+    ];
+  };
+}</code></pre></div>
     <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Examples
@@ -1379,7 +1417,7 @@
         <ul class='ml-2'>
           
             <li class='whitespace-nowrap truncate mt-2' title='Module arguments'>
-              <a href='haskell-flake/modules#module-arguments' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+              <a href='haskell-flake/modules#args' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
                 Module arguments
               </a>
               
@@ -1390,8 +1428,19 @@
             </li>
           
             <li class='whitespace-nowrap truncate mt-2' title='Default modules'>
-              <a href='haskell-flake/modules#default-modules' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+              <a href='haskell-flake/modules#default' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
                 Default modules
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Export non-default project modules'>
+              <a href='haskell-flake/modules#non-default' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Export non-default project modules
               </a>
               
         <ul class='ml-2'>

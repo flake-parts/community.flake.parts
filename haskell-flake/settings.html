@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fe0d284b-1b76-4c50-8f11-2ba1b99d3718' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=a0023c9c-6c1b-4350-b5a6-5bb1ae8c18d9' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -1656,6 +1656,10 @@
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><p>The flake output <code>haskellFlakeProjectModules.output</code> exports <code>packages</code> and <a href='haskell-flake/settings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Package Settings</a> options of <code>haskellProject.default</code>, but you could create custom flake output that does the same for an arbitrary project, let’s say <code>bar</code>, as follows:</p></div>
+    </div>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div><p>The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code>packages</code> (see <a href='haskell-flake/dependency' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code>settings</code> (see <a href='haskell-flake/settings' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code>haskellProject.default</code> entry you can import “bar” as follows:</p></div>
