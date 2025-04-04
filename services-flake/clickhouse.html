@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=5e50ffed-31c4-4e1f-8870-2b11ce3a3b06' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=ddec18ac-5530-49c9-bfc3-6baa59876af3' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -2193,6 +2193,21 @@
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
       <div><a href='services-flake/clickhouse' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkBranch'>Clickhouse</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-sky-600 font-semibold hover:bg-sky-50' href='services-flake/datadir'>
+            Data directory
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-sky-200 hover:border-sky-500'>
+      <div><p><code>dataDir</code> of a service is where the service persists its state. Resetting the state will not only give the service a fresh start but in some cases, like <a href='services-flake/clickhouse' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> or other database services, it loads the updated schema/database-init-scripts. To reset the state of an instance of a service, <code>x</code>, where <code>x</code> is declared in your configuration like <code>services.&lt;name&gt;.x</code>, follow:</p></div>
     </div>
   
 </div>

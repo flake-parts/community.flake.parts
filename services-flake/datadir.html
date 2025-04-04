@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=5e50ffed-31c4-4e1f-8870-2b11ce3a3b06' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=ddec18ac-5530-49c9-bfc3-6baa59876af3' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -1998,6 +1998,40 @@
   <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>|-- data
 |   |-- pg
 |   |-- rd</code></pre></div>
+    <h2 id='reset-state' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
+      
+  Reset state
+  
+  <a href='services-flake/datadir#reset-state' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h2>
+  
+    <p class='mb-3'>
+      <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>dataDir</code> of a service is where the service persists its state. Resetting the state will not only give the service a fresh start but in some cases, like <a href='services-flake/clickhouse' class='text-sky-600 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> or other database services, it loads the updated schema/database-init-scripts. To reset the state of an instance of a service, <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>x</code>, where <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>x</code> is declared in your configuration like <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>services.&lt;name&gt;.x</code>, follow:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Close the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> process
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>rm -rf $PWD/data/x</code>
+        </li>
+      
+        <li>
+          Start the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>process-compose</code> process
+        </li>
+      
+    </ul>
+  
     <h2 id='gotchas' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-4xl'>
       
   Gotchas
@@ -2052,6 +2086,17 @@
             <li class='whitespace-nowrap truncate mt-2' title='Default data directory structure'>
               <a href='services-flake/datadir#default-structure' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
                 Default data directory structure
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='Reset state'>
+              <a href='services-flake/datadir#reset-state' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                Reset state
               </a>
               
         <ul class='ml-2'>
