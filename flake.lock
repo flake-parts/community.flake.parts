@@ -167,11 +167,11 @@
     "haskell-flake_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1743922999,
-        "narHash": "sha256-Wh+Zak8sZUgair4pnZR0mLrLIhhInHS8izj7C1H10B8=",
+        "lastModified": 1744519138,
+        "narHash": "sha256-BWgmM5Vh1Km6W6BpSo2GeqLhTWznqLG+cFE6BVAriTg=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "d102e0f8a1773b1a63a616faef670cf5e129f9e9",
+        "rev": "f95c7d51d8f34aa0a1fc2c18403b247c8e9763cc",
         "type": "github"
       },
       "original": {
@@ -315,11 +315,11 @@
     "services-flake": {
       "flake": false,
       "locked": {
-        "lastModified": 1743899921,
-        "narHash": "sha256-sHurLv7zofk88KxfgplP7Hz6NwIpAi2Rn4Z8FYjdkrg=",
+        "lastModified": 1744506128,
+        "narHash": "sha256-lrtYrPuLBX6sdBFlNDTTMVp1OQxnjB8ETrmVR0jqeoU=",
         "owner": "juspay",
         "repo": "services-flake",
-        "rev": "96bc5a89f5b8375c33d89a9663102655fa5a007a",
+        "rev": "20c12d726c8f37c52a625771fbb164f12ab4eae4",
         "type": "github"
       },
       "original": {
