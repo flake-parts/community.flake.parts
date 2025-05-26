@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=d1242866-196b-4702-b413-7eb0a969dece' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=b5bba495-288a-435f-af43-0dd10155c479' rel='stylesheet' type='text/css' />
 
   <style data-category='error'>
   /* Heist error element */
@@ -1369,6 +1369,24 @@
       haskell-flake provides the following settings on top of those provided by <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a>.
     </p>
   
+    <h3 id='generateoptparseapplicativecompletions' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
+      
+  <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>generateOptparseApplicativeCompletions</code>
+  
+  <a href='haskell-flake/settings#generateoptparseapplicativecompletions' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      Generate and install shell completion files for executables. The executables need to be using <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>optparse-applicative</code> for this to work. Note that this feature is automatically disabled when cross-compiling, since it requires executing the binaries in question.
+    </p>
+  
     <h3 id='removereferencesto' class='group mt-6 mb-4 font-bold text-gray-700 font-sans text-3xl'>
       
   <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>removeReferencesTo</code>
@@ -1545,6 +1563,17 @@
               </a>
               
         <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='generateOptparseApplicativeCompletions'>
+              <a href='haskell-flake/settings#generateoptparseapplicativecompletions' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                generateOptparseApplicativeCompletions
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
           
             <li class='whitespace-nowrap truncate mt-2' title='removeReferencesTo'>
               <a href='haskell-flake/settings#removereferencesto' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
