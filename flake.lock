@@ -65,11 +65,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1752961629,
-        "narHash": "sha256-VeAT2rVVe1W5W/PJri97qwpJrckglH0rd1auLbP7MgI=",
+        "lastModified": 1753040695,
+        "narHash": "sha256-dpOcuQ1eIF6mmjA4b3eGreoYIpffevdhqxs/ykq/IxI=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "c4f0356016f2c0b443a43259abd5f43705759bd4",
+        "rev": "fa5d7125fe32c3b25ee271f3b4013753880519f0",
         "type": "github"
       },
       "original": {
@@ -168,11 +168,11 @@
     "haskell-flake_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1752499668,
-        "narHash": "sha256-Yif99ho8GNgXP0l9vxPHCKi7X16Cf7rwVd+HW1cMVeQ=",
+        "lastModified": 1753034137,
+        "narHash": "sha256-StyB4UPW3lDXSlzwbMGl4Sd3n+Gc+kkAKfzniF0JGaU=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "39065472d2587af93a502423276bfb98c2c6fb09",
+        "rev": "72a74b6ac9cda796e43d39643e818be94f35047f",
         "type": "github"
       },
       "original": {
