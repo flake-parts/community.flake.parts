@@ -1076,7 +1076,7 @@ See #[[start]] for getting started with haskell-flake.
 ===
 
 <!-- Source: index.md -->
-<!-- URL: / -->
+<!-- URL: // -->
 <!-- Title: community.flake.parts -->
 <!-- Wikilinks: [[index]] -->
 
