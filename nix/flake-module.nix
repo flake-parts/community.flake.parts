@@ -63,11 +63,12 @@ in
 
         config = {
           emanote = lib.mkIf config.flake-parts-docs.enable {
-            package = current-flake.inputs.emanote.packages.${system}.default;
             sites.${config.flake-parts-docs.outputName} = {
+              package = current-flake.inputs.emanote.packages.${system}.default;
+              check = false;
               layers = lib.attrValues config.flake-parts-docs.modules;
               port = 5566;
-              prettyUrls = true;
+              extraConfig.template.urlStrategy = "pretty";
             };
           };
         };
