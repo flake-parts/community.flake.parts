@@ -1433,6 +1433,28 @@ This is how running a service with `services-flake` looks like[^demo]:
 
 ===
 
+<!-- Source: services-flake/azurite.md -->
+<!-- URL: /services-flake/azurite -->
+<!-- Title: Azurite -->
+<!-- Wikilinks: [[services-flake/azurite]], [[azurite]] -->
+
+# Azurite
+
+[Azurite](https://github.com/Azure/Azurite) is an open-source emulator that provides a local environment for testing your Azure Blob, Queue Storage, and Table Storage applications.
+
+## Getting Started
+
+```nix
+# In `perSystem.process-compose.<name>`
+{
+  services.azurite."instance-name" = {
+    enable = true;
+  };
+}
+```
+
+===
+
 <!-- Source: services-flake/cassandra.md -->
 <!-- URL: /services-flake/cassandra -->
 <!-- Title: Cassandra -->
@@ -2714,6 +2736,7 @@ short-title: Services
 # Supported services
 
 - [[apache-kafka]]#
+- [[azurite]]#
 - [[cassandra]]#
 - [[clickhouse]]#
 - [[elasticsearch]]#
