@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=280f13c1-0ce6-4b37-b1ab-eaae9e3009bf' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=b66ca224-acf4-44c5-bee0-9106d5051346' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1418,6 +1418,35 @@
       haskell-flake provides the following settings on top of those provided by <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a>.
     </p>
   
+    <h3 id='drvattrs' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
+      
+  <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>drvAttrs</code>
+  
+  <a href='haskell-flake/settings#drvattrs' class='--ema-anchor'>
+    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
+        <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
+      </svg></span>
+  </a>
+
+
+    </h3>
+  
+    <p class='mb-3'>
+      Set arbitrary attributes on the Haskell package derivation. This is a simpler alternative to the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>custom</code> option for setting <a href='https://nixos.asia/en/drv' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>derivation</a> attributes like environment variables.
+    </p>
+  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>settings = {
+  foo = {
+    drvAttrs = {
+      GIT_BIN = lib.getExe' pkgs.git "git";
+      SOME_ENV_VAR = "value";
+    };
+  };
+};</code></pre></div>
+    <p class='mb-3'>
+      <a href='https://github.com/srid/haskell-flake/discussions/430' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Unlike</a> <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>custom</code>, the <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>drvAttrs</code> option composes well with other settings and doesn’t require writing a function.
+    </p>
+  
     <h3 id='generateoptparseapplicativecompletions' class='group mt-6 mb-4 font-bold text-gray-700 text-3xl'>
       
   <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>generateOptparseApplicativeCompletions</code>
@@ -1558,11 +1587,15 @@
       </svg>
     </div>
     <div class='ml-2'>
-       stan configuration<br />This setting looks for a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>.stan.toml</code> file in the root of the package source. See a sample <a href='https://github.com/kowainik/stan/blob/main/.stan.toml' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>.stan.toml</a> configuration for reference.
+       stan configuration
     </div>
   </div>
   <div class='callout-content'>
     
+    <p class='mb-3'>
+      This setting looks for a <code class='py-0.5 px-0.5 bg-gray-100 font-mono'>.stan.toml</code> file in the root of the package source. See a sample <a href='https://github.com/kowainik/stan/blob/main/.stan.toml' class='text-sky-600 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>.stan.toml</a> configuration for reference.
+    </p>
+  
   </div>
 </div>
   <div class='flex items-center justify-center mt-2'>
@@ -1612,6 +1645,17 @@
               </a>
               
         <ul class='ml-2'>
+          
+            <li class='whitespace-nowrap truncate mt-2' title='drvAttrs'>
+              <a href='haskell-flake/settings#drvattrs' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
+                drvAttrs
+              </a>
+              
+        <ul class='ml-2'>
+          
+        </ul>
+      
+            </li>
           
             <li class='whitespace-nowrap truncate mt-2' title='generateOptparseApplicativeCompletions'>
               <a href='haskell-flake/settings#generateoptparseapplicativecompletions' class='--ema-toc bg-sky-200 rounded-md p-0.5'>
