@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1341,9 +1341,9 @@
     </p>
   
     <p class='mb-3'>
-      A “project” in haskell-flake primarily serves the purpose of developing Haskell projects. Additionally, a project also exposes the final <em>package set</em> via the readonly option <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>outputs.finalPackages</code>. This package set includes the base packages (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>basePackages</code>), the <a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> as well as any <a href='haskell-flake/dependency' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>dependency overrides</a> you set. Since we are are only interested in creating a new package set, we can use empty local packages and disable the dev shell:
+      A “project” in haskell-flake primarily serves the purpose of developing Haskell projects. Additionally, a project also exposes the final <em>package set</em> via the readonly option <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>outputs.finalPackages</code>. This package set includes the base packages (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>basePackages</code>), the <a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a> as well as any <a href='haskell-flake/dependency' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>dependency overrides</a> you set. Since we are are only interested in creating a new package set, we can use empty local packages and disable the dev shell:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   haskellProjects.ghc810 = {
     defaults.packages = {};  # Disable scanning for local package
     devShell.enable = false; # Disable devShells
@@ -1354,9 +1354,9 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      You can access this package set as <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>. But this is not terribly interesting, because it is the exact same as the package set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs.haskell.packages.ghc8107</code> from nixpkgs. So let’s add and override some packages in this set:
+      You can access this package set as <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>. But this is not terribly interesting, because it is the exact same as the package set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs.haskell.packages.ghc8107</code> from nixpkgs. So let’s add and override some packages in this set:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   haskellProjects.ghc810 = {
     defaults.packages = {};  # No local packages
     devShell.enable = false;
@@ -1376,13 +1376,13 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This will create a package set that overrides the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>aeson</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dhall</code> packages using the specified versions from Hackage, but with the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>aeson</code> package having the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>jailbreak</code> flag set (which relaxes its Cabal constraints). It also adds the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mylib</code> package which exists neither in nixpkgs nor in Hackage, but comes from somewhere arbitrary and specified as flake input.
+      This will create a package set that overrides the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>aeson</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dhall</code> packages using the specified versions from Hackage, but with the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>aeson</code> package having the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>jailbreak</code> flag set (which relaxes its Cabal constraints). It also adds the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mylib</code> package which exists neither in nixpkgs nor in Hackage, but comes from somewhere arbitrary and specified as flake input.
     </p>
   
     <p class='mb-3'>
-      In your <em>actual</em> haskell project, you can use this package set (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>) as its base package set:
+      In your <em>actual</em> haskell project, you can use this package set (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.ghc810.outputs.finalPackages</code>) as its base package set:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   haskellProjects.myproject = {
     packages.mypackage.source = ./.;
 
@@ -1390,7 +1390,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      Finally, you can externalize this <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ghc810</code> package set as either a flake-parts module or as a <a href='haskell-flake/modules' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>haskell-flake module</a>, and thereon import it from multiple repositories.
+      Finally, you can externalize this <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ghc810</code> package set as either a flake-parts module or as a <a href='haskell-flake/modules' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>haskell-flake module</a>, and thereon import it from multiple repositories.
     </p>
   
     <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1595,7 +1595,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

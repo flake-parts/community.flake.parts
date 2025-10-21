@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1337,27 +1337,27 @@
 
 
     <p class='mb-3'>
-      Haskell libraries ultimately come from <a href='https://hackage.haskell.org/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Hackage</a>, and <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> contains <a href='https://nixpkgs.haskell.page/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>most of these</a>. Adding a library to your project involves modifying the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file and restarting the nix shell. The process is typically as follows:
+      Haskell libraries ultimately come from <a href='https://hackage.haskell.org/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Hackage</a>, and <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> contains <a href='https://nixpkgs.haskell.page/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>most of these</a>. Adding a library to your project involves modifying the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file and restarting the nix shell. The process is typically as follows:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Identify the package name from Hackage. Let’s say you want to use <a href='https://hackage.haskell.org/package/ema' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ema</code></a>
+          Identify the package name from Hackage. Let’s say you want to use <a href='https://hackage.haskell.org/package/ema' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ema</code></a>
         </li>
       
         <li>
-          Add the package, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ema</code>, to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file under <a href='https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>build-depends</code> section</a>.
+          Add the package, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ema</code>, to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file under <a href='https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>build-depends</code> section</a>.
         </li>
       
         <li>
-          Exit and restart the nix shell (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code>).
+          Exit and restart the nix shell (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code>).
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      Step (3) above will try to fetch the package from the Haskell package set in <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs.haskellPackages</code> by default). For various reasons, this package may be either missing or marked as “broken”. In such cases, you will have to override the package locally in the project (see the next section).
+      Step (3) above will try to fetch the package from the Haskell package set in <a href='https://nixos.asia/en/nixpkgs' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>nixpkgs</a> (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs.haskellPackages</code> by default). For various reasons, this package may be either missing or marked as “broken”. In such cases, you will have to override the package locally in the project (see the next section).
     </p>
   
     <h2 id='source' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1393,13 +1393,13 @@
     </h3>
   
     <p class='mb-3'>
-      If you want to use the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>master</code> branch of the <a href='https://hackage.haskell.org/package/ema' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>ema</a> library, for instance, you can do it as follows:
+      If you want to use the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>master</code> branch of the <a href='https://hackage.haskell.org/package/ema' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>ema</a> library, for instance, you can do it as follows:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Add a flake input pointing to the ema Git repo in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code>:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+          Add a flake input pointing to the ema Git repo in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code>:<div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   inputs = {
     ema.url = "github:srid/ema";
     ema.flake = false;
@@ -1408,7 +1408,7 @@
         </li>
       
         <li>
-          Build it using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>callCabal2nix</code> and assign it to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ema</code> name in the Haskell package set by adding it to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages</code> argument of your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code> that is using haskell-flake:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+          Build it using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>callCabal2nix</code> and assign it to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ema</code> name in the Haskell package set by adding it to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages</code> argument of your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code> that is using haskell-flake:<div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   perSystem = { self', config, pkgs, ... }: {
     haskellProjects.default = {
       packages = {
@@ -1420,7 +1420,7 @@
         </li>
       
         <li>
-          Re-run the nix shell (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code>).
+          Re-run the nix shell (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code>).
         </li>
       
     </ul>
@@ -1440,13 +1440,13 @@
     </h3>
   
     <p class='mb-3'>
-      If you want to override multiple dependencies whose source exist in the same mono repo (for e.g., <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> in <a href='https://github.com/srid/haskell-multi-nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a>, you can do so as follows:
+      If you want to override multiple dependencies whose source exist in the same mono repo (for e.g., <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> in <a href='https://github.com/srid/haskell-multi-nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>haskell-multi-nix</a>, you can do so as follows:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Add a flake input pointing to the monorepo (eg., <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskell-multi-nix</code> Git repo) in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code>:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+          Add a flake input pointing to the monorepo (eg., <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskell-multi-nix</code> Git repo) in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake.nix</code>:<div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   inputs = {
     haskell-multi-nix.url = "github:srid/haskell-multi-nix";
     haskell-multi-nix.flake = false;
@@ -1455,7 +1455,7 @@
         </li>
       
         <li>
-          Add a separate entry in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;.packages</code> for each of the package in the subdirectories:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+          Add a separate entry in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;.packages</code> for each of the package in the subdirectories:<div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   perSystem = { self', config, pkgs, ... }: {
     haskellProjects.default = {
       packages = {
@@ -1484,9 +1484,9 @@
     </h3>
   
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.&lt;name&gt;.source</code> also supports Hackage versions. So the following works to pull <a href='https://hackage.haskell.org/package/ema-0.8.2.0' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>ema 0.8.2.0</a>:
+      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.&lt;name&gt;.source</code> also supports Hackage versions. So the following works to pull <a href='https://hackage.haskell.org/package/ema-0.8.2.0' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>ema 0.8.2.0</a>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   perSystem = { self', config, pkgs, ... }: {
     haskellProjects.default = {
       packages = {
@@ -1508,7 +1508,7 @@
 
 
     </h3>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>haskellProjects.default = {
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>haskellProjects.default = {
   settings = {
     fourmolu = { super, ...}: { custom = _: super.fourmolu_0_13_1_0; };
   };
@@ -1546,7 +1546,7 @@
     </h2>
   
     <p class='mb-3'>
-      <a href='haskell-flake/modules' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>settings</code> options for reuse in downstream Haskell projects.
+      <a href='haskell-flake/modules' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Project modules</a> export both <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>settings</code> options for reuse in downstream Haskell projects.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -1792,7 +1792,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

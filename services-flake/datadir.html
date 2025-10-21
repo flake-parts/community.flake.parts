@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -2215,11 +2215,11 @@
 
 
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> is a an option present in all the services, allowing users to specify the directory where a given service will store its data files. Essentially, it is to persist the state of the service even when you exit the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> window.
+      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> is a an option present in all the services, allowing users to specify the directory where a given service will store its data files. Essentially, it is to persist the state of the service even when you exit the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> window.
     </p>
   
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> of these services tend to take <em>relative</em> paths, which are usually relative to the project root. As such, when you run these services using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>, their data files are created relative to whichever directory you are in. If you want these data files to always reside relative to the project directory, instead of using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run</code> consider wrapping the process-compose packages in script, via either <a href='https://community.flake.parts/mission-control' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> module or a <a href='https://just.systems/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>justfile</a>. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> uses the latter.
+      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> of these services tend to take <em>relative</em> paths, which are usually relative to the project root. As such, when you run these services using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>, their data files are created relative to whichever directory you are in. If you want these data files to always reside relative to the project directory, instead of using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run</code> consider wrapping the process-compose packages in script, via either <a href='https://community.flake.parts/mission-control' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> module or a <a href='https://just.systems/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>justfile</a>. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> uses the latter.
     </p>
   
     <h2 id='default-structure' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2239,7 +2239,7 @@
     <p class='mb-3'>
       Let’s say your project defines the following services:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
     # Inside `perSystem.process-compose.&lt;name&gt;`
     services.postgres.pg.enable = true;
     services.redis.rd.enable = true;
@@ -2247,7 +2247,7 @@
     <p class='mb-3'>
       The data directory structure will look like this:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>|-- data
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>|-- data
 |   |-- pg
 |   |-- rd</code></pre></div>
     <h2 id='reset-state' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2265,21 +2265,21 @@
     </h2>
   
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> of a service is where the service persists its state. Resetting the state will not only give the service a fresh start but in some cases, like <a href='services-flake/clickhouse' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> or other database services, it loads the updated schema/database-init-scripts. To reset the state of an instance of a service, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>x</code>, where <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>x</code> is declared in your configuration like <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services.&lt;name&gt;.x</code>, follow:
+      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> of a service is where the service persists its state. Resetting the state will not only give the service a fresh start but in some cases, like <a href='services-flake/clickhouse' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Clickhouse</a> or other database services, it loads the updated schema/database-init-scripts. To reset the state of an instance of a service, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>x</code>, where <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>x</code> is declared in your configuration like <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services.&lt;name&gt;.x</code>, follow:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Close the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> process
+          Close the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> process
         </li>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>rm -rf $PWD/data/x</code>
+          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>rm -rf $PWD/data/x</code>
         </li>
       
         <li>
-          Start the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> process
+          Start the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> process
         </li>
       
     </ul>
@@ -2313,7 +2313,7 @@
     </h3>
   
     <p class='mb-3'>
-      Some services create unix domain socket files under the data directory. As the unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>, if your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> option of the service to a shorter path as a workaround.
+      Some services create unix domain socket files under the data directory. As the unix socket length is limited to <a href='https://linux.die.net/man/7/unix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>about 100 chars</a>, if your data directory is nested too deep, you will have to set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> option of the service to a shorter path as a workaround.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -2511,7 +2511,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

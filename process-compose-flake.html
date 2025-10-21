@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -693,11 +693,11 @@
     </p>
   
     <p class='mb-3'>
-      This <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> module allows you to declare one or more <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> configurations using Nix attribute sets. It will generate corresponding <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages</code> that wrap the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> binary with the given configuration.
+      This <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> module allows you to declare one or more <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> configurations using Nix attribute sets. It will generate corresponding <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages</code> that wrap the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> binary with the given configuration.
     </p>
   
     <p class='mb-3'>
-      This module is practical for local development e.g. if you have a lot of runtime dependencies that depend on each other. Stop executing these programs imperatively over and over again in a specific order, and stop the need to write complicated shell scripts to automate this. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> gives you a process dashboard for monitoring, inspecting logs for each process, and much more, all of this in a TUI.
+      This module is practical for local development e.g. if you have a lot of runtime dependencies that depend on each other. Stop executing these programs imperatively over and over again in a specific order, and stop the need to write complicated shell scripts to automate this. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code> gives you a process dashboard for monitoring, inspecting logs for each process, and much more, all of this in a TUI.
     </p>
   
     <h2 id='quick-example' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -715,17 +715,17 @@
     </h2>
   
     <p class='mb-3'>
-      See <a href='https://github.com/Platonic-Systems/process-compose-flake/blob/main/example/flake.nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>example/flake.nix</code></a> for an example flake. This example shows a demo of <a href='https://github.com/coleifer/sqlite-web' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>sqlite-web</a> using the sample <a href='https://github.com/lerocha/chinook-database' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>chinhook-database</a>.
+      See <a href='https://github.com/Platonic-Systems/process-compose-flake/blob/main/example/flake.nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>example/flake.nix</code></a> for an example flake. This example shows a demo of <a href='https://github.com/coleifer/sqlite-web' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>sqlite-web</a> using the sample <a href='https://github.com/lerocha/chinook-database' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>chinhook-database</a>.
     </p>
   
     <p class='mb-3'>
       To run this example locally,
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>mkdir example && cd example
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='bash language-bash'>mkdir example && cd example
 nix flake init -t github:Platonic-Systems/process-compose-flake
 nix run</code></pre></div>
     <p class='mb-3'>
-      This should open <a href='http://127.0.0.1:8213/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://127.0.0.1:8213/</a> in your web browser. If not, navigate to the logs for the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>sqlite-web</code> process and access the URL. Use <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>demo</code> as the password to access sqlite-web. The interface should look like this:
+      This should open <a href='http://127.0.0.1:8213/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>http://127.0.0.1:8213/</a> in your web browser. If not, navigate to the logs for the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>sqlite-web</code> process and access the URL. Use <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>demo</code> as the password to access sqlite-web. The interface should look like this:
     </p>
   
     <p class='mb-3'>
@@ -747,13 +747,13 @@ nix run</code></pre></div>
     </h2>
   
     <p class='mb-3'>
-      Let’s say you want to have a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>devShell</code> that makes a command <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> available, that you can use to spin up your projects <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>backend-server</code>, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>frontend-server</code>, and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>proxy-server</code>.
+      Let’s say you want to have a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>devShell</code> that makes a command <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> available, that you can use to spin up your projects <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>backend-server</code>, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>frontend-server</code>, and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>proxy-server</code>.
     </p>
   
     <p class='mb-3'>
-      To achieve this using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> you can simply add the following code to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>perSystem</code> function in your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> flake.
+      To achieve this using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> you can simply add the following code to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>perSystem</code> function in your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> flake.
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>process-compose.watch-server = {
   settings.processes = {
     backend-server.command = "${self'.apps.backend-server.program} --port 9000";
     frontend-server.command = "${self'.apps.frontend-server.program} --port 9001";
@@ -770,17 +770,17 @@ nix run</code></pre></div>
   };
 };</code></pre></div>
     <p class='mb-3'>
-      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> will generate the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.${system}.watch-server</code> output for you.
+      <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> will generate the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.${system}.watch-server</code> output for you.
     </p>
   
     <p class='mb-3'>
-      You can then spin up the processes by running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run .#watch-server</code>.
+      You can then spin up the processes by running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run .#watch-server</code>.
     </p>
   
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>package</code> output in turn can be used to make the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> command available in your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>devShell</code>:
+      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>package</code> output in turn can be used to make the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> command available in your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>devShell</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>devShells = {
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>devShells = {
   default = pkgs.mkShell {
     name = "my-shell";
     nativeBuildInputs = [
@@ -789,7 +789,7 @@ nix run</code></pre></div>
   };
 };</code></pre></div>
     <p class='mb-3'>
-      You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> to run your processes.
+      You can enter your devShell by running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix develop</code> and run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>watch-server</code> to run your processes.
     </p>
   
     <h3 id='prehook' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-3xl'>
@@ -807,9 +807,9 @@ nix run</code></pre></div>
     </h3>
   
     <p class='mb-3'>
-      If you’d like to run certain commands before starting the processes, you can add them to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>preHook</code>:
+      If you’d like to run certain commands before starting the processes, you can add them to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>preHook</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>process-compose.watch-server = {
   preHook = ''
     # Cleanup on EXIT, this runs irrespective of exit-code of process-compose
     trap "rm -rf ./data" EXIT
@@ -831,9 +831,9 @@ nix run</code></pre></div>
     </h3>
   
     <p class='mb-3'>
-      Or if you’d like to run certain commands upon successful execution of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code>, i.e exits with <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>exit-code: 0</code>, then add them to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>postHook</code>:
+      Or if you’d like to run certain commands upon successful execution of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose</code>, i.e exits with <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>exit-code: 0</code>, then add them to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>postHook</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>process-compose.watch-server = {
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>process-compose.watch-server = {
   postHook = ''
     cat foo.txt
   '';
@@ -859,15 +859,15 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.environment</code>: In the YAML config, a list of environment strings are specified. While this is supported, you can also specify the env vars as a Nix attrset
+          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.environment</code>: In the YAML config, a list of environment strings are specified. While this is supported, you can also specify the env vars as a Nix attrset
         </li>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.processes.&lt;name&gt;.command</code>: The command string does not have access to the process environment, so if your command becomes shellscript-like you probably want to wrap it in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs.writeShellApplication</code> (see <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/22' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>#22</a>).
+          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.processes.&lt;name&gt;.command</code>: The command string does not have access to the process environment, so if your command becomes shellscript-like you probably want to wrap it in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs.writeShellApplication</code> (see <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/22' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>#22</a>).
         </li>
       
         <li>
-          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.shell</code>: This is set to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs.bash</code> by default, obviating reproducibility issues due to depending on globally available bash.
+          <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;.shell</code>: This is set to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs.bash</code> by default, obviating reproducibility issues due to depending on globally available bash.
         </li>
       
     </ul>
@@ -911,11 +911,11 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://community.flake.parts/services-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code></a>: NixOS-like services built on top of process-compose-flake. Use this if you want to run popular services (like postgres).
+          <a href='https://community.flake.parts/services-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code></a>: NixOS-like services built on top of process-compose-flake. Use this if you want to run popular services (like postgres).
         </li>
       
         <li>
-          <a href='https://github.com/srid/proc-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>proc-flake</code></a>: A similar module that uses a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>Procfile</code>-based runner. It is less feature-rich, but <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/30' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>at times more reliable</a> than process-compose.
+          <a href='https://github.com/srid/proc-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>proc-flake</code></a>: A similar module that uses a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>Procfile</code>-based runner. It is less feature-rich, but <a href='https://github.com/Platonic-Systems/process-compose-flake/issues/30' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>at times more reliable</a> than process-compose.
         </li>
       
     </ul>
@@ -1133,7 +1133,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

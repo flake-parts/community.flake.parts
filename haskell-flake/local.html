@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1337,7 +1337,7 @@
 
 
     <p class='mb-3'>
-      Local Haskell packages are defined in the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.*.source</code> option under <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;</code> module. They are automatically detected if you have a single top-level Cabal package, or multiple Cabal packages defined in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file, via <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default settings</a>.
+      Local Haskell packages are defined in the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.*.source</code> option under <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;</code> module. They are automatically detected if you have a single top-level Cabal package, or multiple Cabal packages defined in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file, via <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default settings</a>.
     </p>
   
     <h2 id='single' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1355,7 +1355,7 @@
     </h2>
   
     <p class='mb-3'>
-      If your repository has a single top-level <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file, haskell-flake will use it by <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default</a>. There is no need to specify <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.*.source</code> yourself.
+      If your repository has a single top-level <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>.cabal</code> file, haskell-flake will use it by <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default</a>. There is no need to specify <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.*.source</code> yourself.
     </p>
   
     <h2 id='multi' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1373,20 +1373,20 @@
     </h2>
   
     <p class='mb-3'>
-      If you have multiple Haskell packages in sub-directories, you can refer to them in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file to have haskell-flake automatically use them as local packages by <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default</a>:
+      If you have multiple Haskell packages in sub-directories, you can refer to them in a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file to have haskell-flake automatically use them as local packages by <a href='haskell-flake/defaults' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>default</a>:
     </p>
   
     <p class='mb-3'>
       See <a href='https://github.com/srid/haskell-multi-nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/srid/haskell-multi-nix</a> for example:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>$ cat cabal.project
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>$ cat cabal.project
 packages:
     ./foo
     ./bar</code></pre></div>
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file must begin with a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages:</code> key, followed by a list of directories containing the cabal files.
+      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cabal.project</code> file must begin with a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages:</code> key, followed by a list of directories containing the cabal files.
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>$ ls */*.cabal
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>$ ls */*.cabal
 bar/bar.cabal  foo/foo.cabal</code></pre></div>
     <h2 id='source-filtering' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
       
@@ -1403,11 +1403,11 @@ bar/bar.cabal  foo/foo.cabal</code></pre></div>
     </h2>
   
     <p class='mb-3'>
-      When a local package is in a sub-directory, haskell-flake will create a new store path to avoid changes to parent files (using <a href='https://github.com/srid/haskell-flake/blob/67db46409b4c2e92abf27ddde7c75ae310d4068c/nix/build-haskell-package.nix#L15-L24' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cleanSourceWith</code></a>) triggering a rebuild.
+      When a local package is in a sub-directory, haskell-flake will create a new store path to avoid changes to parent files (using <a href='https://github.com/srid/haskell-flake/blob/67db46409b4c2e92abf27ddde7c75ae310d4068c/nix/build-haskell-package.nix#L15-L24' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cleanSourceWith</code></a>) triggering a rebuild.
     </p>
   
     <p class='mb-3'>
-      When a local package is the only top-level one, however, any file in the repository will by default trigger a rebuild. This is because <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;.projectRoot</code> is set to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>self</code> by default.
+      When a local package is the only top-level one, however, any file in the repository will by default trigger a rebuild. This is because <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProjects.&lt;name&gt;.projectRoot</code> is set to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>self</code> by default.
     </p>
   
     <h3 id='rebuild' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-3xl'>
@@ -1435,7 +1435,7 @@ bar/bar.cabal  foo/foo.cabal</code></pre></div>
         </li>
       
         <li>
-          Or, set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>projectRoot</code> to a subset of your flake root using <a href='https://nixos.org/manual/nixpkgs/stable/#function-library-example-lib.fileset.toSource' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>fileset.toSource</code></a>. For <a href='https://github.com/srid/haskell-template/blob/033913a6fe418ea0c25ec2c2604ab4030563ba2e/flake.nix#L28-L34' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>example</a>:<div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+          Or, set <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>projectRoot</code> to a subset of your flake root using <a href='https://nixos.org/manual/nixpkgs/stable/#function-library-example-lib.fileset.toSource' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>fileset.toSource</code></a>. For <a href='https://github.com/srid/haskell-template/blob/033913a6fe418ea0c25ec2c2604ab4030563ba2e/flake.nix#L28-L34' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>example</a>:<div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   haskellProjects.default = {
     projectRoot = builtins.toString (lib.fileset.toSource {
       root = ./.;
@@ -1709,7 +1709,7 @@ bar/bar.cabal  foo/foo.cabal</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

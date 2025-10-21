@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -707,13 +707,13 @@
   <div class='callout-content dark:text-gray-200'>
     
     <p class='mb-3'>
-      As a simpler alternative to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mission-control</code>, you may also use <a href='https://just.systems/man/en/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>just</a> (see <a href='https://github.com/srid/haskell-template/pull/111' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>example use</a>).
+      As a simpler alternative to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mission-control</code>, you may also use <a href='https://just.systems/man/en/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>just</a> (see <a href='https://github.com/srid/haskell-template/pull/111' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>example use</a>).
     </p>
   
   </div>
 </div>
     <p class='mb-3'>
-      The <a href='https://github.com/Platonic-Systems/mission-control' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> flake-parts module enables creating a set of scripts or commands to run in the Nix dev shell. This makes it possible for the project’s user to locate all of the commands they need (to get started) in one place, often replacing the likes of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>Makefile</code> or <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bin/</code> scripts.
+      The <a href='https://github.com/Platonic-Systems/mission-control' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> flake-parts module enables creating a set of scripts or commands to run in the Nix dev shell. This makes it possible for the project’s user to locate all of the commands they need (to get started) in one place, often replacing the likes of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>Makefile</code> or <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bin/</code> scripts.
     </p>
   
     <h2 id='usage' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -731,16 +731,16 @@
     </h2>
   
     <p class='mb-3'>
-      To use this module, add <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mission-control</code> to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>inputs</code>,
+      To use this module, add <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mission-control</code> to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>inputs</code>,
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside inputs
   mission-control.url = "github:Platonic-Systems/mission-control";
 }</code></pre></div>
     <p class='mb-3'>
       and import its flakeModule:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside mkFlake
   imports = [
     inputs.mission-control.flakeModule
@@ -761,7 +761,7 @@
     </h2>
   
     <p class='mb-3'>
-      Here we’ll show a sample of scripts that are particular useful when developing <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>[Haskell](/haskell-flake)</code> projects.
+      Here we’ll show a sample of scripts that are particular useful when developing <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>[Haskell](/haskell-flake)</code> projects.
     </p>
   
     <h3 id='docs-hoogle' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-3xl'>
@@ -779,9 +779,9 @@
     </h3>
   
     <p class='mb-3'>
-      We can add a convenient script to start Hoogle on project dependencies as follows. As a result, typing <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, docs</code> in the dev shell will start Hoogle.
+      We can add a convenient script to start Hoogle on project dependencies as follows. As a result, typing <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, docs</code> in the dev shell will start Hoogle.
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside perSystem
   mission-control.scripts = {
     docs = {
@@ -795,7 +795,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>exec</code> option can be either a shell script (string) or a Nix package. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>category</code> option defines the group that this script belongs to, when displayed in the menu.
+      The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>exec</code> option can be either a shell script (string) or a Nix package. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>category</code> option defines the group that this script belongs to, when displayed in the menu.
     </p>
   
     <h3 id='cabal-repl' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-3xl'>
@@ -813,9 +813,9 @@
     </h3>
   
     <p class='mb-3'>
-      To start a cabal repl from your devShell on running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, repl</code>, use:
+      To start a cabal repl from your devShell on running <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, repl</code>, use:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside perSystem
   mission-control.scripts = {
     repl = {
@@ -828,7 +828,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      <a href='https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>"$@"</code></a> represents the command-line arguments passed to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, repl</code>. This allows us to pass custom arguments to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cabal repl</code>. For example, if you wish to run an executable <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> from your project in cabal repl, you’d run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, repl exe:foo</code>. Similarly, to get into the repl for a library <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> you’d run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, run lib:bar</code>.
+      <a href='https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>"$@"</code></a> represents the command-line arguments passed to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, repl</code>. This allows us to pass custom arguments to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cabal repl</code>. For example, if you wish to run an executable <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> from your project in cabal repl, you’d run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, repl exe:foo</code>. Similarly, to get into the repl for a library <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> you’d run <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, run lib:bar</code>.
     </p>
   
     <h3 id='treefmt' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-3xl'>
@@ -846,9 +846,9 @@
     </h3>
   
     <p class='mb-3'>
-      If you use the <a href='https://nixos.asia/en/treefmt' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>treefmt</a> module for autoformatting the source tree, you can alias it as <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, fmt</code>:
+      If you use the <a href='https://nixos.asia/en/treefmt' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>treefmt</a> module for autoformatting the source tree, you can alias it as <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, fmt</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{ 
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{ 
   # Inside perSystem
   mission-control.scripts = {
     fmt = {
@@ -859,7 +859,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      Note that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>exec</code> in this example is a Nix package.
+      Note that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>exec</code> in this example is a Nix package.
     </p>
   
     <h2 id='tips' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -891,9 +891,9 @@
     </h3>
   
     <p class='mb-3'>
-      If you don’t wish to run your command using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>, &lt;command&gt;</code> you can change the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>,</code> to be any string of your choice by setting the option <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>wrapperName</code>, as follows:
+      If you don’t wish to run your command using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>, &lt;command&gt;</code> you can change the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>,</code> to be any string of your choice by setting the option <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>wrapperName</code>, as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside perSystem
   mission-control = {
     wrapperName = "s";
@@ -1145,7 +1145,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

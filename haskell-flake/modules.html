@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1337,13 +1337,13 @@
 
 
     <p class='mb-3'>
-      haskell-flake’s per-project configuration can be modularized and shared among multiple repos. This is done using the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake.haskellFlakeProjectModules</code> flake output.
+      haskell-flake’s per-project configuration can be modularized and shared among multiple repos. This is done using the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake.haskellFlakeProjectModules</code> flake output.
     </p>
   
     <p class='mb-3'>
-      Let’s say you have two repositories – <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>common</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>myapp</code>. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>common</code> repository may expose some shared haskell-flake settings as follows:
+      Let’s say you have two repositories – <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>common</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>myapp</code>. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>common</code> repository may expose some shared haskell-flake settings as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside flake-parts' `mkFlake`:
   flake.haskellFlakeProjectModules.default = { pkgs, ... }: {
     devShell.tools = hp: {
@@ -1358,9 +1358,9 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This module can then be imported in multiple projects, such as the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>myapp</code> project:
+      This module can then be imported in multiple projects, such as the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>myapp</code> project:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside flake-parts' `perSystem`:
   haskellProjects.default = {
     imports = [
@@ -1372,7 +1372,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This way your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
+      This way your <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>app</code> project knows how to find “mylib” library as well as includes the default tools you want to use in the dev shell.
     </p>
   
     <h2 id='args' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1392,7 +1392,7 @@
     <p class='mb-3'>
       A haskell-flake project module takes the following arguments:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>self</code></td></tr></tbody></table>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Argument</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The perSystem’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>pkgs</code> argument</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>self</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The flake’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>self</code></td></tr></tbody></table>
     <h2 id='default' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
       
   Default modules
@@ -1408,13 +1408,13 @@
     </h2>
   
     <p class='mb-3'>
-      By default, haskell-flake will generate the following modules for the “default” <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProject</code>:
+      By default, haskell-flake will generate the following modules for the “default” <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProject</code>:
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Module</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Contents</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.output</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Local packages</a> & dependency overrides</td></tr></tbody></table>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Module</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Contents</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.output</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Local packages</a> & dependency overrides</td></tr></tbody></table>
     <p class='mb-3'>
-      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages</code> (see <a href='haskell-flake/dependency' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>settings</code> (see <a href='haskell-flake/settings' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProject.default</code> entry you can import “bar” as follows:
+      The idea here being that you can “connect” two Haskell projects such that they depend on one another while reusing the overrides – <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages</code> (see <a href='haskell-flake/dependency' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Overriding dependencies</a>) and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>settings</code> (see <a href='haskell-flake/settings' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a>) – from one place. For example, if you have a project “foo” that depends on “bar” and if “foo”’s flake.nix has “bar” as its input, then in “foo”’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProject.default</code> entry you can import “bar” as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># foo's flake.nix's perSystem
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'># foo's flake.nix's perSystem
 { 
   haskellProjects.default = {
     imports = [
@@ -1426,7 +1426,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>output</code> project module, you automatically get the overrides from “bar” as well as the <a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a>. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
+      By importing “bar”’s <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>output</code> project module, you automatically get the overrides from “bar” as well as the <a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>local packages</a>. This way you don’t have to duplicate the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>settings</code> and manually specify the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.&lt;name&gt;.source</code> in “foo”’s flake.nix.
     </p>
   
     <h2 id='non-default' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -1444,9 +1444,9 @@
     </h2>
   
     <p class='mb-3'>
-      The flake output <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.output</code> exports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages</code> and <a href='haskell-flake/settings' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a> options of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellProject.default</code>, but you could create custom flake output that does the same for an arbitrary project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code>, as follows:
+      The flake output <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.output</code> exports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages</code> and <a href='haskell-flake/settings' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Package Settings</a> options of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellProject.default</code>, but you could create custom flake output that does the same for an arbitrary project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code>, as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># Inside foo/flake.nix's outputs
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'># Inside foo/flake.nix's outputs
 {
   flake-parts.lib.mkFlake { inherit inputs; } ({ withSystem, ... }: {
     flake.haskellFlakeProjectModules = {
@@ -1457,9 +1457,9 @@
   });
 }</code></pre></div>
     <p class='mb-3'>
-      The flake output <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.bar</code> of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> can be imported in another project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>baz</code>, as:
+      The flake output <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskellFlakeProjectModules.bar</code> of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> can be imported in another project, let’s say <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>baz</code>, as:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># baz/flake.nix's perSystem
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'># baz/flake.nix's perSystem
 { 
   haskellProjects.default = {
     imports = [
@@ -1484,7 +1484,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/nammayatri/nammayatri</a> (imports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>shared-kernel</code> which in turn imports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>euler-hs</code>)
+          <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/nammayatri/nammayatri</a> (imports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>shared-kernel</code> which in turn imports <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>euler-hs</code>)
         </li>
       
     </ul>
@@ -1729,7 +1729,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

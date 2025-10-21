@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1335,9 +1335,9 @@
 
 
     <p class='mb-3'>
-      Haskell package derivations created by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>haskell-flake</code> are shipped with symlinks to other store paths, like <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>$out/lib</code>, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>$out/nix-support</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>$out/share/doc</code>. In addition, enabling profiling or haddock can increase the size of these packages. If your Haskell application is end-user software, you will want to strip all but the executables. This can be achieved using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>justStaticExecutables</code>:
+      Haskell package derivations created by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>haskell-flake</code> are shipped with symlinks to other store paths, like <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>$out/lib</code>, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>$out/nix-support</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>$out/share/doc</code>. In addition, enabling profiling or haddock can increase the size of these packages. If your Haskell application is end-user software, you will want to strip all but the executables. This can be achieved using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>justStaticExecutables</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>  # Inside perSystem
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>  # Inside perSystem
   packages.default = pkgs.haskell.lib.justStaticExecutables self'.packages.foo;</code></pre></div>
     <h2 id='removing-unnecessary-nix-dependencies' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
       
@@ -1354,7 +1354,7 @@
     </h2>
   
     <p class='mb-3'>
-      There can be cases where <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>justStaticExecutables</code> doesn’t work. In such cases, you can manually remove references to the store paths that you don’t want to ship. Let’s say you have a haskell project <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> that is dependendent on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> relies on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>data-files</code> in its cabal (which data-files can be, for instance, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>js</code> or <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>html</code> files). Considering you are using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>cabal-install &lt; 3.10.1.0</code> the final executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> will have a reference to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> will depend on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ghc</code>, thus increasing the overal size of the docker image.
+      There can be cases where <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>justStaticExecutables</code> doesn’t work. In such cases, you can manually remove references to the store paths that you don’t want to ship. Let’s say you have a haskell project <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> that is dependendent on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> relies on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>data-files</code> in its cabal (which data-files can be, for instance, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>js</code> or <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>html</code> files). Considering you are using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>cabal-install &lt; 3.10.1.0</code> the final executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> will have a reference to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> will depend on <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ghc</code>, thus increasing the overal size of the docker image.
     </p>
   
     <p class='mb-3'>
@@ -1368,7 +1368,7 @@
     <p class='mb-3'>
       Build and scan <a href='haskell-flake/docker' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>the docker image</a> for store paths that are taking up the most space:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>nix build .#dockerImage
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='bash language-bash'>nix build .#dockerImage
 docker load -i &lt; result
 docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tail</code></pre></div>
         </li>
@@ -1376,7 +1376,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
         <li>
           
     <p class='mb-3'>
-      After the scan you will notice that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> will be present and its quite obvious it shouldn’t be present because all of that will be packaged in the executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code>.
+      After the scan you will notice that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> will be present and its quite obvious it shouldn’t be present because all of that will be packaged in the executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code>.
     </p>
   
         </li>
@@ -1384,17 +1384,17 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
         <li>
           
     <p class='mb-3'>
-      It might not be obvious to you that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> is causing the increase in size. In such cases you can use <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix why-depends</code> to find out why <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>ghc</code> is present in the docker image:
+      It might not be obvious to you that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> is causing the increase in size. In such cases you can use <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix why-depends</code> to find out why <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>ghc</code> is present in the docker image:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='bash language-bash'>nix why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='bash language-bash'>nix why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x</code></pre></div>
         </li>
       
         <li>
           
     <p class='mb-3'>
-      Now that you know that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code> is causing the increase in size, let’s wrap the executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>foo</code> <a href='https://srid.ca/remove-references-to' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>removing references to</a> <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>bar</code>:
+      Now that you know that <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code> is causing the increase in size, let’s wrap the executable of <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>foo</code> <a href='https://srid.ca/remove-references-to' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>removing references to</a> <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>bar</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # Inside `haskellProjects`
   haskellProjects.default = 
     let
@@ -1522,7 +1522,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

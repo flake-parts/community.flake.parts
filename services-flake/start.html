@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -2225,9 +2225,9 @@
     </h2>
   
     <p class='mb-3'>
-      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code>:
+      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>mkdir example && cd ./example
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>mkdir example && cd ./example
 nix flake init -t github:juspay/services-flake
 nix run</code></pre></div>
     <h2 id='existing-project' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2245,9 +2245,9 @@ nix run</code></pre></div>
     </h2>
   
     <p class='mb-3'>
-      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> in your flake:
+      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> in your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   # 1. Add the inputs
   inputs.process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
   inputs.services-flake.url = "github:juspay/services-flake";
@@ -2269,16 +2269,16 @@ nix run</code></pre></div>
     };
 }</code></pre></div>
     <p class='mb-3'>
-      As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>redis</code> service to your flake:
+      As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>redis</code> service to your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
 {
   services.redis."r1".enable = true;
 }</code></pre></div>
     <p class='mb-3'>
       Time to run the service:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
     <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
       
   Under the hood
@@ -2296,17 +2296,17 @@ nix run</code></pre></div>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code>.
+          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code>.
         </li>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>packages.${system}.myservices</code>
+          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.${system}.myservices</code>
     <sup class='px-0.5'>
       <a class='text-sky-600 dark:text-sky-400 hover:underline' href='services-flake/start#fn1'>
         1
       </a>
     </sup>
-   (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
+   (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
     <sup class='px-0.5'>
       <a class='text-sky-600 dark:text-sky-400 hover:underline' href='services-flake/start#fn2'>
         2
@@ -2347,7 +2347,7 @@ nix run</code></pre></div>
             1.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>perSystem.process-compose</code>.
+            <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>perSystem.process-compose</code>.
           </div>
         </div>
       
@@ -2550,7 +2550,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

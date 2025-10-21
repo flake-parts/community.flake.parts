@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -2215,11 +2215,11 @@
 
 
     <p class='mb-3'>
-      When using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> you are not just limited to the <a href='services-flake/services' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>builtin services</a>. You can also define your own service.
+      When using <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> you are not just limited to the <a href='services-flake/services' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>builtin services</a>. You can also define your own service.
     </p>
   
     <p class='mb-3'>
-      By default, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> supports multiple instances for each service, allowing you to run several instances of the same service simultaneously. However, you also have the option to create custom single-instance services. In the following sections, we’ll explore how to define custom services of both types.
+      By default, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> supports multiple instances for each service, allowing you to run several instances of the same service simultaneously. However, you also have the option to create custom single-instance services. In the following sections, we’ll explore how to define custom services of both types.
     </p>
   
     <h2 id='single-instance' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2237,9 +2237,9 @@
     </h2>
   
     <p class='mb-3'>
-      We will create a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>hello</code> service that will return a greeting message:
+      We will create a <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>hello</code> service that will return a greeting message:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{ config, lib, pkgs, ... }:
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{ config, lib, pkgs, ... }:
 {
   options = {
     services.hello = {
@@ -2263,13 +2263,13 @@
     };
 }</code></pre></div>
     <p class='mb-3'>
-      Let’s call this file <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>hello.nix</code>.
+      Let’s call this file <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>hello.nix</code>.
     </p>
   
     <p class='mb-3'>
       Now, we can import this service in our flake. In this example, we will configure an existing service, <a href='services-flake/ollama' class='text-sky-600 dark:text-sky-400 font-semibold hover:underline' data-wikilink-type='WikiLinkNormal'>Ollama</a>, and our custom service from above:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   description = "A demo of importing a single instance custom service";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -2298,7 +2298,7 @@
     };
 }</code></pre></div>
     <p class='mb-3'>
-      Finally, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>: <img class='inline mb-3' src='services-flake/single-instance-hello.png' alt='[[single-instance-hello.png]]' style='width: inherit;' />
+      Finally, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>: <img class='inline mb-3' src='services-flake/single-instance-hello.png' alt='[[single-instance-hello.png]]' style='width: inherit;' />
     </p>
   
     <h2 id='multi-instance' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2316,13 +2316,13 @@
     </h2>
   
     <p class='mb-3'>
-      For this purpose, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> exports a <a href='https://github.com/juspay/services-flake/blob/647bff2c44b42529461f60a7fe07851ff93fb600/nix/lib.nix#L1-L34' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>multiService</a> library function. It aims to provide an interface wherein the user just writes the configuration like they would for a single instance service, and the library takes care of creating multiple instances of the service.
+      For this purpose, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> exports a <a href='https://github.com/juspay/services-flake/blob/647bff2c44b42529461f60a7fe07851ff93fb600/nix/lib.nix#L1-L34' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>multiService</a> library function. It aims to provide an interface wherein the user just writes the configuration like they would for a single instance service, and the library takes care of creating multiple instances of the service.
     </p>
   
     <p class='mb-3'>
-      Let’s write the same <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>hello</code> service as above, in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>hello.nix</code>, but this time as a multi-instance service:
+      Let’s write the same <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>hello</code> service as above, in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>hello.nix</code>, but this time as a multi-instance service:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{ config, lib, name, pkgs, ... }:
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{ config, lib, name, pkgs, ... }:
 {
   options = {
     package = lib.mkPackageOption pkgs "hello" { };
@@ -2347,15 +2347,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          The module now takes an additional argument <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>name</code>, which is the name of the instance of the service.
+          The module now takes an additional argument <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>name</code>, which is the name of the instance of the service.
         </li>
       
         <li>
-          We no longer have to write the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>config</code> block, as it is now handled by the library by importing the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>outputs.settings</code> option.
+          We no longer have to write the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>config</code> block, as it is now handled by the library by importing the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>outputs.settings</code> option.
         </li>
       
         <li>
-          And we don’t have to write <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>options.services."${name}"</code> or define <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>enable</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> options, as that is abstracted away by the library.
+          And we don’t have to write <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>options.services."${name}"</code> or define <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>enable</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>dataDir</code> options, as that is abstracted away by the library.
         </li>
       
     </ul>
@@ -2363,7 +2363,7 @@
     <p class='mb-3'>
       Now that we have defined the multi-instance service, we can import it in our flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   description = "A demo of importing a multi-instance custom service";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -2405,7 +2405,7 @@
     };
 }</code></pre></div>
     <p class='mb-3'>
-      And finally, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>: <img class='inline mb-3' src='services-flake/multi-instance-hello.png' alt='[[multi-instance-hello.png]]' style='width: inherit;' />
+      And finally, <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run</code>: <img class='inline mb-3' src='services-flake/multi-instance-hello.png' alt='[[multi-instance-hello.png]]' style='width: inherit;' />
     </p>
   
     <h2 id='see-also' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
@@ -2618,7 +2618,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

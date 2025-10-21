@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=fdf18d16-5bfd-49d4-9ff6-70cced2b401e' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=55ceb65d-78f4-4dab-8ca3-46b0efa6c0e0' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
 
@@ -1335,9 +1335,9 @@
 
 
     <p class='mb-3'>
-      haskell-flake uses the <a href='https://nixos.org/manual/nixpkgs/unstable/#haskell-shellFor' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>shellFor</code></a> function to provide a Haskell development shell. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>shellFor</code> in turn uses the standard <a href='https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code></a> function to create a Nix shell environment. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> option can be used to pass custom arguments to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code>.
+      haskell-flake uses the <a href='https://nixos.org/manual/nixpkgs/unstable/#haskell-shellFor' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>shellFor</code></a> function to provide a Haskell development shell. <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>shellFor</code> in turn uses the standard <a href='https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code></a> function to create a Nix shell environment. The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> option can be used to pass custom arguments to <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code>.
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   haskellProjects.default = {
     devShell = {
       mkShellArgs = {
@@ -1363,17 +1363,17 @@
     </h2>
   
     <p class='mb-3'>
-      While <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> is a convenient way to extend the Haskell devShell, sometimes you want to compose multiple devShell environments in a way you want.
+      While <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> is a convenient way to extend the Haskell devShell, sometimes you want to compose multiple devShell environments in a way you want.
     </p>
   
     <p class='mb-3'>
-      The devShell of a haskell-flake project is exposed in the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.&lt;name&gt;.outputs.devShell</code> attribute. You can pass this devShell to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>inputsFrom</code> argument of a <a href='https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code></a> function in order to include the Haskell devShell in another devShell. The same technique can be used to compose devShells created by other flake-parts modules.
+      The devShell of a haskell-flake project is exposed in the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>config.haskellProjects.&lt;name&gt;.outputs.devShell</code> attribute. You can pass this devShell to the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>inputsFrom</code> argument of a <a href='https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-mkShell' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShell</code></a> function in order to include the Haskell devShell in another devShell. The same technique can be used to compose devShells created by other flake-parts modules.
     </p>
   
     <p class='mb-3'>
       For example, <a href='https://github.com/srid/haskell-template/blob/fc263b19e4ef02710ffc61fc656aec6c1a873974/flake.nix#L96-L102' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>in haskell-template</a>, we create a top-level devShell that merges the devShell of the haskell-flake project, the devShell of <a href='https://community.flake.parts/mission-control' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>mission-control</a> and the devShell of <a href='https://github.com/srid/flake-root' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>flake-root</a> as follows::
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono'><pre><code class='nix language-nix'>{
+  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
   devShell = pkgs.mkShell {
     inputsFrom = [
       config.haskellProjects.default.outputs.devShell
@@ -1383,7 +1383,7 @@
   };
 }</code></pre></div>
     <p class='mb-3'>
-      This sort of composition is either impossible or very complex to do with the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> approach.
+      This sort of composition is either impossible or very complex to do with the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>mkShellArgs</code> approach.
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -1471,7 +1471,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
       <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
