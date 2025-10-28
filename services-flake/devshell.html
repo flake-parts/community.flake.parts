@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=548c3969-a415-487e-835a-06283460806d' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=a35ed1ca-fae6-43fe-bd7f-fd776b21bdf8' rel='stylesheet' type='text/css' />
 
   <style data-category='global-font'>
   /* Refined typography with system font stack */
@@ -2360,7 +2360,7 @@
   process-compose."my-pc" = { ... };
   devShells.default = pkgs.mkShell {
     inputsFrom = [
-      config.process-compose."my-pc".services.outputs.devShell;
+      config.process-compose."my-pc".services.outputs.devShell
     ];
     # ...
   };

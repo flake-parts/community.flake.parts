@@ -1898,7 +1898,7 @@ Some services create unix domain socket files under the data directory. As the u
   process-compose."my-pc" = { ... };
   devShells.default = pkgs.mkShell {
     inputsFrom = [
-      config.process-compose."my-pc".services.outputs.devShell;
+      config.process-compose."my-pc".services.outputs.devShell
     ];
     # ...
   };
