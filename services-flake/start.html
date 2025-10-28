@@ -43,14 +43,21 @@
 
   
   
-  <link href='tailwind.css?instanceId=ef4fdee1-8fef-4ef1-93d9-8199de963fff' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=548c3969-a415-487e-835a-06283460806d' rel='stylesheet' type='text/css' />
 
-  <link rel='stylesheet' href='_emanote-static/fonts/maven-pro.css' />
-
-<style data-category='global-font'>
-  /* Maven Pro font for the entire site */
+  <style data-category='global-font'>
+  /* Refined typography with system font stack */
   body {
-    font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    font-weight: 700;
   }
 </style>
 
@@ -67,25 +74,26 @@
 <style data-category='kbd'>
   /* <kbd> styling */
   kbd {
-    background-color: #eee;
-    border-radius: 3px;
-    border: 1px solid #b4b4b4;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
     box-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.2),
-      0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 2px 0 0 rgba(255, 255, 255, 0.8) inset;
     display: inline-block;
-    line-height: 1;
-    padding: 2px 4px;
+    line-height: 1.2;
+    padding: 3px 6px;
     white-space: nowrap;
+    font-size: 0.9em;
   }
-  
+
   /* Dark mode kbd styling */
   .dark kbd {
     background-color: #374151;
-    border: 1px solid #6b7280;
+    border: 1px solid #4b5563;
     box-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.4),
-      0 2px 0 0 rgba(255, 255, 255, 0.1) inset;
+      0 1px 2px rgba(0, 0, 0, 0.4),
+      0 2px 0 0 rgba(255, 255, 255, 0.08) inset;
     color: #f3f4f6;
   }
 </style>
@@ -102,7 +110,137 @@
   a.--ema-toc {
     background-color: transparent !important;
   }
+
+  /* Active TOC item styling */
+  a.--ema-toc.toc-item-active {
+    font-weight: 600;
+    border-left: 3px solid #3b82f6;
+    padding-left: calc(0.5rem - 3px) !important;
+  }
+
+  /* Light mode active state */
+  a.--ema-toc.toc-item-active {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+  }
+
+  /* Dark mode active state */
+  .dark a.--ema-toc.toc-item-active {
+    background-color: #172554 !important;
+    color: #93c5fd !important;
+    border-left-color: #3b82f6;
+  }
 </style>
+
+<style data-category='global-improvements'>
+  /* Link improvements */
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  /* Focus states for accessibility */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Code block enhancements */
+  pre {
+    position: relative;
+  }
+
+  pre code {
+    display: block;
+    line-height: 1.6;
+  }
+
+  /* Copy button for code blocks */
+  .code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #374151;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .code-copy-button svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dark .code-copy-button {
+    background: rgba(31, 41, 55, 0.9);
+    border-color: #4b5563;
+    color: #d1d5db;
+  }
+
+  pre:hover .code-copy-button {
+    opacity: 1;
+  }
+
+  .code-copy-button:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .dark .code-copy-button:hover {
+    background: rgba(31, 41, 55, 1);
+  }
+
+  .code-copy-button:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+  // Add copy buttons to code blocks
+  document.addEventListener('DOMContentLoaded', function() {
+    const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
+    const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
+
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      const pre = codeBlock.parentElement;
+
+      // Create copy button
+      const button = document.createElement('button');
+      button.className = 'code-copy-button';
+      button.innerHTML = copyIcon;
+      button.setAttribute('aria-label', 'Copy code to clipboard');
+      button.setAttribute('title', 'Copy code');
+
+      button.addEventListener('click', function() {
+        const text = codeBlock.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+          button.innerHTML = checkIcon;
+          button.setAttribute('title', 'Copied!');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Copy failed:', err);
+          button.setAttribute('title', 'Copy failed');
+          setTimeout(function() {
+            button.innerHTML = copyIcon;
+            button.setAttribute('title', 'Copy code');
+          }, 2000);
+        });
+      });
+
+      pre.appendChild(button);
+    });
+  });
+</script>
 
 <style data-category='external-link'>
   /* External link icon */
@@ -186,17 +324,17 @@
   
     <style>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
-      /* md:min-w-48  */
+      /* md:min-w-52  */
       @media (min-width: 768px) {
         #sidebar {
-          min-width: 12rem;
+          min-width: 13rem;
         }
       }
 
-      /* xl:min-w-64  */
+      /* xl:min-w-72  */
       @media (min-width: 1280px) {
         #sidebar {
-          min-width: 16rem;
+          min-width: 18rem;
         }
       }
     </style>
@@ -311,7 +449,7 @@
 
 <!-- DoNotFormat -->
 
-<body class='bg-gray-400 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-y-scroll'>
+<body class='bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-50 overflow-y-scroll'>
   
     <div class='container mx-auto md:mt-8 '>
       
@@ -319,8 +457,8 @@
       
         <nav id='breadcrumbs' class='w-full text-gray-700 dark:text-gray-300 md:hidden'>
   <div class='flex justify-left'>
-    <div class='w-full px-2 py-2 bg-gray-50 dark:bg-gray-800'>
-      <ul class='flex flex-wrap text-lg'>
+    <div class='w-full px-4 py-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800'>
+      <ul class='flex flex-wrap text-base'>
         <li class='inline-flex items-center'>
           
             
@@ -351,13 +489,13 @@
         
       </ul>
     </div>
-    <button class='inline px-2 py-1 bg-gray-50 dark:bg-gray-800 outline-none cursor-pointer focus:outline-none' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
+    <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
       <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-sky-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-2 py-1 text-white bg-sky-600 dark:bg-sky-700 outline-none cursor-pointer focus:outline-none' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-sky-600 dark:bg-sky-700 outline-none cursor-pointer focus:outline-none hover:bg-sky-700 dark:hover:bg-sky-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -372,47 +510,47 @@
       
 
       
-        <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 dark:bg-gray-800 md:shadow-2xl md:mb-8'>
+        <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-white dark:bg-gray-900 md:shadow-md md:rounded-lg md:mb-8 md:border md:border-gray-200 dark:md:border-gray-800'>
           <!-- Sidebar column -->
-          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-48 xl:w-64'>
-  <div class='px-2 py-2 text-gray-800 dark:text-gray-200'>
-    <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500 dark:text-gray-400'>
-      <a href='-/tags' title='View tags'>
-        <svg style='width: 1rem;' class='hover:text-sky-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
-          </path>
-        </svg>
-      </a>
-      <a href='-/all' title='Expand full tree'>
-        <svg style='width: 1rem;' class='hover:text-sky-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
-          </path>
-        </svg>
-      </a>
-      <button title='Search (Ctrl+K)' class='cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-        <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-sky-700' f
- fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
-  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
-</svg>
-      </button>
-    </div>
-
-    <div id='site-logo' class='pl-2'>
-      <div class='flex items-center my-2 space-x-2 justify-left'>
+          <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto md:w-52 xl:w-72 bg-gray-50 dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800'>
+  <div class='px-4 py-5 text-gray-800 dark:text-gray-200'>
+    <div class='flex items-center justify-between mb-4'>
+      <div id='site-logo' class='flex items-center space-x-2.5 min-w-0'>
         
           
-            <a href='/' title='Go to Home'>
+            <a href='/' title='Go to Home' class='flex-shrink-0'>
               <!-- The style width attribute here is to prevent huge
                       icon from displaying at those rare occasions when Tailwind
-                      hasn't kicked in immediately on page load 
+                      hasn't kicked in immediately on page load
                       -->
-              <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='favicon.svg' alt='Site Icon' />
+              <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-bold truncate' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-sky-600 dark:hover:text-sky-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
         
+      </div>
+
+      <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+            </path>
+          </svg>
+        </a>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors'>
+          <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+            </path>
+          </svg>
+        </a>
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-sky-700' f
+ fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
+  <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+</svg>
+        </button>
       </div>
     </div>
 
@@ -429,12 +567,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -442,7 +580,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Gotchas' href='haskell-flake/gotchas'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Gotchas' href='haskell-flake/gotchas'>
       Gotchas
     </a>
     
@@ -473,19 +611,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='font-bold hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Modules' href='modules'>
+    <a class='font-semibold hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -509,14 +647,14 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
-          <a href='haskell-flake' title='View folgezettel children'>
+          <a href='haskell-flake' title='View folgezettel children' class='hover:opacity-70 transition-opacity'>
             
     
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 flex-shrink-0 inline text-gray-500 dark:text-gray-400' viewBox='0 0 24 24' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z' clip-rule='evenodd'></path>
       </svg>
     
@@ -525,12 +663,12 @@
           
       
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='haskell-flake' href='haskell-flake'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
       
-        <span class='text-gray-300 dark:text-gray-600' title='4 children inside'>
+        <span class='text-xs text-gray-400 dark:text-gray-500 flex-shrink-0' title='4 children inside'>
           4
         </span>
       
@@ -555,13 +693,13 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
           
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -570,7 +708,7 @@
         
       
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='mission-control' href='mission-control'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='mission-control' href='mission-control'>
       mission-control
     </a>
     
@@ -597,13 +735,13 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
           
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -612,7 +750,7 @@
         
       
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='process-compose-flake' href='process-compose-flake'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='process-compose-flake' href='process-compose-flake'>
       process-compose-flake
     </a>
     
@@ -643,19 +781,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='font-bold hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='services-flake' href='services-flake'>
+    <a class='font-semibold hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -679,12 +817,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
@@ -692,7 +830,7 @@
   
         
     </span>
-    <a class='font-bold bg-sky-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Getting started' href='services-flake/start'>
+    <a class='font-semibold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 hover:bg-sky-100 dark:hover:bg-sky-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Getting started' href='services-flake/start'>
       Getting started
     </a>
     
@@ -719,12 +857,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -732,7 +870,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Contributing' href='services-flake/contributing'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Contributing' href='services-flake/contributing'>
       Contributing
     </a>
     
@@ -759,19 +897,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Examples' href='services-flake/examples'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Examples' href='services-flake/examples'>
       Examples
     </a>
     
@@ -795,12 +933,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -808,7 +946,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Local AI chatbot' href='services-flake/llm'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Local AI chatbot' href='services-flake/llm'>
       Local AI chatbot
     </a>
     
@@ -835,12 +973,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -848,7 +986,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Share services' href='services-flake/share-services'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Share services' href='services-flake/share-services'>
       Share services
     </a>
     
@@ -875,12 +1013,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -888,7 +1026,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Without flake-parts' href='services-flake/without-flake-parts'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Without flake-parts' href='services-flake/without-flake-parts'>
       Without flake-parts
     </a>
     
@@ -918,19 +1056,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Guide' href='services-flake/guide'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Guide' href='services-flake/guide'>
       Guide
     </a>
     
@@ -954,12 +1092,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -967,7 +1105,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Custom service' href='services-flake/custom-service'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Custom service' href='services-flake/custom-service'>
       Custom service
     </a>
     
@@ -994,12 +1132,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1007,7 +1145,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Data directory' href='services-flake/datadir'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Data directory' href='services-flake/datadir'>
       Data directory
     </a>
     
@@ -1034,12 +1172,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1047,7 +1185,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='DevShell' href='services-flake/devshell'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DevShell' href='services-flake/devshell'>
       DevShell
     </a>
     
@@ -1077,19 +1215,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Services' href='services-flake/services'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Services' href='services-flake/services'>
       Services
     </a>
     
@@ -1113,12 +1251,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1126,7 +1264,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Apache Kafka' href='services-flake/apache-kafka'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Apache Kafka' href='services-flake/apache-kafka'>
       Apache Kafka
     </a>
     
@@ -1153,12 +1291,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1166,7 +1304,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Azurite' href='services-flake/azurite'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Azurite' href='services-flake/azurite'>
       Azurite
     </a>
     
@@ -1193,12 +1331,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1206,7 +1344,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Cassandra' href='services-flake/cassandra'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Cassandra' href='services-flake/cassandra'>
       Cassandra
     </a>
     
@@ -1233,12 +1371,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1246,7 +1384,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Clickhouse' href='services-flake/clickhouse'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Clickhouse' href='services-flake/clickhouse'>
       Clickhouse
     </a>
     
@@ -1273,12 +1411,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1286,7 +1424,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Elasticsearch' href='services-flake/elasticsearch'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Elasticsearch' href='services-flake/elasticsearch'>
       Elasticsearch
     </a>
     
@@ -1313,19 +1451,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Grafana' href='services-flake/grafana'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana' href='services-flake/grafana'>
       Grafana
     </a>
     
@@ -1349,12 +1487,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1362,7 +1500,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Grafana Tempo' href='services-flake/tempo'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana Tempo' href='services-flake/tempo'>
       Grafana Tempo
     </a>
     
@@ -1392,12 +1530,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1405,7 +1543,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Memcached' href='services-flake/memcached'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Memcached' href='services-flake/memcached'>
       Memcached
     </a>
     
@@ -1432,12 +1570,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1445,7 +1583,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='MinIO' href='services-flake/minio'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MinIO' href='services-flake/minio'>
       MinIO
     </a>
     
@@ -1472,12 +1610,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1485,7 +1623,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='MongoDB' href='services-flake/mongodb'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MongoDB' href='services-flake/mongodb'>
       MongoDB
     </a>
     
@@ -1512,12 +1650,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1525,7 +1663,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='MySQL' href='services-flake/mysql'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MySQL' href='services-flake/mysql'>
       MySQL
     </a>
     
@@ -1552,12 +1690,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1565,7 +1703,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='nats-server' href='services-flake/nats-server'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='nats-server' href='services-flake/nats-server'>
       nats-server
     </a>
     
@@ -1592,12 +1730,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1605,7 +1743,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Nginx' href='services-flake/nginx'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Nginx' href='services-flake/nginx'>
       Nginx
     </a>
     
@@ -1632,12 +1770,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1645,7 +1783,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Ollama' href='services-flake/ollama'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Ollama' href='services-flake/ollama'>
       Ollama
     </a>
     
@@ -1672,12 +1810,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1685,7 +1823,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Open WebUI' href='services-flake/open-webui'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Open WebUI' href='services-flake/open-webui'>
       Open WebUI
     </a>
     
@@ -1712,12 +1850,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1725,7 +1863,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='PHP FastCGI Process Manager' href='services-flake/phpfpm'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PHP FastCGI Process Manager' href='services-flake/phpfpm'>
       PHP FastCGI Process Manager
     </a>
     
@@ -1752,12 +1890,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1765,7 +1903,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Plantuml' href='services-flake/plantuml'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Plantuml' href='services-flake/plantuml'>
       Plantuml
     </a>
     
@@ -1792,19 +1930,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='PostgreSQL' href='services-flake/postgresql'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PostgreSQL' href='services-flake/postgresql'>
       PostgreSQL
     </a>
     
@@ -1828,12 +1966,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1841,7 +1979,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='pgAdmin' href='services-flake/pgadmin'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='pgAdmin' href='services-flake/pgadmin'>
       pgAdmin
     </a>
     
@@ -1871,12 +2009,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1884,7 +2022,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Prometheus' href='services-flake/prometheus'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Prometheus' href='services-flake/prometheus'>
       Prometheus
     </a>
     
@@ -1911,12 +2049,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -1924,7 +2062,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Pubsub Emulator' href='services-flake/pubsub-emulator'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Pubsub Emulator' href='services-flake/pubsub-emulator'>
       Pubsub Emulator
     </a>
     
@@ -1951,19 +2089,19 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-4 h-4 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='w-5 h-5 flex-shrink-0 inline text-gray-700 dark:text-gray-300' fill='currentColor'>
         <path fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z' clip-rule='evenodd'></path>
       </svg>
       
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Redis' href='services-flake/redis'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis' href='services-flake/redis'>
       Redis
     </a>
     
@@ -1987,12 +2125,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -2000,7 +2138,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Redis Cluster' href='services-flake/redis-cluster'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis Cluster' href='services-flake/redis-cluster'>
       Redis Cluster
     </a>
     
@@ -2030,12 +2168,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -2043,7 +2181,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Searxng' href='services-flake/searxng'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Searxng' href='services-flake/searxng'>
       Searxng
     </a>
     
@@ -2070,12 +2208,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -2083,7 +2221,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Tika' href='services-flake/tika'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Tika' href='services-flake/tika'>
       Tika
     </a>
     
@@ -2110,12 +2248,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -2123,7 +2261,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Weaviate' href='services-flake/weaviate'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Weaviate' href='services-flake/weaviate'>
       Weaviate
     </a>
     
@@ -2150,12 +2288,12 @@
 <!-- Rendering of this tree -->
 <div class='pl-2'>
   <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    <span>
+  <div class='flex items-center my-1.5 space-x-2 justify-left'>
+    <span class='flex-shrink-0'>
       
         
     
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
@@ -2163,7 +2301,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-200 dark:hover:bg-sky-700 rounded px-1.5 truncate' title='Zookeeper' href='services-flake/zookeeper'>
+    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Zookeeper' href='services-flake/zookeeper'>
       Zookeeper
     </a>
     
@@ -2192,14 +2330,12 @@
 </nav>
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
-  <main class='px-4 py-4'>
-    <h1 class='flex items-end justify-center mb-4 p-3 bg-sky-100 dark:bg-sky-800 text-5xl font-extrabold text-black dark:text-white rounded'>
-  <span class='z-40 tracking-tighter '>
-    Getting started
-  </span>
+  <main class='px-6 py-8 max-w-7xl mx-auto'>
+    <h1 class='mb-10 px-8 py-5 bg-sky-600 dark:bg-sky-800 text-5xl font-bold text-white text-center rounded-2xl'>
+  Getting started
 </h1>
     
-      <div class='md:grid md:gap-4 md:grid-cols-8'>
+      <div class='md:grid md:gap-8 md:grid-cols-8'>
         <div class='md:col-span-6'>
           <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
@@ -2210,12 +2346,16 @@
 
 
 
-    <h2 id='new-project' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
+
+
+
+
+    <h2 id='new-project' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   New project
   
-  <a href='services-flake/start#new-project' class='--ema-anchor'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+  <a href='services-flake/start#new-project' class='--ema-anchor ml-2'>
+    <span class='text-gray-400 hover:text-sky-500 dark:hover:text-sky-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2224,18 +2364,18 @@
 
     </h2>
   
-    <p class='mb-3'>
-      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code>:
+    <p class='mb-4 leading-relaxed'>
+      Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>services-flake</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>mkdir example && cd ./example
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>mkdir example && cd ./example
 nix flake init -t github:juspay/services-flake
 nix run</code></pre></div>
-    <h2 id='existing-project' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
+    <h2 id='existing-project' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Existing project
   
-  <a href='services-flake/start#existing-project' class='--ema-anchor'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+  <a href='services-flake/start#existing-project' class='--ema-anchor ml-2'>
+    <span class='text-gray-400 hover:text-sky-500 dark:hover:text-sky-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2244,10 +2384,10 @@ nix run</code></pre></div>
 
     </h2>
   
-    <p class='mb-3'>
-      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>flake-parts</code> modules provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> and <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> in your flake:
+    <p class='mb-4 leading-relaxed'>
+      services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>flake-parts</code> modules provided by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>services-flake</code> in your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'>{
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
   # 1. Add the inputs
   inputs.process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
   inputs.services-flake.url = "github:juspay/services-flake";
@@ -2268,23 +2408,23 @@ nix run</code></pre></div>
       }
     };
 }</code></pre></div>
-    <p class='mb-3'>
-      As an example, let’s add the <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>redis</code> service to your flake:
+    <p class='mb-4 leading-relaxed'>
+      As an example, let’s add the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>redis</code> service to your flake:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
 {
   services.redis."r1".enable = true;
 }</code></pre></div>
-    <p class='mb-3'>
+    <p class='mb-4 leading-relaxed'>
       Time to run the service:
     </p>
-  <div class='py-0.5 mb-3 text-sm font-mono bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
-    <h2 id='under-the-hood' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
+    <h2 id='under-the-hood' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Under the hood
   
-  <a href='services-flake/start#under-the-hood' class='--ema-anchor'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+  <a href='services-flake/start#under-the-hood' class='--ema-anchor ml-2'>
+    <span class='text-gray-400 hover:text-sky-500 dark:hover:text-sky-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2293,20 +2433,20 @@ nix run</code></pre></div>
 
     </h2>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
+    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code>.
+          The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>services-flake</code> module configures <a href='https://community.flake.parts/process-compose-flake#usage' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>process settings</a> for a service. In simple terms, it handles stuff like health checks, restart policies, setup scripts, etc. by using the easy to configure APIs provided by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code>.
         </li>
       
         <li>
-          The <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose-flake</code> module uses these settings to generate <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>packages.${system}.myservices</code>
+          The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code> module uses these settings to generate <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>packages.${system}.myservices</code>
     <sup class='px-0.5'>
       <a class='text-sky-600 dark:text-sky-400 hover:underline' href='services-flake/start#fn1'>
         1
       </a>
     </sup>
-   (<code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
+   (<code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nix run .#myservices</code> above, <a href='https://nixos.asia/en/nix-first#run' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>runs</a> this package by default), which runs <a href='https://github.com/F1bonacc1/process-compose' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>process-compose</a> with the generated YAML configuration
     <sup class='px-0.5'>
       <a class='text-sky-600 dark:text-sky-400 hover:underline' href='services-flake/start#fn2'>
         2
@@ -2317,12 +2457,12 @@ nix run</code></pre></div>
       
     </ul>
   
-    <h2 id='examples' class='group mt-6 mb-4 font-bold text-gray-700 dark:text-gray-200 text-4xl'>
+    <h2 id='examples' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Examples
   
-  <a href='services-flake/start#examples' class='--ema-anchor'>
-    <span class='hover:text-sky-400 group-hover:visible invisible cursor-pointer text-sm align-middle' aria-label='Copy link'><svg class='inline w-4' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+  <a href='services-flake/start#examples' class='--ema-anchor ml-2'>
+    <span class='text-gray-400 hover:text-sky-500 dark:hover:text-sky-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2331,10 +2471,10 @@ nix run</code></pre></div>
 
     </h2>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
+    <ul class='my-4 ml-6 space-y-2 list-disc leading-relaxed'>
       
         <li>
-          In <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>Nammayatri</a>, services-flakes is used to run the local services stack (which used to be run with docker-compose). Read about it <a href='https://nixos.asia/en/blog/replacing-docker-compose' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>in this blog post</a>.
+          In <a href='https://github.com/nammayatri/nammayatri' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Nammayatri</a>, services-flakes is used to run the local services stack (which used to be run with docker-compose). Read about it <a href='https://nixos.asia/en/blog/replacing-docker-compose' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>in this blog post</a>.
         </li>
       
     </ul>
@@ -2347,7 +2487,7 @@ nix run</code></pre></div>
             1.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>myservices</code> is the name of the process group that is derived from <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>process-compose.&lt;name&gt;</code> in <code class='py-0.5 px-0.5 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono'>perSystem.process-compose</code>.
+            <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>myservices</code> is the name of the process group that is derived from <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose.&lt;name&gt;</code> in <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>perSystem.process-compose</code>.
           </div>
         </div>
       
@@ -2356,7 +2496,7 @@ nix run</code></pre></div>
             2.
           </header>
           <div class='inline-block mb-2 ml-4'>
-            See the example configuration from the <a href='https://f1bonacc1.github.io/process-compose/intro/' class='text-sky-600 dark:text-sky-400 hover:underline' data-linkicon='external' target='_blank' rel='noopener'>getting started</a> section of the process-compose docs.
+            See the example configuration from the <a href='https://f1bonacc1.github.io/process-compose/intro/' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>getting started</a> section of the process-compose docs.
           </div>
         </div>
       
@@ -2375,51 +2515,52 @@ nix run</code></pre></div>
 </div>
 </article>
         </div>
-        <div class='hidden md:block md:col-span-2 md:border-l md:border-gray-300 dark:md:border-gray-600'>
+        <div class='hidden md:block md:col-span-2 md:border-l md:border-gray-200 dark:md:border-gray-800 md:pl-6 md:bg-gray-50/50 dark:md:bg-gray-950/50 md:-mr-6 md:pr-6 md:-my-8 md:py-8'>
           <nav id='toc' class='hidden leading-relaxed md:block md:sticky md:top-0 md:max-h-screen md:overflow-y-auto'>
-  <div class='text-gray-600 dark:text-gray-400 text-sm -mt-2'>
+  <div class='text-gray-700 dark:text-gray-300 text-sm pt-2'>
+    <h3 class='text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3 px-2'>On this page</h3>
     
-        <ul class='ml-2'>
+        <ul class='space-y-1 ml-2'>
           
-            <li class='whitespace-nowrap truncate mt-2' title='New project'>
-              <a href='services-flake/start#new-project' class='--ema-toc rounded-md p-0.5'>
+            <li class='truncate' title='New project'>
+              <a href='services-flake/start#new-project' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors'>
                 New project
               </a>
               
-        <ul class='ml-2'>
+        <ul class='space-y-1 ml-2'>
           
         </ul>
       
             </li>
           
-            <li class='whitespace-nowrap truncate mt-2' title='Existing project'>
-              <a href='services-flake/start#existing-project' class='--ema-toc rounded-md p-0.5'>
+            <li class='truncate' title='Existing project'>
+              <a href='services-flake/start#existing-project' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors'>
                 Existing project
               </a>
               
-        <ul class='ml-2'>
+        <ul class='space-y-1 ml-2'>
           
         </ul>
       
             </li>
           
-            <li class='whitespace-nowrap truncate mt-2' title='Under the hood'>
-              <a href='services-flake/start#under-the-hood' class='--ema-toc rounded-md p-0.5'>
+            <li class='truncate' title='Under the hood'>
+              <a href='services-flake/start#under-the-hood' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors'>
                 Under the hood
               </a>
               
-        <ul class='ml-2'>
+        <ul class='space-y-1 ml-2'>
           
         </ul>
       
             </li>
           
-            <li class='whitespace-nowrap truncate mt-2' title='Examples'>
-              <a href='services-flake/start#examples' class='--ema-toc rounded-md p-0.5'>
+            <li class='truncate' title='Examples'>
+              <a href='services-flake/start#examples' class='--ema-toc block rounded-md px-2 py-1.5 hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors'>
                 Examples
               </a>
               
-        <ul class='ml-2'>
+        <ul class='space-y-1 ml-2'>
           
         </ul>
       
@@ -2485,22 +2626,22 @@ nix run</code></pre></div>
         </div>
       </div>
       
-    <div class='flex flex-col lg:flex-row lg:space-x-2'>
+    <div class='flex flex-col lg:flex-row lg:space-x-4 mt-8'>
       
       
-  <div class='flex-1 p-4 mt-8 bg-gray-100 dark:bg-gray-700 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500 dark:text-gray-200'>Links to this page</header>
-    <ul class='space-y-1'>
+  <div class='flex-1 p-5 mt-8 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm'>
+    <header class='mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400'>Links to this page</header>
+    <ul class='space-y-2'>
       
         <li>
-          <a class='text-sky-600 dark:text-white font-semibold hover:bg-sky-50 dark:hover:bg-sky-900' href='services-flake'>
+          <a class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900 inline-block' href='services-flake'>
             Running services using <code>services-flake</code>
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 dark:border-sky-600 hover:border-sky-500 dark:hover:border-sky-400'>
-      <div><p>The commands used in the demo are available <a href='services-flake/start' class='text-gray-600 dark:text-gray-200 font-bold hover:bg-gray-50 dark:hover:bg-gray-600' data-wikilink-type='WikiLinkNormal'>Getting started</a>.</p></div>
+      <div><p>The commands used in the demo are available <a href='services-flake/start' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>Getting started</a>.</p></div>
     </div>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 dark:border-sky-600 hover:border-sky-500 dark:hover:border-sky-400'>
@@ -2508,7 +2649,7 @@ nix run</code></pre></div>
     </div>
   
     <div class='pl-2 mt-2 border-l-2 border-sky-200 dark:border-sky-600 hover:border-sky-500 dark:hover:border-sky-400'>
-      <div><a href='services-flake/start' class='text-gray-600 dark:text-gray-200 font-bold hover:bg-gray-50 dark:hover:bg-gray-600' data-wikilink-type='WikiLinkBranch'>Getting started</a></div>
+      <div><a href='services-flake/start' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkBranch'>Getting started</a></div>
     </div>
   
 </div>
@@ -2529,13 +2670,14 @@ nix run</code></pre></div>
 </div>
         </div>
         
-      <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800 dark:text-gray-200'>
-  
+      <footer class='flex items-center justify-center mt-10 mb-10'>
+  <div class='inline-flex items-center justify-center space-x-6 px-8 py-4 bg-gray-50 dark:bg-gray-900 rounded-lg'>
+    
   <div>
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -2544,19 +2686,19 @@ nix run</code></pre></div>
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.2.1'>
-      <img class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -2564,10 +2706,11 @@ nix run</code></pre></div>
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-6 h-6 hover:text-sky-700 dark:hover:text-sky-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
+  </div>
   </div>
 </footer>
     </div>
