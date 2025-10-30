@@ -43,7 +43,7 @@
 
   
   
-  <link href='tailwind.css?instanceId=a35ed1ca-fae6-43fe-bd7f-fd776b21bdf8' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=8e07feea-1797-41c4-84bf-9b17b96cff58' rel='stylesheet' type='text/css' />
 
   <style data-category='global-font'>
   /* Refined typography with system font stack */
@@ -1493,6 +1493,10 @@
 
       # Extra non-Haskell dependencies
       extraBuildDepends = [ pkgs.stork ];
+
+      # Library-specific dependencies
+      librarySystemDepends = [ pkgs.zlib ];
+      libraryPkgconfigDepends = [ pkgs.openssl ];
 
       # Source patches
       patches = [ ./patches/ema-bug-fix.patch ];

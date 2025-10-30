@@ -858,6 +858,10 @@ haskellProjects.default = {
       # Extra non-Haskell dependencies
       extraBuildDepends = [ pkgs.stork ];
 
+      # Library-specific dependencies
+      librarySystemDepends = [ pkgs.zlib ];
+      libraryPkgconfigDepends = [ pkgs.openssl ];
+
       # Source patches
       patches = [ ./patches/ema-bug-fix.patch ];
 
