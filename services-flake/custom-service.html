@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2419,29 +2413,30 @@
     <p class='mb-4 leading-relaxed'>
       We will create a <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>hello</code> service that will return a greeting message:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{ config, lib, pkgs, ... }:
-{
-  options = {
-    services.hello = {
-      enable = lib.mkEnableOption "Enable hello service";
-      package = lib.mkPackageOption pkgs "hello" { };
-      message = lib.mkOption {
-        type = lib.types.str;
-        default = "Hello, world!";
-        description = "The message to be displayed";
-      };
-    };
-  };
-  config =
-    let
-      cfg = config.services.hello;
-    in
-    lib.mkIf cfg.enable {
-      settings.processes.hello = {
-        command = "${lib.getExe cfg.package} --greeting='${cfg.message}'";
-      };
-    };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span> <span class='va'>config</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>:
+<span class='op'>{</span>
+  <span class='va'>options</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>services</span>.<span class='va'>hello</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>enable</span> <span class='op'>=</span> lib<span class='op'>.</span>mkEnableOption <span class='st'>"Enable hello service"</span><span class='op'>;</span>
+      <span class='va'>package</span> <span class='op'>=</span> lib<span class='op'>.</span>mkPackageOption pkgs <span class='st'>"hello"</span> <span class='op'>{</span> <span class='op'>};</span>
+      <span class='va'>message</span> <span class='op'>=</span> lib<span class='op'>.</span>mkOption <span class='op'>{</span>
+        <span class='va'>type</span> <span class='op'>=</span> lib<span class='op'>.</span>types<span class='op'>.</span>str<span class='op'>;</span>
+        <span class='va'>default</span> <span class='op'>=</span> <span class='st'>"Hello, world!"</span><span class='op'>;</span>
+        <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"The message to be displayed"</span><span class='op'>;</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+  <span class='va'>config</span> <span class='op'>=</span>
+    <span class='kw'>let</span>
+      <span class='va'>cfg</span> <span class='op'>=</span> config<span class='op'>.</span>services<span class='op'>.</span>hello<span class='op'>;</span>
+    <span class='kw'>in</span>
+    lib<span class='op'>.</span>mkIf cfg<span class='op'>.</span>enable <span class='op'>{</span>
+      <span class='va'>settings</span>.<span class='va'>processes</span>.<span class='va'>hello</span> <span class='op'>=</span> <span class='op'>{</span>
+        <span class='va'>command</span> <span class='op'>=</span> <span class='st'>"</span><span class='sc'>${</span>lib<span class='op'>.</span>getExe cfg<span class='op'>.</span>package<span class='sc'>}</span><span class='st'> --greeting='</span><span class='sc'>${</span>cfg<span class='op'>.</span>message<span class='sc'>}</span><span class='st'>'"</span><span class='op'>;</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Let’s call this file <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>hello.nix</code>.
     </p>
@@ -2449,34 +2444,35 @@
     <p class='mb-4 leading-relaxed'>
       Now, we can import this service in our flake. In this example, we will configure an existing service, <a href='services-flake/ollama' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>Ollama</a>, and our custom service from above:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  description = "A demo of importing a single instance custom service";
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "github:nix-systems/default";
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-    services-flake.url = "github:juspay/services-flake";
-  };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
-      imports = [
-        inputs.process-compose-flake.flakeModule
-      ];
-      perSystem = { self', pkgs, lib, ... }: {
-        process-compose."default" = { config, ... }: {
-          imports = [
-            inputs.services-flake.processComposeModules.default
-            ./hello.nix
-          ];
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"A demo of importing a single instance custom service"</span><span class='op'>;</span>
+  <span class='va'>inputs</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>nixpkgs</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nixos/nixpkgs/nixpkgs-unstable"</span><span class='op'>;</span>
+    <span class='va'>flake-parts</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:hercules-ci/flake-parts"</span><span class='op'>;</span>
+    <span class='va'>systems</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nix-systems/default"</span><span class='op'>;</span>
+    <span class='va'>process-compose-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/process-compose-flake"</span><span class='op'>;</span>
+    <span class='va'>services-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:juspay/services-flake"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+  <span class='va'>outputs</span> <span class='op'>=</span> <span class='va'>inputs</span><span class='op'>:</span>
+    inputs<span class='op'>.</span>flake<span class='op'>-</span>parts<span class='op'>.</span>lib<span class='op'>.</span>mkFlake <span class='op'>{</span> <span class='kw'>inherit</span> <span class='va'>inputs</span><span class='op'>;</span> <span class='op'>}</span> <span class='op'>{</span>
+      <span class='va'>systems</span> <span class='op'>=</span> <span class='bu'>import</span> inputs<span class='op'>.</span>systems<span class='op'>;</span>
+      <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+        inputs<span class='op'>.</span>process-compose-flake<span class='op'>.</span>flakeModule
+      <span class='op'>];</span>
+      <span class='va'>perSystem</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>self'</span><span class='op'>,</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+        <span class='va'>process-compose</span>.<span class='st'>"default"</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>config</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+          <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+            inputs<span class='op'>.</span>services-flake<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+            <span class='ss'>./hello.nix</span>
+          <span class='op'>];</span>
 
-          services.ollama."ollama1".enable = true;
-          services.hello.enable = true;
-        };
-      };
-    };
-}</code></pre></div>
+          <span class='va'>services</span>.<span class='va'>ollama</span>.<span class='st'>"ollama1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+          <span class='va'>services</span>.<span class='va'>hello</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+        <span class='op'>};</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Finally, <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nix run</code>: <img class='inline mb-3' src='services-flake/single-instance-hello.png' alt='[[single-instance-hello.png]]' style='width: inherit;' />
     </p>
@@ -2502,24 +2498,25 @@
     <p class='mb-4 leading-relaxed'>
       Let’s write the same <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>hello</code> service as above, in <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>hello.nix</code>, but this time as a multi-instance service:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{ config, lib, name, pkgs, ... }:
-{
-  options = {
-    package = lib.mkPackageOption pkgs "hello" { };
-    message = lib.mkOption {
-      type = lib.types.str;
-      default = "Hello, world!";
-      description = "The message to be displayed";
-    };
-  };
-  config = {
-    outputs.settings = {
-      processes.${name} = {
-        command = "${lib.getExe config.package} --greeting='${config.message}'";
-      };
-    };
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span> <span class='va'>config</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='va'>name</span><span class='op'>,</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>:
+<span class='op'>{</span>
+  <span class='va'>options</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>package</span> <span class='op'>=</span> lib<span class='op'>.</span>mkPackageOption pkgs <span class='st'>"hello"</span> <span class='op'>{</span> <span class='op'>};</span>
+    <span class='va'>message</span> <span class='op'>=</span> lib<span class='op'>.</span>mkOption <span class='op'>{</span>
+      <span class='va'>type</span> <span class='op'>=</span> lib<span class='op'>.</span>types<span class='op'>.</span>str<span class='op'>;</span>
+      <span class='va'>default</span> <span class='op'>=</span> <span class='st'>"Hello, world!"</span><span class='op'>;</span>
+      <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"The message to be displayed"</span><span class='op'>;</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+  <span class='va'>config</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>outputs</span>.<span class='va'>settings</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>processes</span>.<span class='sc'>${</span>name<span class='sc'>}</span> <span class='op'>=</span> <span class='op'>{</span>
+        <span class='va'>command</span> <span class='op'>=</span> <span class='st'>"</span><span class='sc'>${</span>lib<span class='op'>.</span>getExe config<span class='op'>.</span>package<span class='sc'>}</span><span class='st'> --greeting='</span><span class='sc'>${</span>config<span class='op'>.</span>message<span class='sc'>}</span><span class='st'>'"</span><span class='op'>;</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       The primary differences from the single instance service are:
     </p>
@@ -2543,47 +2540,48 @@
     <p class='mb-4 leading-relaxed'>
       Now that we have defined the multi-instance service, we can import it in our flake:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  description = "A demo of importing a multi-instance custom service";
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "github:nix-systems/default";
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-    services-flake.url = "github:juspay/services-flake";
-  };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
-      imports = [
-        inputs.process-compose-flake.flakeModule
-      ];
-      perSystem = { self', pkgs, lib, ... }: {
-        process-compose."default" = 
-        let
-          inherit (inputs.services-flake.lib) multiService;
-        in
-        {
-          imports = [
-            inputs.services-flake.processComposeModules.default
-            (multiService ./hello.nix)
-          ];
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"A demo of importing a multi-instance custom service"</span><span class='op'>;</span>
+  <span class='va'>inputs</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>nixpkgs</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nixos/nixpkgs/nixpkgs-unstable"</span><span class='op'>;</span>
+    <span class='va'>flake-parts</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:hercules-ci/flake-parts"</span><span class='op'>;</span>
+    <span class='va'>systems</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nix-systems/default"</span><span class='op'>;</span>
+    <span class='va'>process-compose-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/process-compose-flake"</span><span class='op'>;</span>
+    <span class='va'>services-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:juspay/services-flake"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+  <span class='va'>outputs</span> <span class='op'>=</span> <span class='va'>inputs</span><span class='op'>:</span>
+    inputs<span class='op'>.</span>flake<span class='op'>-</span>parts<span class='op'>.</span>lib<span class='op'>.</span>mkFlake <span class='op'>{</span> <span class='kw'>inherit</span> <span class='va'>inputs</span><span class='op'>;</span> <span class='op'>}</span> <span class='op'>{</span>
+      <span class='va'>systems</span> <span class='op'>=</span> <span class='bu'>import</span> inputs<span class='op'>.</span>systems<span class='op'>;</span>
+      <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+        inputs<span class='op'>.</span>process-compose-flake<span class='op'>.</span>flakeModule
+      <span class='op'>];</span>
+      <span class='va'>perSystem</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>self'</span><span class='op'>,</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+        <span class='va'>process-compose</span>.<span class='st'>"default"</span> <span class='op'>=</span> 
+        <span class='kw'>let</span>
+          <span class='va'>inherit</span> (<span class='va'>inputs</span>.<span class='va'>services-flake</span>.<span class='va'>lib</span>) <span class='va'>multiService</span>;
+        <span class='kw'>in</span>
+        <span class='op'>{</span>
+          <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+            inputs<span class='op'>.</span>services-flake<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+            <span class='op'>(</span>multiService <span class='ss'>./hello.nix</span><span class='op'>)</span>
+          <span class='op'>];</span>
 
-          services.ollama."ollama1".enable = true;
-          services.hello = {
-            hello1 = {
-              enable = true;
-              message = "Hello, world!";
-            };
-            hello2 = {
-              enable = true;
-              message = "Hello, Nix!";
-            };
-          };
-        };
-      };
-    };
-}</code></pre></div>
+          <span class='va'>services</span>.<span class='va'>ollama</span>.<span class='st'>"ollama1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+          <span class='va'>services</span>.<span class='va'>hello</span> <span class='op'>=</span> <span class='op'>{</span>
+            <span class='va'>hello1</span> <span class='op'>=</span> <span class='op'>{</span>
+              <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+              <span class='va'>message</span> <span class='op'>=</span> <span class='st'>"Hello, world!"</span><span class='op'>;</span>
+            <span class='op'>};</span>
+            <span class='va'>hello2</span> <span class='op'>=</span> <span class='op'>{</span>
+              <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+              <span class='va'>message</span> <span class='op'>=</span> <span class='st'>"Hello, Nix!"</span><span class='op'>;</span>
+            <span class='op'>};</span>
+          <span class='op'>};</span>
+        <span class='op'>};</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       And finally, <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nix run</code>: <img class='inline mb-3' src='services-flake/multi-instance-hello.png' alt='[[multi-instance-hello.png]]' style='width: inherit;' />
     </p>
@@ -2800,7 +2798,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

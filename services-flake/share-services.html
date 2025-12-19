@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2415,49 +2409,51 @@
 
 
     </h2>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># foo/flake.nix
-{
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-    services-flake.url = "github:juspay/services-flake";
-  };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" "aarch64-darwin" ];
-      imports = [
-        inputs.process-compose-flake.flakeModule
-      ];
-      flake.processComposeModules.default = ./services.nix;
-      perSystem = { pkgs, lib, ... }: {
-        process-compose."default" = {
-          imports = [
-            inputs.services-flake.processComposeModules.default
-            inputs.self.processComposeModules.default
-          ];
-        };
-      };
-    };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># foo/flake.nix</span>
+<span class='op'>{</span>
+  <span class='va'>inputs</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>nixpkgs</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nixos/nixpkgs/nixpkgs-unstable"</span><span class='op'>;</span>
+    <span class='va'>flake-parts</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:hercules-ci/flake-parts"</span><span class='op'>;</span>
+    <span class='va'>process-compose-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/process-compose-flake"</span><span class='op'>;</span>
+    <span class='va'>services-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:juspay/services-flake"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+  <span class='va'>outputs</span> <span class='op'>=</span> <span class='va'>inputs</span><span class='op'>:</span>
+    inputs<span class='op'>.</span>flake<span class='op'>-</span>parts<span class='op'>.</span>lib<span class='op'>.</span>mkFlake <span class='op'>{</span> <span class='kw'>inherit</span> <span class='va'>inputs</span><span class='op'>;</span> <span class='op'>}</span> <span class='op'>{</span>
+      <span class='va'>systems</span> <span class='op'>=</span> <span class='op'>[</span> <span class='st'>"x86_64-linux"</span> <span class='st'>"aarch64-darwin"</span> <span class='op'>];</span>
+      <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+        inputs<span class='op'>.</span>process-compose-flake<span class='op'>.</span>flakeModule
+      <span class='op'>];</span>
+      <span class='va'>flake</span>.<span class='va'>processComposeModules</span>.<span class='va'>default</span> <span class='op'>=</span> <span class='ss'>./services.nix</span><span class='op'>;</span>
+      <span class='va'>perSystem</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+        <span class='va'>process-compose</span>.<span class='st'>"default"</span> <span class='op'>=</span> <span class='op'>{</span>
+          <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+            inputs<span class='op'>.</span>services-flake<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+            inputs<span class='op'>.</span>self<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+          <span class='op'>];</span>
+        <span class='op'>};</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       <a href='services-flake/custom-service' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>Custom service</a> exported by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>foo</code> as <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>processComposeModules.default</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># foo/services.nix
-{ pkgs, lib, ... }: {
-    options = {
-    services.foo = {
-      enable = lib.mkEnableOption "Enable foo service";
-      package = lib.mkPackageOption pkgs "foo" { };
-    };
-  };
-  config = let cfg = config.services.foo; in
-    lib.mkIf cfg.enable {
-        settings.processes.foo = {
-            command = "${lib.getExe cfg.foo}";
-        };
-    };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># foo/services.nix</span>
+<span class='op'>{</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+    <span class='va'>options</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>services</span>.<span class='va'>foo</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>enable</span> <span class='op'>=</span> lib<span class='op'>.</span>mkEnableOption <span class='st'>"Enable foo service"</span><span class='op'>;</span>
+      <span class='va'>package</span> <span class='op'>=</span> lib<span class='op'>.</span>mkPackageOption pkgs <span class='st'>"foo"</span> <span class='op'>{</span> <span class='op'>};</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+  <span class='va'>config</span> <span class='op'>=</span> <span class='kw'>let</span> <span class='va'>cfg</span> <span class='op'>=</span> config<span class='op'>.</span>services<span class='op'>.</span>foo<span class='op'>;</span> <span class='kw'>in</span>
+    lib<span class='op'>.</span>mkIf cfg<span class='op'>.</span>enable <span class='op'>{</span>
+        <span class='va'>settings</span>.<span class='va'>processes</span>.<span class='va'>foo</span> <span class='op'>=</span> <span class='op'>{</span>
+            <span class='va'>command</span> <span class='op'>=</span> <span class='st'>"</span><span class='sc'>${</span>lib<span class='op'>.</span>getExe cfg<span class='op'>.</span>foo<span class='sc'>}</span><span class='st'>"</span><span class='op'>;</span>
+        <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='bar-imports-foo-service' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   bar (Imports foo service)
@@ -2475,35 +2471,35 @@
     <p class='mb-4 leading-relaxed'>
       <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bar</code> wants to reuse <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>foo</code>’s service.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># bar/flake.nix
-{
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-    services-flake.url = "github:juspay/services-flake";
-    foo.url = "&lt;foo-source&gt;";
-  };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" "aarch64-darwin" ];
-      imports = [
-        inputs.process-compose-flake.flakeModule
-      ];
-      flake.processComposeModules.default = ./services.nix;
-      perSystem = { pkgs, lib, ... }: {
-        process-compose."default" = {
-          imports = [
-            inputs.services-flake.processComposeModules.default
-            inputs.foo.processComposeModules.default
-          ];
-          services.foo.enable = true;
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># bar/flake.nix</span>
+<span class='op'>{</span>
+  <span class='va'>inputs</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>nixpkgs</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:nixos/nixpkgs/nixpkgs-unstable"</span><span class='op'>;</span>
+    <span class='va'>flake-parts</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:hercules-ci/flake-parts"</span><span class='op'>;</span>
+    <span class='va'>process-compose-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/process-compose-flake"</span><span class='op'>;</span>
+    <span class='va'>services-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:juspay/services-flake"</span><span class='op'>;</span>
+    <span class='va'>foo</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"&lt;foo-source&gt;"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+  <span class='va'>outputs</span> <span class='op'>=</span> <span class='va'>inputs</span><span class='op'>:</span>
+    inputs<span class='op'>.</span>flake<span class='op'>-</span>parts<span class='op'>.</span>lib<span class='op'>.</span>mkFlake <span class='op'>{</span> <span class='kw'>inherit</span> <span class='va'>inputs</span><span class='op'>;</span> <span class='op'>}</span> <span class='op'>{</span>
+      <span class='va'>systems</span> <span class='op'>=</span> <span class='op'>[</span> <span class='st'>"x86_64-linux"</span> <span class='st'>"aarch64-darwin"</span> <span class='op'>];</span>
+      <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+        inputs<span class='op'>.</span>process-compose-flake<span class='op'>.</span>flakeModule
+      <span class='op'>];</span>
+      <span class='va'>flake</span>.<span class='va'>processComposeModules</span>.<span class='va'>default</span> <span class='op'>=</span> <span class='ss'>./services.nix</span><span class='op'>;</span>
+      <span class='va'>perSystem</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>pkgs</span><span class='op'>,</span> <span class='va'>lib</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+        <span class='va'>process-compose</span>.<span class='st'>"default"</span> <span class='op'>=</span> <span class='op'>{</span>
+          <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+            inputs<span class='op'>.</span>services-flake<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+            inputs<span class='op'>.</span>foo<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+          <span class='op'>];</span>
+          <span class='va'>services</span>.<span class='va'>foo</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
           
-          # The rest of bar's services goes here...
-        };
-      };
-    };
-}
+          <span class='co'># The rest of bar's services goes here...</span>
+        <span class='op'>};</span>
+      <span class='op'>};</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
 </code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
@@ -2665,7 +2661,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

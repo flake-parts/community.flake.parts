@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2411,10 +2405,11 @@
 
 
     </h2>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.postgres."pg1".enable = true;
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>postgres</span>.<span class='st'>"pg1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='examples' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Examples
@@ -2468,21 +2463,22 @@
     <p class='mb-4 leading-relaxed'>
       Assuming your initial schema is defined in <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>./scripts/db.sql</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.postgres."pg1" = {
-    enable = true;
-    initialScript.before = ''
-      CREATE USER myuser WITH password 'mypasswd';
-    '';
-    initialDatabases = [
-      {
-        name = "mydb";
-        schemas = [ ./scripts/db.sql ];
-      }
-    ];
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>postgres</span>.<span class='st'>"pg1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>initialScript</span>.<span class='va'>before</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>      CREATE USER myuser WITH password 'mypasswd';</span>
+<span class='st'>    ''</span><span class='op'>;</span>
+    <span class='va'>initialDatabases</span> <span class='op'>=</span> <span class='op'>[</span>
+      <span class='op'>{</span>
+        <span class='va'>name</span> <span class='op'>=</span> <span class='st'>"mydb"</span><span class='op'>;</span>
+        <span class='va'>schemas</span> <span class='op'>=</span> <span class='op'>[</span> <span class='ss'>./scripts/db.sql</span> <span class='op'>];</span>
+      <span class='op'>}</span>
+    <span class='op'>];</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='gotchas' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Gotchas
@@ -2561,12 +2557,13 @@
     </p>
   
   </div>
-</div><div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  services.postgres."pg1" = {
-    enable = true;
-    socketDir = "/tmp/pg1";
-  };
-}</code></pre></div>
+</div><div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>postgres</span>.<span class='st'>"pg1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>socketDir</span> <span class='op'>=</span> <span class='st'>"/tmp/pg1"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -2790,7 +2787,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

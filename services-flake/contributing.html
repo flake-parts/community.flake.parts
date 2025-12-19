@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2407,7 +2401,8 @@
     <p class='mb-4 leading-relaxed'>
       A Nix dev shell is available, providing <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nixpkgs-fmt</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>just</code>. To enter the dev shell, run:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>nix develop ./dev</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>nix</span> develop ./dev
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       An <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>.envrc</code> is also provided, so it is recommended to use <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>direnv</code> to automatically enter the dev shell when you <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>cd</code> into the project directory. See <a href='https://nixos.asia/en/direnv' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this tutorial</a>.
     </p>
@@ -2491,7 +2486,8 @@
 
 
     </h3>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>just run &lt;service-name&gt;</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>just</span> run <span class='op'>&lt;</span>service-name<span class='op'>&gt;</span>
+</code></pre></div>
     <h3 id='run-tests' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   Run the tests for the service
@@ -2509,11 +2505,13 @@
     <p class='mb-4 leading-relaxed'>
       The previous command will run the services but not the tests. To run the tests, use:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>just test &lt;service-name&gt;</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>just</span> test <span class='op'>&lt;</span>service-name<span class='op'>&gt;</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       or test all services:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>just test-all</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>just</span> test-all
+</code></pre></div>
     <h3 id='service-doc' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   Add documentation for the new service
@@ -2576,7 +2574,8 @@
     <p class='mb-4 leading-relaxed'>
       We use <a href='https://emanote.srid.ca/' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>emanote</a> to render our documentation. The source files are in the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>doc</code> directory. To run the docs, use:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>just doc # Or, `cd doc && nix run`</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>just</span> doc <span class='co'># Or, `cd doc && nix run`</span>
+</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -2781,7 +2780,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

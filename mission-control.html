@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -873,19 +867,21 @@
     <p class='mb-4 leading-relaxed'>
       To use this module, add <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>mission-control</code> to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>inputs</code>,
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside inputs
-  mission-control.url = "github:Platonic-Systems/mission-control";
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside inputs</span>
+  <span class='va'>mission-control</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/mission-control"</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       and import its flakeModule:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside mkFlake
-  imports = [
-    inputs.mission-control.flakeModule
-  ];
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside mkFlake</span>
+  <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+    inputs<span class='op'>.</span>mission-control<span class='op'>.</span>flakeModule
+  <span class='op'>];</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='add-a-script-haskell' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Add a script (Haskell)
@@ -921,19 +917,20 @@
     <p class='mb-4 leading-relaxed'>
       We can add a convenient script to start Hoogle on project dependencies as follows. As a result, typing <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, docs</code> in the dev shell will start Hoogle.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside perSystem
-  mission-control.scripts = {
-    docs = {
-      description = "Start Hoogle server for project dependencies";
-      exec = ''
-        echo http://127.0.0.1:8888
-        hoogle serve -p 8888 --local
-      '';
-      category = "Dev Tools";
-    };
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside perSystem</span>
+  <span class='va'>mission-control</span>.<span class='va'>scripts</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>docs</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"Start Hoogle server for project dependencies"</span><span class='op'>;</span>
+      <span class='va'>exec</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>        echo http://127.0.0.1:8888</span>
+<span class='st'>        hoogle serve -p 8888 --local</span>
+<span class='st'>      ''</span><span class='op'>;</span>
+      <span class='va'>category</span> <span class='op'>=</span> <span class='st'>"Dev Tools"</span><span class='op'>;</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>exec</code> option can be either a shell script (string) or a Nix package. The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>category</code> option defines the group that this script belongs to, when displayed in the menu.
     </p>
@@ -955,18 +952,19 @@
     <p class='mb-4 leading-relaxed'>
       To start a cabal repl from your devShell on running <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, repl</code>, use:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside perSystem
-  mission-control.scripts = {
-    repl = {
-      description = "Start the cabal repl";
-      exec = ''
-        cabal repl "$@"
-      '';
-      category = "Dev Tools";
-    };
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside perSystem</span>
+  <span class='va'>mission-control</span>.<span class='va'>scripts</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>repl</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"Start the cabal repl"</span><span class='op'>;</span>
+      <span class='va'>exec</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>        cabal repl "$@"</span>
+<span class='st'>      ''</span><span class='op'>;</span>
+      <span class='va'>category</span> <span class='op'>=</span> <span class='st'>"Dev Tools"</span><span class='op'>;</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       <a href='https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'><code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>"$@"</code></a> represents the command-line arguments passed to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, repl</code>. This allows us to pass custom arguments to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>cabal repl</code>. For example, if you wish to run an executable <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>foo</code> from your project in cabal repl, you’d run <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, repl exe:foo</code>. Similarly, to get into the repl for a library <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bar</code> you’d run <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, run lib:bar</code>.
     </p>
@@ -988,16 +986,17 @@
     <p class='mb-4 leading-relaxed'>
       If you use the <a href='https://nixos.asia/en/treefmt' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>treefmt</a> module for autoformatting the source tree, you can alias it as <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, fmt</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{ 
-  # Inside perSystem
-  mission-control.scripts = {
-    fmt = {
-      description = "Format the source tree";
-      exec = config.treefmt.build.wrapper;
-      category = "Dev Tools";
-    };
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span> 
+  <span class='co'># Inside perSystem</span>
+  <span class='va'>mission-control</span>.<span class='va'>scripts</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>fmt</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>description</span> <span class='op'>=</span> <span class='st'>"Format the source tree"</span><span class='op'>;</span>
+      <span class='va'>exec</span> <span class='op'>=</span> config<span class='op'>.</span>treefmt<span class='op'>.</span>build<span class='op'>.</span>wrapper<span class='op'>;</span>
+      <span class='va'>category</span> <span class='op'>=</span> <span class='st'>"Dev Tools"</span><span class='op'>;</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Note that <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>exec</code> in this example is a Nix package.
     </p>
@@ -1033,12 +1032,13 @@
     <p class='mb-4 leading-relaxed'>
       If you don’t wish to run your command using <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>, &lt;command&gt;</code> you can change the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>,</code> to be any string of your choice by setting the option <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>wrapperName</code>, as follows:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside perSystem
-  mission-control = {
-    wrapperName = "s";
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside perSystem</span>
+  <span class='va'>mission-control</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>wrapperName</span> <span class='op'>=</span> <span class='st'>"s"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='example' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Example
@@ -1287,7 +1287,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

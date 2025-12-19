@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2414,10 +2408,11 @@
 
 
     </h2>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.ollama."ollama1".enable = true;
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>ollama</span>.<span class='st'>"ollama1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='acceleration' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Acceleration
@@ -2480,27 +2475,29 @@
     <p class='mb-4 leading-relaxed'>
       Firstly, allow unfree packages:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># Inside perSystem = { system, ... }: { ...
-{
-  imports = [
-    "${inputs.nixpkgs}/nixos/modules/misc/nixpkgs.nix"
-  ];
-  nixpkgs = {
-    hostPlatform = system;
-    # Required for CUDA
-    config.allowUnfree = true;
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># Inside perSystem = { system, ... }: { ...</span>
+<span class='op'>{</span>
+  <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+    <span class='st'>"</span><span class='sc'>${</span>inputs<span class='op'>.</span>nixpkgs<span class='sc'>}</span><span class='st'>/nixos/modules/misc/nixpkgs.nix"</span>
+  <span class='op'>];</span>
+  <span class='va'>nixpkgs</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>hostPlatform</span> <span class='op'>=</span> system<span class='op'>;</span>
+    <span class='co'># Required for CUDA</span>
+    <span class='va'>config</span>.<span class='va'>allowUnfree</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       And then enable CUDA acceleration:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.ollama."ollama1" = {
-    enable = true;
-    acceleration = "cuda";
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>ollama</span>.<span class='st'>"ollama1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>acceleration</span> <span class='op'>=</span> <span class='st'>"cuda"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h3 id='rocm' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   ROCm
@@ -2518,13 +2515,14 @@
     <p class='mb-4 leading-relaxed'>
       For Radeon GPUs.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.ollama."ollama1" = {
-    enable = true;
-    acceleration = "rocm";
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>ollama</span>.<span class='st'>"ollama1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>acceleration</span> <span class='op'>=</span> <span class='st'>"rocm"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -2760,7 +2758,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

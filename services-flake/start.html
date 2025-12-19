@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2407,9 +2401,10 @@
     <p class='mb-4 leading-relaxed'>
       Use the <a href='https://github.com/juspay/services-flake/blob/main/example/simple/flake.nix' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>template flake</a> provided by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>services-flake</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>mkdir example && cd ./example
-nix flake init -t github:juspay/services-flake
-nix run</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='fu'>mkdir</span> example <span class='kw'>&&</span> <span class='bu'>cd</span> ./example
+<span class='ex'>nix</span> flake init <span class='at'>-t</span> github:juspay/services-flake
+<span class='ex'>nix</span> run
+</code></pre></div>
     <h2 id='existing-project' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Existing project
@@ -2427,38 +2422,41 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       services-flake uses <a href='https://community.flake.parts/process-compose-flake' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>process-compose-flake</a> to manage the services. Let’s first import the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>flake-parts</code> modules provided by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>services-flake</code> in your flake:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # 1. Add the inputs
-  inputs.process-compose-flake.url = "github:Platonic-Systems/process-compose-flake";
-  inputs.services-flake.url = "github:juspay/services-flake";
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># 1. Add the inputs</span>
+  <span class='va'>inputs</span>.<span class='va'>process-compose-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:Platonic-Systems/process-compose-flake"</span><span class='op'>;</span>
+  <span class='va'>inputs</span>.<span class='va'>services-flake</span>.<span class='va'>url</span> <span class='op'>=</span> <span class='st'>"github:juspay/services-flake"</span><span class='op'>;</span>
   ...
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        # 2. Import the flake-module
-        inputs.process-compose-flake.flakeModule
-      ];
-      perSystem = { ... }: {
-        # 3. Create the process-compose configuration, importing services-flake
-        process-compose."myservices" = {
-          imports = [
-            inputs.services-flake.processComposeModules.default
-          ];
-        };
-      }
-    };
-}</code></pre></div>
+  <span class='va'>outputs</span> <span class='op'>=</span> <span class='va'>inputs</span><span class='op'>:</span>
+    inputs<span class='op'>.</span>flake<span class='op'>-</span>parts<span class='op'>.</span>lib<span class='op'>.</span>mkFlake <span class='op'>{</span> <span class='kw'>inherit</span> <span class='va'>inputs</span><span class='op'>;</span> <span class='op'>}</span> <span class='op'>{</span>
+      <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+        <span class='co'># 2. Import the flake-module</span>
+        inputs<span class='op'>.</span>process-compose-flake<span class='op'>.</span>flakeModule
+      <span class='op'>];</span>
+      <span class='va'>perSystem</span> <span class='op'>=</span> <span class='op'>{</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+        <span class='co'># 3. Create the process-compose configuration, importing services-flake</span>
+        <span class='va'>process-compose</span>.<span class='st'>"myservices"</span> <span class='op'>=</span> <span class='op'>{</span>
+          <span class='va'>imports</span> <span class='op'>=</span> <span class='op'>[</span>
+            inputs<span class='op'>.</span>services-flake<span class='op'>.</span>processComposeModules<span class='op'>.</span>default
+          <span class='op'>];</span>
+        <span class='op'>};</span>
+      <span class='op'>}</span>
+    <span class='er'>}</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       As an example, let’s add the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>redis</code> service to your flake:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># Inside `perSystem.process-compose."myservices"`
-{
-  services.redis."r1".enable = true;
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># Inside `perSystem.process-compose."myservices"`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>redis</span>.<span class='st'>"r1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Time to run the service:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh language-sh'>nix run .#myservices</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='sh'><span class='ex'>nix</span> run .#myservices
+</code></pre></div>
     <h2 id='under-the-hood' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Under the hood
@@ -2732,7 +2730,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -861,9 +855,10 @@
     <p class='mb-4 leading-relaxed'>
       To run this example locally,
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash language-bash'>mkdir example && cd example
-nix flake init -t github:Platonic-Systems/process-compose-flake
-nix run</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash'><span class='fu'>mkdir</span> example <span class='kw'>&&</span> <span class='bu'>cd</span> example
+<span class='ex'>nix</span> flake init <span class='at'>-t</span> github:Platonic-Systems/process-compose-flake
+<span class='ex'>nix</span> run
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       This should open <a href='http://127.0.0.1:8213/' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>http://127.0.0.1:8213/</a> in your web browser. If not, navigate to the logs for the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>sqlite-web</code> process and access the URL. Use <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>demo</code> as the password to access sqlite-web. The interface should look like this:
     </p>
@@ -893,22 +888,23 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       To achieve this using <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code> you can simply add the following code to the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>perSystem</code> function in your <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>flake-parts</code> flake.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>process-compose.watch-server = {
-  settings.processes = {
-    backend-server.command = "${self'.apps.backend-server.program} --port 9000";
-    frontend-server.command = "${self'.apps.frontend-server.program} --port 9001";
-    proxy-server.command =
-      let
-        proxyConfig = pkgs.writeTextFile {
-          name = "proxy.conf";
-          text = ''
-            ...
-          '';
-        };
-      in
-      "${self'.apps.proxy-server.program} -c ${proxyConfig} -p 8000";
-  };
-};</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>process<span class='op'>-</span>compose<span class='op'>.</span>watch<span class='op'>-</span>server = <span class='op'>{</span>
+  <span class='va'>settings</span>.<span class='va'>processes</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>backend-server</span>.<span class='va'>command</span> <span class='op'>=</span> <span class='st'>"</span><span class='sc'>${</span>self'<span class='op'>.</span>apps<span class='op'>.</span>backend<span class='op'>-</span>server<span class='op'>.</span>program<span class='sc'>}</span><span class='st'> --port 9000"</span><span class='op'>;</span>
+    <span class='va'>frontend-server</span>.<span class='va'>command</span> <span class='op'>=</span> <span class='st'>"</span><span class='sc'>${</span>self'<span class='op'>.</span>apps<span class='op'>.</span>frontend<span class='op'>-</span>server<span class='op'>.</span>program<span class='sc'>}</span><span class='st'> --port 9001"</span><span class='op'>;</span>
+    <span class='va'>proxy-server</span>.<span class='va'>command</span> <span class='op'>=</span>
+      <span class='kw'>let</span>
+        <span class='va'>proxyConfig</span> <span class='op'>=</span> pkgs<span class='op'>.</span>writeTextFile <span class='op'>{</span>
+          <span class='va'>name</span> <span class='op'>=</span> <span class='st'>"proxy.conf"</span><span class='op'>;</span>
+          <span class='va'>text</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>            ...</span>
+<span class='st'>          ''</span><span class='op'>;</span>
+        <span class='op'>};</span>
+      <span class='kw'>in</span>
+      <span class='st'>"</span><span class='sc'>${</span>self'<span class='op'>.</span>apps<span class='op'>.</span>proxy<span class='op'>-</span>server<span class='op'>.</span>program<span class='sc'>}</span><span class='st'> -c </span><span class='sc'>${</span>proxyConfig<span class='sc'>}</span><span class='st'> -p 8000"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>;
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose-flake</code> will generate the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>packages.${system}.watch-server</code> output for you.
     </p>
@@ -920,14 +916,15 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       The <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>package</code> output in turn can be used to make the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>watch-server</code> command available in your <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>devShell</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>devShells = {
-  default = pkgs.mkShell {
-    name = "my-shell";
-    nativeBuildInputs = [
-      self'.packages.watch-server
-    ];
-  };
-};</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>devShells = <span class='op'>{</span>
+  <span class='va'>default</span> <span class='op'>=</span> pkgs<span class='op'>.</span>mkShell <span class='op'>{</span>
+    <span class='va'>name</span> <span class='op'>=</span> <span class='st'>"my-shell"</span><span class='op'>;</span>
+    <span class='va'>nativeBuildInputs</span> <span class='op'>=</span> <span class='op'>[</span>
+      self'<span class='op'>.</span>packages<span class='op'>.</span>watch-server
+    <span class='op'>];</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>;
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       You can enter your devShell by running <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nix develop</code> and run <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>watch-server</code> to run your processes.
     </p>
@@ -949,13 +946,14 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       If you’d like to run certain commands before starting the processes, you can add them to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>preHook</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>process-compose.watch-server = {
-  preHook = ''
-    # Cleanup on EXIT, this runs irrespective of exit-code of process-compose
-    trap "rm -rf ./data" EXIT
-    export USER=foo
-  '';
-};</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>process<span class='op'>-</span>compose<span class='op'>.</span>watch<span class='op'>-</span>server = <span class='op'>{</span>
+  <span class='va'>preHook</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>    # Cleanup on EXIT, this runs irrespective of exit-code of process-compose</span>
+<span class='st'>    trap "rm -rf ./data" EXIT</span>
+<span class='st'>    export USER=foo</span>
+<span class='st'>  ''</span><span class='op'>;</span>
+<span class='op'>}</span>;
+</code></pre></div>
     <h3 id='posthook' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   postHook
@@ -973,11 +971,12 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Or if you’d like to run certain commands upon successful execution of <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>process-compose</code>, i.e exits with <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>exit-code: 0</code>, then add them to <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>postHook</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>process-compose.watch-server = {
-  postHook = ''
-    cat foo.txt
-  '';
-};</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>process<span class='op'>-</span>compose<span class='op'>.</span>watch<span class='op'>-</span>server = <span class='op'>{</span>
+  <span class='va'>postHook</span> <span class='op'>=</span> <span class='st'>''</span>
+<span class='st'>    cat foo.txt</span>
+<span class='st'>  ''</span><span class='op'>;</span>
+<span class='op'>}</span>;
+</code></pre></div>
     <h3 id='default-settings-for-all-processes' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   Default settings for all processes
@@ -995,27 +994,28 @@ nix run</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       You can define default settings that apply to all processes using <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>defaults.processSettings</code>. This is useful when you want to set common configuration like namespace, restart behavior, or other settings across all processes.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>process-compose.watch-server = {
-  defaults.processSettings = { name, ... }: {
-    # Set default namespace for all processes
-    namespace = lib.mkDefault "watch-server";
-    # Set default restart behavior
-    availability.restart = lib.mkDefault "on_failure";
-    availability.max_restarts = lib.mkDefault 3;
-    # Use the process name in log locations
-    log_location = ".logs/${name}.log";
-  };
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>process<span class='op'>-</span>compose<span class='op'>.</span>watch<span class='op'>-</span>server = <span class='op'>{</span>
+  <span class='va'>defaults</span>.<span class='va'>processSettings</span> <span class='op'>=</span> <span class='op'>{</span> <span class='va'>name</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+    <span class='co'># Set default namespace for all processes</span>
+    <span class='va'>namespace</span> <span class='op'>=</span> lib<span class='op'>.</span>mkDefault <span class='st'>"watch-server"</span><span class='op'>;</span>
+    <span class='co'># Set default restart behavior</span>
+    <span class='va'>availability</span>.<span class='va'>restart</span> <span class='op'>=</span> lib<span class='op'>.</span>mkDefault <span class='st'>"on_failure"</span><span class='op'>;</span>
+    <span class='va'>availability</span>.<span class='va'>max_restarts</span> <span class='op'>=</span> lib<span class='op'>.</span>mkDefault <span class='dv'>3</span><span class='op'>;</span>
+    <span class='co'># Use the process name in log locations</span>
+    <span class='va'>log_location</span> <span class='op'>=</span> <span class='st'>".logs/</span><span class='sc'>${</span>name<span class='sc'>}</span><span class='st'>.log"</span><span class='op'>;</span>
+  <span class='op'>};</span>
 
-  settings.processes = {
-    backend-server.command = "...";
-    frontend-server.command = "...";
-    # This process overrides the default namespace
-    proxy-server = {
-      command = "...";
-      namespace = "proxy"; # Overrides the default
-    };
-  };
-};</code></pre></div>
+  <span class='va'>settings</span>.<span class='va'>processes</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>backend-server</span>.<span class='va'>command</span> <span class='op'>=</span> <span class='st'>"..."</span><span class='op'>;</span>
+    <span class='va'>frontend-server</span>.<span class='va'>command</span> <span class='op'>=</span> <span class='st'>"..."</span><span class='op'>;</span>
+    <span class='co'># This process overrides the default namespace</span>
+    <span class='va'>proxy-server</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>command</span> <span class='op'>=</span> <span class='st'>"..."</span><span class='op'>;</span>
+      <span class='va'>namespace</span> <span class='op'>=</span> <span class='st'>"proxy"</span><span class='op'>;</span> <span class='co'># Overrides the default</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>;
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       <strong>Important:</strong> Use <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>lib.mkDefault</code> when setting defaults to ensure individual process settings can override them.
     </p>
@@ -1336,7 +1336,7 @@ nix run</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

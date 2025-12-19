@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -1477,8 +1471,9 @@
     <p class='mb-4 leading-relaxed'>
       Haskell package derivations created by <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>haskell-flake</code> are shipped with symlinks to other store paths, like <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>$out/lib</code>, <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>$out/nix-support</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>$out/share/doc</code>. In addition, enabling profiling or haddock can increase the size of these packages. If your Haskell application is end-user software, you will want to strip all but the executables. This can be achieved using <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>justStaticExecutables</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>  # Inside perSystem
-  packages.default = pkgs.haskell.lib.justStaticExecutables self'.packages.foo;</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'>  <span class='co'># Inside perSystem</span>
+  packages<span class='op'>.</span>default = pkgs<span class='op'>.</span>haskell<span class='op'>.</span>lib<span class='op'>.</span>justStaticExecutables self'<span class='op'>.</span>packages<span class='op'>.</span>foo;
+</code></pre></div>
     <h2 id='removing-unnecessary-nix-dependencies' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Removing unnecessary Nix dependencies
@@ -1508,9 +1503,10 @@
     <p class='mb-4 leading-relaxed'>
       Build and scan <a href='haskell-flake/docker' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>the docker image</a> for store paths that are taking up the most space:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash language-bash'>nix build .#dockerImage
-docker load -i &lt; result
-docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tail</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash'><span class='ex'>nix</span> build .#dockerImage
+<span class='ex'>docker</span> load <span class='at'>-i</span> <span class='op'>&lt;</span> result
+<span class='ex'>docker</span> run <span class='at'>--rm</span> <span class='at'>-it</span> <span class='op'>&lt;</span>name:tag<span class='op'>&gt;</span> sh <span class='at'>-c</span> <span class='st'>'du -sh /nix/store/*'</span> <span class='kw'>|</span> <span class='fu'>sort</span> <span class='at'>-h</span> <span class='kw'>|</span> <span class='fu'>tail</span>
+</code></pre></div>
         </li>
       
         <li>
@@ -1526,7 +1522,8 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     <p class='mb-4 leading-relaxed'>
       It might not be obvious to you that <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bar</code> is causing the increase in size. In such cases you can use <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>nix why-depends</code> to find out why <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>ghc</code> is present in the docker image:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash language-bash'>nix why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='bash'><span class='ex'>nix</span> why-depends /nix/store/...-foo /nix/store/...-ghc-x.x.x
+</code></pre></div>
         </li>
       
         <li>
@@ -1534,37 +1531,38 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     <p class='mb-4 leading-relaxed'>
       Now that you know that <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bar</code> is causing the increase in size, let’s wrap the executable of <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>foo</code> <a href='https://srid.ca/remove-references-to' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>removing references to</a> <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>bar</code>:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  # Inside `haskellProjects`
-  haskellProjects.default = 
-    let
-      # Forked from: https://github.com/srid/emanote/blob/24c7e5e29a91ec201a48fad1ac028a123b82a402/flake.nix#L52-L62
-      # We shouldn't need this after https://github.com/haskell/cabal/pull/8534
-      removeReferencesTo = disallowedReferences: drv:
-        drv.overrideAttrs (old: rec {
-          inherit disallowedReferences;
-          # Ditch data dependencies that are not needed at runtime.
-          # cf. https://github.com/NixOS/nixpkgs/pull/204675
-          # cf. https://srid.ca/remove-references-to
-          postInstall = (old.postInstall or "") + ''
-            ${lib.concatStrings (map (e: "echo Removing reference to: ${e}\n") disallowedReferences)}
-            ${lib.concatStrings (map (e: "remove-references-to -t ${e} $out/bin/*\n") disallowedReferences)}
-          '';
-        });
-    in
-    {
-      # ...
-      settings = {
-        foo = {self, super, ... }: {
-          justStaticExecutables = true;
-          removeReferencesTo = [
-            self.bar
-          ];
-        };
-      };
-      # ...
-    };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='co'># Inside `haskellProjects`</span>
+  <span class='va'>haskellProjects</span>.<span class='va'>default</span> <span class='op'>=</span> 
+    <span class='kw'>let</span>
+      <span class='co'># Forked from: https://github.com/srid/emanote/blob/24c7e5e29a91ec201a48fad1ac028a123b82a402/flake.nix#L52-L62</span>
+      <span class='co'># We shouldn't need this after https://github.com/haskell/cabal/pull/8534</span>
+      <span class='va'>removeReferencesTo</span> <span class='op'>=</span> <span class='va'>disallowedReferences</span><span class='op'>:</span> <span class='va'>drv</span><span class='op'>:</span>
+        drv<span class='op'>.</span>overrideAttrs <span class='op'>(</span><span class='va'>old</span><span class='op'>:</span> <span class='kw'>rec</span> <span class='op'>{</span>
+          <span class='kw'>inherit</span> <span class='va'>disallowedReferences</span><span class='op'>;</span>
+          <span class='co'># Ditch data dependencies that are not needed at runtime.</span>
+          <span class='co'># cf. https://github.com/NixOS/nixpkgs/pull/204675</span>
+          <span class='co'># cf. https://srid.ca/remove-references-to</span>
+          <span class='va'>postInstall</span> <span class='op'>=</span> <span class='op'>(</span>old<span class='op'>.</span>postInstall <span class='kw'>or</span> <span class='st'>""</span><span class='op'>)</span> <span class='op'>+</span> <span class='st'>''</span>
+<span class='st'>            </span><span class='sc'>${</span>lib<span class='op'>.</span>concatStrings <span class='op'>(</span><span class='bu'>map</span> <span class='op'>(</span><span class='va'>e</span><span class='op'>:</span> <span class='st'>"echo Removing reference to: </span><span class='sc'>${</span>e<span class='sc'>}\n</span><span class='st'>"</span><span class='op'>)</span> disallowedReferences<span class='op'>)</span><span class='sc'>}</span>
+<span class='st'>            </span><span class='sc'>${</span>lib<span class='op'>.</span>concatStrings <span class='op'>(</span><span class='bu'>map</span> <span class='op'>(</span><span class='va'>e</span><span class='op'>:</span> <span class='st'>"remove-references-to -t </span><span class='sc'>${</span>e<span class='sc'>}</span><span class='st'> $out/bin/*</span><span class='sc'>\n</span><span class='st'>"</span><span class='op'>)</span> disallowedReferences<span class='op'>)</span><span class='sc'>}</span>
+<span class='st'>          ''</span><span class='op'>;</span>
+        <span class='op'>});</span>
+    <span class='kw'>in</span>
+    <span class='op'>{</span>
+      <span class='co'># ...</span>
+      <span class='va'>settings</span> <span class='op'>=</span> <span class='op'>{</span>
+        <span class='va'>foo</span> <span class='op'>=</span> <span class='op'>{</span><span class='va'>self</span><span class='op'>,</span> <span class='va'>super</span><span class='op'>,</span> <span class='op'>...</span> <span class='op'>}</span>: <span class='op'>{</span>
+          <span class='va'>justStaticExecutables</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+          <span class='va'>removeReferencesTo</span> <span class='op'>=</span> <span class='op'>[</span>
+            self<span class='op'>.</span>bar
+          <span class='op'>];</span>
+        <span class='op'>};</span>
+      <span class='op'>};</span>
+      <span class='co'># ...</span>
+    <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
         </li>
       
         <li>
@@ -1663,7 +1661,7 @@ docker run --rm -it &lt;name:tag&gt; sh -c 'du -sh /nix/store/*' | sort -h | tai
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

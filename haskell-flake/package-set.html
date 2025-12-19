@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -1483,38 +1477,40 @@
     <p class='mb-4 leading-relaxed'>
       A “project” in haskell-flake primarily serves the purpose of developing Haskell projects. Additionally, a project also exposes the final <em>package set</em> via the readonly option <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>outputs.finalPackages</code>. This package set includes the base packages (<code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>basePackages</code>), the <a href='haskell-flake/local' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>local packages</a> as well as any <a href='haskell-flake/dependency' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>dependency overrides</a> you set. Since we are are only interested in creating a new package set, we can use empty local packages and disable the dev shell:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  haskellProjects.ghc810 = {
-    defaults.packages = {};  # Disable scanning for local package
-    devShell.enable = false; # Disable devShells
-    autoWire = [ ];          # Don't wire any flake outputs
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>haskellProjects</span>.<span class='va'>ghc810</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>defaults</span>.<span class='va'>packages</span> <span class='op'>=</span> <span class='op'>{};</span>  <span class='co'># Disable scanning for local package</span>
+    <span class='va'>devShell</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>false</span><span class='op'>;</span> <span class='co'># Disable devShells</span>
+    <span class='va'>autoWire</span> <span class='op'>=</span> <span class='op'>[</span> <span class='op'>];</span>          <span class='co'># Don't wire any flake outputs</span>
 
-    # Start from nixpkgs's ghc8107 package set
-    basePackages = pkgs.haskell.packages.ghc8107;
-  };
-}</code></pre></div>
+    <span class='co'># Start from nixpkgs's ghc8107 package set</span>
+    <span class='va'>basePackages</span> <span class='op'>=</span> pkgs<span class='op'>.</span>haskell<span class='op'>.</span>packages<span class='op'>.</span>ghc8107<span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       You can access this package set as <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>config.haskellProjects.ghc810.outputs.finalPackages</code>. But this is not terribly interesting, because it is the exact same as the package set <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>pkgs.haskell.packages.ghc8107</code> from nixpkgs. So let’s add and override some packages in this set:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  haskellProjects.ghc810 = {
-    defaults.packages = {};  # No local packages
-    devShell.enable = false;
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>haskellProjects</span>.<span class='va'>ghc810</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>defaults</span>.<span class='va'>packages</span> <span class='op'>=</span> <span class='op'>{};</span>  <span class='co'># No local packages</span>
+    <span class='va'>devShell</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>false</span><span class='op'>;</span>
 
-    basePackages = pkgs.haskell.packages.ghc8107;
+    <span class='va'>basePackages</span> <span class='op'>=</span> pkgs<span class='op'>.</span>haskell<span class='op'>.</span>packages<span class='op'>.</span>ghc8107<span class='op'>;</span>
 
-    packages = {
-      # New packages from flake inputs
-      mylib.source = inputs.mylib;
-      # Dependencies from Hackage
-      aeson.source = "1.5.6.0";
-      dhall.source = "1.35.0";
-    };
-    settings = {
-       aeson.jailbreak = true;
-    };
-  };
-}</code></pre></div>
+    <span class='va'>packages</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='co'># New packages from flake inputs</span>
+      <span class='va'>mylib</span>.<span class='va'>source</span> <span class='op'>=</span> inputs<span class='op'>.</span>mylib<span class='op'>;</span>
+      <span class='co'># Dependencies from Hackage</span>
+      <span class='va'>aeson</span>.<span class='va'>source</span> <span class='op'>=</span> <span class='st'>"1.5.6.0"</span><span class='op'>;</span>
+      <span class='va'>dhall</span>.<span class='va'>source</span> <span class='op'>=</span> <span class='st'>"1.35.0"</span><span class='op'>;</span>
+    <span class='op'>};</span>
+    <span class='va'>settings</span> <span class='op'>=</span> <span class='op'>{</span>
+       <span class='va'>aeson</span>.<span class='va'>jailbreak</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       This will create a package set that overrides the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>aeson</code> and <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>dhall</code> packages using the specified versions from Hackage, but with the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>aeson</code> package having the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>jailbreak</code> flag set (which relaxes its Cabal constraints). It also adds the <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>mylib</code> package which exists neither in nixpkgs nor in Hackage, but comes from somewhere arbitrary and specified as flake input.
     </p>
@@ -1522,13 +1518,14 @@
     <p class='mb-4 leading-relaxed'>
       In your <em>actual</em> haskell project, you can use this package set (<code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>config.haskellProjects.ghc810.outputs.finalPackages</code>) as its base package set:
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  haskellProjects.myproject = {
-    packages.mypackage.source = ./.;
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>haskellProjects</span>.<span class='va'>myproject</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>packages</span>.<span class='va'>mypackage</span>.<span class='va'>source</span> <span class='op'>=</span> <span class='ss'>./.</span><span class='op'>;</span>
 
-    basePackages = config.haskellProjects.ghc810.outputs.finalPackages;
-  };
-}</code></pre></div>
+    <span class='va'>basePackages</span> <span class='op'>=</span> config<span class='op'>.</span>haskellProjects<span class='op'>.</span>ghc810<span class='op'>.</span>outputs<span class='op'>.</span>finalPackages<span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <p class='mb-4 leading-relaxed'>
       Finally, you can externalize this <code class='py-1 px-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-mono rounded border border-gray-200 dark:border-gray-700 text-[0.9em]'>ghc810</code> package set as either a flake-parts module or as a <a href='haskell-flake/modules' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkNormal'>haskell-flake module</a>, and thereon import it from multiple repositories.
     </p>
@@ -1737,7 +1734,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>

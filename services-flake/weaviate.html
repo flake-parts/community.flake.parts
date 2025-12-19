@@ -31,21 +31,15 @@
       <base href='/' />
       <link href='favicon.svg' rel='icon' />
     
-    <!-- highlight.js -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'></script>
-<!-- Include languages that Emanote itself uses -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/haskell.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nix.min.js'></script>
-<script>hljs.highlightAll();</script>
-
-
+    <strong class='error'>expression error: can't find "js.highlightjs" in JSON object (&lt;snippet&gt; tag)</strong>
 
   
   
-  <link href='tailwind.css?instanceId=7464b4c3-1758-4999-b16f-a55fdcdd0d72' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=4ae0df49-62ed-4dbe-9f60-6c4a238262c5' rel='stylesheet' type='text/css' />
 
-  <style data-category='global-font'>
+  <link rel='stylesheet' href='/_emanote-static/skylighting.css' />
+
+<style data-category='global-font'>
   /* Refined typography with system font stack */
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -2411,10 +2405,11 @@
 
 
     </h2>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'># In `perSystem.process-compose.&lt;name&gt;`
-{
-  services.weaviate."weaviate1".enable = true;
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='co'># In `perSystem.process-compose.&lt;name&gt;`</span>
+<span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>weaviate</span>.<span class='st'>"weaviate1"</span>.<span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h2 id='tips' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
       
   Tips & Tricks
@@ -2446,18 +2441,19 @@
     <p class='mb-4 leading-relaxed'>
       To see list of environment variables, see <a href='https://weaviate.io/developers/weaviate/config-refs/env-vars' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>this link</a>.
     </p>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  services.weaviate."weaviate1" = {
-    enable = true;
-    environment = {
-      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED = true;
-      QUERY_DEFAULTS_LIMIT = 100;
-      DISABLE_TELEMETRY = true;
-      LIMIT_RESOURCES = true;
-      ENABLE_MODULES = ["text2vec-openai" "generative-openai"];
-    };
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>weaviate</span>.<span class='st'>"weaviate1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>environment</span> <span class='op'>=</span> <span class='op'>{</span>
+      <span class='va'>AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+      <span class='va'>QUERY_DEFAULTS_LIMIT</span> <span class='op'>=</span> <span class='dv'>100</span><span class='op'>;</span>
+      <span class='va'>DISABLE_TELEMETRY</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+      <span class='va'>LIMIT_RESOURCES</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+      <span class='va'>ENABLE_MODULES</span> <span class='op'>=</span> <span class='op'>[</span><span class='st'>"text2vec-openai"</span> <span class='st'>"generative-openai"</span><span class='op'>];</span>
+    <span class='op'>};</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h3 id='port' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   Use a different port
@@ -2471,12 +2467,13 @@
 
 
     </h3>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  services.weaviate."weaviate1" = {
-    enable = true;
-    port = 8080;
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>weaviate</span>.<span class='st'>"weaviate1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>port</span> <span class='op'>=</span> <span class='dv'>8080</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
     <h3 id='dataDir' class='group mt-10 mb-5 font-semibold text-gray-900 dark:text-gray-50 text-3xl'>
       
   Use a different data path
@@ -2490,12 +2487,13 @@
 
 
     </h3>
-  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix language-nix'>{
-  services.weaviate."weaviate1" = {
-    enable = true;
-    dataDir = "./data";
-  };
-}</code></pre></div>
+  <div class='py-4 pr-4 mb-6 text-sm font-mono rounded-lg overflow-x-auto'><pre><code class='nix'><span class='op'>{</span>
+  <span class='va'>services</span>.<span class='va'>weaviate</span>.<span class='st'>"weaviate1"</span> <span class='op'>=</span> <span class='op'>{</span>
+    <span class='va'>enable</span> <span class='op'>=</span> <span class='cn'>true</span><span class='op'>;</span>
+    <span class='va'>dataDir</span> <span class='op'>=</span> <span class='st'>"./data"</span><span class='op'>;</span>
+  <span class='op'>};</span>
+<span class='op'>}</span>
+</code></pre></div>
   <div class='flex items-center justify-center mt-2'>
   
     
@@ -2689,7 +2687,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.3.1'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.0'>
       <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
