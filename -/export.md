@@ -1991,6 +1991,21 @@ is a local version of AWS DynamoDB for testing and development without accessing
 
 ===
 
+<!-- Source: services-flake/elasticmq.md -->
+<!-- URL: /services-flake/elasticmq -->
+<!-- Title: ElasticMQ -->
+<!-- Wikilinks: [[services-flake/elasticmq]], [[elasticmq]] -->
+
+# ElasticMQ
+
+[ElasticMQ](https://github.com/softwaremill/elasticmq) is a message queue system, offering an actor-based Scala and an SQS-compatible REST (query) interface.
+
+## Usage example
+
+<https://github.com/juspay/services-flake/blob/main/nix/services/elasticmq_test.nix>
+
+===
+
 <!-- Source: services-flake/elasticsearch.md -->
 <!-- URL: /services-flake/elasticsearch -->
 <!-- Title: Elasticsearch -->
@@ -2884,6 +2899,7 @@ short-title: Services
 - [[cassandra]]#
 - [[clickhouse]]#
 - [[dynamodb-local]]#
+- [[elasticmq]]#
 - [[elasticsearch]]#
 - [[grafana]]#
   - [[tempo]]
