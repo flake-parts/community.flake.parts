@@ -187,11 +187,11 @@
     "haskell-flake_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1770936528,
-        "narHash": "sha256-prklSEWoFyaIHo2jxq7BPw/LyTPBLR/em5C3h5lGXqg=",
+        "lastModified": 1771200453,
+        "narHash": "sha256-uJdc/H/ldyybwD/2OgIEOa/F1G1sJHj/SPH6WzCrrR4=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "96d901fb45a33fe65c74f5b03f75e1195a2cd81b",
+        "rev": "ce5c692d7550956bd27e42a8d101abca161d94d4",
         "type": "github"
       },
       "original": {
