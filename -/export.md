@@ -1571,6 +1571,22 @@ By default, the Cassandra server is started on port `9042`. To change the port, 
 
 ===
 
+<!-- Source: services-flake/chromadb.md -->
+<!-- URL: /services-flake/chromadb -->
+<!-- Title: ChromaDB -->
+<!-- Wikilinks: [[services-flake/chromadb]], [[chromadb]] -->
+
+# ChromaDB
+
+[ChromaDB](https://github.com/chroma-core/chroma) is an AI-native open-source embedding database.
+
+## Usage example
+
+<https://github.com/juspay/services-flake/blob/main/nix/services/chromadb_test.nix>
+
+
+===
+
 <!-- Source: services-flake/clickhouse.md -->
 <!-- URL: /services-flake/clickhouse -->
 <!-- Title: Clickhouse -->
@@ -2380,6 +2396,24 @@ The `schema` can be a path to a single `.sql` file or a directory containing mul
 
 ===
 
+<!-- Source: services-flake/neo4j.md -->
+<!-- URL: /services-flake/neo4j -->
+<!-- Title: Neo4j -->
+<!-- Wikilinks: [[services-flake/neo4j]], [[neo4j]] -->
+
+# Neo4j
+
+[Neo4j](https://neo4j.com/) is a highly scalable, robust, native graph database.
+
+Default credentials: `neo4j` / `neo4jadmin`
+
+## Usage example
+
+<https://github.com/juspay/services-flake/blob/main/nix/services/neo4j_test.nix>
+
+
+===
+
 <!-- Source: services-flake/nginx.md -->
 <!-- URL: /services-flake/nginx -->
 <!-- Title: Nginx -->
@@ -2827,6 +2861,22 @@ Since Prometheus also exposes data about itself as an HTTP endpoint it can scrap
 
 ===
 
+<!-- Source: services-flake/qdrant.md -->
+<!-- URL: /services-flake/qdrant -->
+<!-- Title: Qdrant -->
+<!-- Wikilinks: [[services-flake/qdrant]], [[qdrant]] -->
+
+# Qdrant
+
+[Qdrant](https://github.com/qdrant/qdrant) is a vector similarity search engine and database for AI applications.
+
+## Usage example
+
+<https://github.com/juspay/services-flake/blob/main/nix/services/qdrant_test.nix>
+
+
+===
+
 <!-- Source: services-flake/redis-cluster.md -->
 <!-- URL: /services-flake/redis-cluster -->
 <!-- Title: Redis Cluster -->
@@ -2918,6 +2968,7 @@ short-title: Services
 - [[apache-kafka]]#
 - [[azurite]]#
 - [[cassandra]]#
+- [[chromadb]]#
 - [[clickhouse]]#
 - [[dynamodb-local]]#
 - [[elasticmq]]#
@@ -2930,6 +2981,7 @@ short-title: Services
 - [[mongodb]]#
 - [[mysql]]#
 - [[nats-server]]#
+- [[neo4j]]#
 - [[nginx]]#
 - [[ollama]]#
 - [[open-webui]]#
@@ -2939,6 +2991,7 @@ short-title: Services
   - [[pgadmin]]
 - [[prometheus]]#
 - [[pubsub-emulator]]#
+- [[qdrant]]#
 - [[redis]]#
   - [[redis-cluster]]
 - [[searxng]]#
