@@ -44,7 +44,6 @@ in
                   type = types.attrsOf docLayerModule;
                   default = {
                     "".path = current-flake.inputs.self + /doc;
-                    "haskell-flake".path = current-flake.inputs."haskell-flake" + /doc;
                     "services-flake".path = current-flake.inputs."services-flake" + /doc;
                     "process-compose-flake".path = current-flake.inputs."process-compose-flake" + /doc;
                     "mission-control".path = current-flake.inputs."mission-control" + /doc;

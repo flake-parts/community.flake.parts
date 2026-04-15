@@ -7,7 +7,7 @@ template:
 
 # Modules
 
-- [[haskell-flake]]#
+- [haskell-flake](https://haskell.nixos.asia/)
 - [[services-flake]]#
 - [[process-compose-flake]]#
 - [[mission-control]]#

@@ -184,22 +184,6 @@
         "type": "github"
       }
     },
-    "haskell-flake_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1776030284,
-        "narHash": "sha256-RlhVw9N6HlepLj2oityi2k8+H3hWkFQHsUIouCCfIo0=",
-        "owner": "srid",
-        "repo": "haskell-flake",
-        "rev": "f6eed3c0c2ab8abb9fccd058092eba0a399513dd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "srid",
-        "repo": "haskell-flake",
-        "type": "github"
-      }
-    },
     "heist-extra": {
       "flake": false,
       "locked": {
@@ -338,7 +322,6 @@
           "emanote",
           "flake-parts"
         ],
-        "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
         "mission-control": "mission-control",
         "nixpkgs": [
