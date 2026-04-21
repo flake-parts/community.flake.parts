@@ -35,7 +35,20 @@
 
   
   
-  <link href='tailwind.css?instanceId=8f19f0fa-c71e-4d2b-a95e-ed7f59c42913' rel='stylesheet' type='text/css' />
+  <style id='emanote-theme-remap'>:root {
+  --color-primary-50: var(--color-sky-50);
+  --color-primary-100: var(--color-sky-100);
+  --color-primary-200: var(--color-sky-200);
+  --color-primary-300: var(--color-sky-300);
+  --color-primary-400: var(--color-sky-400);
+  --color-primary-500: var(--color-sky-500);
+  --color-primary-600: var(--color-sky-600);
+  --color-primary-700: var(--color-sky-700);
+  --color-primary-800: var(--color-sky-800);
+  --color-primary-900: var(--color-sky-900);
+  --color-primary-950: var(--color-sky-950);
+}
+</style><link href='tailwind.css?instanceId=328bda26-84be-46aa-8c84-b3a30ef8083b' rel='stylesheet' type='text/css' />
 
   <link rel='stylesheet' href='_emanote-static/skylighting.css' />
 
@@ -316,7 +329,7 @@
   <!-- What goes in this file will appear on near the end of <head>-->
 
   
-    <style>
+    <style id='emanote-sidebar-sizing'>
       /* For use in sidebar.tpl, as we cannot achieve this in tailwind itself! */
       /* md:min-w-52  */
       @media (min-width: 768px) {
@@ -484,12 +497,12 @@
       </ul>
     </div>
     <button class='inline px-3 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 outline-none cursor-pointer focus:outline-none hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors' title='Search (Ctrl+K)' type='button' onclick='window.emanote.stork.toggleSearch()'>
-      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-sky-700' f
+      <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
     </button>
-    <button class='inline px-3 py-2 text-white bg-sky-600 dark:bg-sky-700 outline-none cursor-pointer focus:outline-none hover:bg-sky-700 dark:hover:bg-sky-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+    <button class='inline px-3 py-2 text-white bg-primary-600 dark:bg-primary-700 outline-none cursor-pointer focus:outline-none hover:bg-primary-700 dark:hover:bg-primary-800 transition-colors' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
       <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
       </svg>
@@ -519,7 +532,7 @@
                       -->
               <img style='width: 1.25rem;' class='transition transform hover:scale-110 hover:opacity-80' src='favicon.svg' alt='Site Icon' />
             </a>
-            <a class='font-semibold text-base truncate hover:text-sky-600 dark:hover:text-sky-400 transition-colors' title='Go to Home' href='/'>
+            <a class='font-semibold text-base truncate hover:text-primary-600 dark:hover:text-primary-400 transition-colors' title='Go to Home' href='/'>
               Home
             </a>
           
@@ -527,20 +540,20 @@
       </div>
 
       <div id='indexing-links' class='flex flex-row space-x-2 text-gray-500 dark:text-gray-400 flex-shrink-0'>
-        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors'>
+        <a href='-/tags' title='View tags' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
             </path>
           </svg>
         </a>
-        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors'>
+        <a href='-/all' title='Expand full tree' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors'>
           <svg style='width: 1.125rem;' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
             </path>
           </svg>
         </a>
-        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
-          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-sky-700' f
+        <button title='Search (Ctrl+K)' class='p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer' onclick='window.emanote.stork.toggleSearch()'>
+          <svg xmlns='http://www.w3.org/2000/svg' style='width: 1rem;' class='hover:text-primary-700' f
  fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'>
   <path stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
 </svg>
@@ -576,7 +589,7 @@
         
       
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='haskell-flake' href='haskell-flake'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='haskell-flake' href='haskell-flake'>
       haskell-flake
     </a>
     
@@ -619,7 +632,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Modules' href='modules'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Modules' href='modules'>
       Modules
     </a>
     
@@ -658,7 +671,7 @@
         
       
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='mission-control' href='mission-control'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='mission-control' href='mission-control'>
       mission-control
     </a>
     
@@ -700,7 +713,7 @@
         
       
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='process-compose-flake' href='process-compose-flake'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='process-compose-flake' href='process-compose-flake'>
       process-compose-flake
     </a>
     
@@ -743,7 +756,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='services-flake' href='services-flake'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='services-flake' href='services-flake'>
       services-flake
     </a>
     
@@ -780,7 +793,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Getting started' href='services-flake/start'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Getting started' href='services-flake/start'>
       Getting started
     </a>
     
@@ -820,7 +833,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Contributing' href='services-flake/contributing'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Contributing' href='services-flake/contributing'>
       Contributing
     </a>
     
@@ -859,7 +872,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Examples' href='services-flake/examples'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Examples' href='services-flake/examples'>
       Examples
     </a>
     
@@ -896,7 +909,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Local AI chatbot' href='services-flake/llm'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Local AI chatbot' href='services-flake/llm'>
       Local AI chatbot
     </a>
     
@@ -936,7 +949,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Share services' href='services-flake/share-services'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Share services' href='services-flake/share-services'>
       Share services
     </a>
     
@@ -976,7 +989,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Without flake-parts' href='services-flake/without-flake-parts'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Without flake-parts' href='services-flake/without-flake-parts'>
       Without flake-parts
     </a>
     
@@ -1018,7 +1031,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Guide' href='services-flake/guide'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Guide' href='services-flake/guide'>
       Guide
     </a>
     
@@ -1055,7 +1068,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Custom service' href='services-flake/custom-service'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Custom service' href='services-flake/custom-service'>
       Custom service
     </a>
     
@@ -1095,7 +1108,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Data directory' href='services-flake/datadir'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Data directory' href='services-flake/datadir'>
       Data directory
     </a>
     
@@ -1135,7 +1148,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DevShell' href='services-flake/devshell'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DevShell' href='services-flake/devshell'>
       DevShell
     </a>
     
@@ -1181,7 +1194,7 @@
   
         
     </span>
-    <a class='font-semibold hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Services' href='services-flake/services'>
+    <a class='font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Services' href='services-flake/services'>
       Services
     </a>
     
@@ -1218,7 +1231,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Apache Kafka' href='services-flake/apache-kafka'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Apache Kafka' href='services-flake/apache-kafka'>
       Apache Kafka
     </a>
     
@@ -1258,7 +1271,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Azurite' href='services-flake/azurite'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Azurite' href='services-flake/azurite'>
       Azurite
     </a>
     
@@ -1298,7 +1311,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Cassandra' href='services-flake/cassandra'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Cassandra' href='services-flake/cassandra'>
       Cassandra
     </a>
     
@@ -1338,7 +1351,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='ChromaDB' href='services-flake/chromadb'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='ChromaDB' href='services-flake/chromadb'>
       ChromaDB
     </a>
     
@@ -1378,7 +1391,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Clickhouse' href='services-flake/clickhouse'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Clickhouse' href='services-flake/clickhouse'>
       Clickhouse
     </a>
     
@@ -1418,7 +1431,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DynamoDB Local' href='services-flake/dynamodb-local'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='DynamoDB Local' href='services-flake/dynamodb-local'>
       DynamoDB Local
     </a>
     
@@ -1458,7 +1471,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='ElasticMQ' href='services-flake/elasticmq'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='ElasticMQ' href='services-flake/elasticmq'>
       ElasticMQ
     </a>
     
@@ -1498,7 +1511,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Elasticsearch' href='services-flake/elasticsearch'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Elasticsearch' href='services-flake/elasticsearch'>
       Elasticsearch
     </a>
     
@@ -1537,7 +1550,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana' href='services-flake/grafana'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana' href='services-flake/grafana'>
       Grafana
     </a>
     
@@ -1574,7 +1587,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana Loki' href='services-flake/loki'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana Loki' href='services-flake/loki'>
       Grafana Loki
     </a>
     
@@ -1614,7 +1627,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana Tempo' href='services-flake/tempo'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Grafana Tempo' href='services-flake/tempo'>
       Grafana Tempo
     </a>
     
@@ -1657,7 +1670,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Memcached' href='services-flake/memcached'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Memcached' href='services-flake/memcached'>
       Memcached
     </a>
     
@@ -1697,7 +1710,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MinIO' href='services-flake/minio'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MinIO' href='services-flake/minio'>
       MinIO
     </a>
     
@@ -1737,7 +1750,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MongoDB' href='services-flake/mongodb'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MongoDB' href='services-flake/mongodb'>
       MongoDB
     </a>
     
@@ -1777,7 +1790,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MySQL' href='services-flake/mysql'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='MySQL' href='services-flake/mysql'>
       MySQL
     </a>
     
@@ -1817,7 +1830,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='nats-server' href='services-flake/nats-server'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='nats-server' href='services-flake/nats-server'>
       nats-server
     </a>
     
@@ -1857,7 +1870,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Neo4j' href='services-flake/neo4j'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Neo4j' href='services-flake/neo4j'>
       Neo4j
     </a>
     
@@ -1897,7 +1910,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Nginx' href='services-flake/nginx'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Nginx' href='services-flake/nginx'>
       Nginx
     </a>
     
@@ -1937,7 +1950,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Ollama' href='services-flake/ollama'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Ollama' href='services-flake/ollama'>
       Ollama
     </a>
     
@@ -1977,7 +1990,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Open WebUI' href='services-flake/open-webui'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Open WebUI' href='services-flake/open-webui'>
       Open WebUI
     </a>
     
@@ -2017,7 +2030,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PHP FastCGI Process Manager' href='services-flake/phpfpm'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PHP FastCGI Process Manager' href='services-flake/phpfpm'>
       PHP FastCGI Process Manager
     </a>
     
@@ -2057,7 +2070,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Plantuml' href='services-flake/plantuml'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Plantuml' href='services-flake/plantuml'>
       Plantuml
     </a>
     
@@ -2096,7 +2109,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PostgreSQL' href='services-flake/postgresql'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='PostgreSQL' href='services-flake/postgresql'>
       PostgreSQL
     </a>
     
@@ -2133,7 +2146,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='pgAdmin' href='services-flake/pgadmin'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='pgAdmin' href='services-flake/pgadmin'>
       pgAdmin
     </a>
     
@@ -2176,7 +2189,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Prometheus' href='services-flake/prometheus'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Prometheus' href='services-flake/prometheus'>
       Prometheus
     </a>
     
@@ -2216,7 +2229,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Pubsub Emulator' href='services-flake/pubsub-emulator'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Pubsub Emulator' href='services-flake/pubsub-emulator'>
       Pubsub Emulator
     </a>
     
@@ -2256,7 +2269,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Qdrant' href='services-flake/qdrant'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Qdrant' href='services-flake/qdrant'>
       Qdrant
     </a>
     
@@ -2295,7 +2308,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis' href='services-flake/redis'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis' href='services-flake/redis'>
       Redis
     </a>
     
@@ -2332,7 +2345,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis Cluster' href='services-flake/redis-cluster'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Redis Cluster' href='services-flake/redis-cluster'>
       Redis Cluster
     </a>
     
@@ -2375,7 +2388,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Searxng' href='services-flake/searxng'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Searxng' href='services-flake/searxng'>
       Searxng
     </a>
     
@@ -2415,7 +2428,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Tika' href='services-flake/tika'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Tika' href='services-flake/tika'>
       Tika
     </a>
     
@@ -2455,7 +2468,7 @@
   
         
     </span>
-    <a class='hover:bg-sky-50 dark:hover:bg-sky-950 hover:text-sky-700 dark:hover:text-sky-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Weaviate' href='services-flake/weaviate'>
+    <a class='hover:bg-primary-50 dark:hover:bg-primary-950 hover:text-primary-700 dark:hover:text-primary-300 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Weaviate' href='services-flake/weaviate'>
       Weaviate
     </a>
     
@@ -2495,7 +2508,7 @@
   
         
     </span>
-    <a class='font-semibold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 hover:bg-sky-100 dark:hover:bg-sky-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Zookeeper' href='services-flake/zookeeper'>
+    <a class='font-semibold bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors rounded-md px-2 py-1 truncate flex-1' title='Zookeeper' href='services-flake/zookeeper'>
       Zookeeper
     </a>
     
@@ -2525,7 +2538,7 @@
           <!-- Main body column -->
           <div class='flex-1 w-full bg-white dark:bg-gray-800'>
   <main class='px-6 py-8 max-w-7xl mx-auto'>
-    <h1 class='mb-10 px-8 py-5 bg-sky-600 dark:bg-sky-800 text-5xl font-bold text-white text-center rounded-2xl'>
+    <h1 class='mb-10 px-8 py-5 bg-primary-600 dark:bg-primary-800 text-5xl font-bold text-white text-center rounded-2xl'>
   Zookeeper
 </h1>
     
@@ -2543,7 +2556,7 @@
 
 
     <p class='mb-4 leading-relaxed'>
-      <a href='https://zookeeper.apache.org/' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Zookeeper</a> is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+      <a href='https://zookeeper.apache.org/' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>Zookeeper</a> is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
     </p>
   
     <h2 id='usage-example' class='group mt-12 mb-6 font-bold text-gray-900 dark:text-gray-50 pb-2 border-b-2 border-gray-200 dark:border-gray-800 text-4xl'>
@@ -2551,7 +2564,7 @@
   Usage example
   
   <a href='services-flake/zookeeper#usage-example' class='--ema-anchor ml-2'>
-    <span class='text-gray-400 hover:text-sky-500 dark:hover:text-sky-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <span class='text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 group-hover:opacity-100 opacity-0 cursor-pointer text-sm align-middle transition-opacity' aria-label='Copy link' title='Copy link to heading'><svg class='inline w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
         <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'></path>
         <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'></path>
       </svg></span>
@@ -2561,7 +2574,7 @@
     </h2>
   
     <p class='mb-4 leading-relaxed'>
-      <a href='https://github.com/juspay/services-flake/blob/main/nix/services/zookeeper_test.nix' class='text-sky-600 dark:text-sky-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/juspay/services-flake/blob/main/nix/services/zookeeper_test.nix</a>
+      <a href='https://github.com/juspay/services-flake/blob/main/nix/services/zookeeper_test.nix' class='text-primary-600 dark:text-primary-400 underline decoration-1 hover:decoration-2' data-linkicon='external' target='_blank' rel='noopener'>https://github.com/juspay/services-flake/blob/main/nix/services/zookeeper_test.nix</a>
     </p>
   
   <div class='flex items-center justify-center mt-2'>
@@ -2585,14 +2598,14 @@
     <ul class='space-y-2'>
       
         <li>
-          <a class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900 inline-block' href='services-flake/services'>
+          <a class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900 inline-block' href='services-flake/services'>
             Supported services
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500 dark:text-gray-300'>
   
-    <div class='pl-2 mt-2 border-l-2 border-sky-200 dark:border-sky-600 hover:border-sky-500 dark:hover:border-sky-400'>
-      <div><a href='services-flake/zookeeper' class='text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-sky-100 dark:hover:bg-sky-900' data-wikilink-type='WikiLinkBranch'>Zookeeper</a></div>
+    <div class='pl-2 mt-2 border-l-2 border-primary-200 dark:border-primary-600 hover:border-primary-500 dark:hover:border-primary-400'>
+      <div><a href='services-flake/zookeeper' class='text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950 px-1.5 py-0.5 rounded-md font-semibold no-underline hover:bg-primary-100 dark:hover:bg-primary-900' data-wikilink-type='WikiLinkBranch'>Zookeeper</a></div>
     </div>
   
 </div>
@@ -2620,7 +2633,7 @@
     
       
         <a href='/' title='Go to Home'>
-          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+          <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
             <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
           </svg>
         </a>
@@ -2629,19 +2642,19 @@
   </div>
   <div>
     <a href='-/all' title='View Index'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path>
       </svg>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.5.4.1'>
-      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 1.6.0.0'>
+      <img class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' src='_emanote-static/emanote-logo.svg' alt='Emanote logo' />
     </a>
   </div>
   <div>
     <a href='-/tags' title='View tags'>
-      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
         </path>
       </svg>
@@ -2649,7 +2662,7 @@
   </div>
   <div>
     <a href='-/tasks' title='View tasks'>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-8 h-8 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950 p-1.5 rounded-md transition-all hover:shadow-md hover:-translate-y-0.5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
       </svg>
     </a>
@@ -2670,14 +2683,18 @@
 </div>
 
 <script>
-  const wrapper = document.getElementById('stork-wrapper');
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+  // Block-scoped so Ema's reloadScripts can re-execute on route switches
+  // without hitting "Identifier 'wrapper' has already been declared".
+  {
+    const wrapper = document.getElementById('stork-wrapper');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    wrapper.classList.add(isDark ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
-    wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
-  });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      wrapper.classList.remove('stork-wrapper-edible', 'stork-wrapper-edible-dark');
+      wrapper.classList.add(e.matches ? 'stork-wrapper-edible-dark' : 'stork-wrapper-edible');
+    });
+  }
 </script>
   
     
