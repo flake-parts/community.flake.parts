@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Page moved</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 40rem;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      background: #1a1b26;
+      color: #c0caf5;
+    }
+    h1 { font-size: 1.5rem; }
+    a { color: #7aa2f7; }
+  </style>
+  <script>
+    // Forward old documentation URLs to the projects' new homes.
+    // [prefix, target, preserveSubpath]
+    var redirects = [
+      ["/services-flake", "https://services.nixos.asia", true],
+      ["/haskell-flake", "https://haskell.nixos.asia", true],
+      ["/process-compose-flake", "https://github.com/Platonic-Systems/process-compose-flake#process-management-using-process-compose-flake", false],
+      ["/mission-control", "https://github.com/Platonic-Systems/mission-control", false]
+    ];
+    var path = location.pathname;
+    for (var i = 0; i < redirects.length; i++) {
+      var prefix = redirects[i][0];
+      var target = redirects[i][1];
+      var preserveSubpath = redirects[i][2];
+      if (path === prefix || path.indexOf(prefix + "/") === 0) {
+        location.replace(preserveSubpath ? target + path.slice(prefix.length) : target);
+        break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Page moved</h1>
+  <p>
+    community.flake.parts has been retired. The documentation that used to be
+    hosted here has moved to the individual projects:
+  </p>
+  <ul>
+    <li><a href="https://services.nixos.asia/">services-flake</a></li>
+    <li><a href="https://github.com/Platonic-Systems/process-compose-flake#process-management-using-process-compose-flake">process-compose-flake</a></li>
+    <li><a href="https://haskell.nixos.asia/">haskell-flake</a></li>
+    <li><a href="https://github.com/Platonic-Systems/mission-control">mission-control</a></li>
+  </ul>
+  <p>
+    For flake-parts itself, see <a href="https://flake.parts/">flake.parts</a>.
+  </p>
+</body>
+</html>
